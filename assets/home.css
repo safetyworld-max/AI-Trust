@@ -62,3 +62,12 @@
   .report-book{flex:0 0 72%;scroll-snap-align:start}
   .report-cover{height:220px}
 }
+
+@media(max-width:700px){
+  .trust-layout{gap:28px}
+  .feature-reader{padding:22px}
+  .reader-content{min-height:165px}
+  .reader-item h3{font-size:22px;line-height:1.5;min-height:0;margin:12px 0 17px}
+  .reader-bottom{padding-top:14px}
+  .reader-controls button{width:38px;height:38px}
+}
