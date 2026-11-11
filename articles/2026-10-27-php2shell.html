@@ -14,13 +14,9 @@
   <meta property="og:title" content="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了 | 可信AI说 · SafetyWorld">
   <meta property="og:description" content="2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…">
   <meta property="og:url" content="https://safetyworld.online/articles/2026-10-27-php2shell.html">
-  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了 | 可信AI说 · SafetyWorld">
   <meta name="twitter:description" content="2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…">
-  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +27,6 @@
   "@type": "Article",
   "headline": "PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了",
   "description": "2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…",
-  "image": "https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg",
   "datePublished": "2026-10-27",
   "dateModified": "2026-10-27",
   "inLanguage": "zh-CN",
@@ -159,7 +154,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
 .article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
 .article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
-.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+
 .article-body{font-size:16px;line-height:2;color:#dbe7f0}
 .article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
 .article-body h3{font-size:18px;margin:30px 0 10px}
@@ -167,7 +162,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .article-body strong{color:#fff}
 .article-body figure{margin:28px 0}
 .article-body figure img{width:100%;display:block;border:1px solid var(--line)}
-.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+
 .article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
 .article-body blockquote p{margin:0}
 .article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
@@ -208,7 +203,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
       <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
       <h1>PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了</h1>
       <div class="article-meta"><span>可信AI说</span><span>2026-10-27</span><span>阅读约 8 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
-      <figure class="article-cover"><img src="/articles/2026-10-27-php2shell/cover.jpg" alt="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了"></figure>
+      
       <div class="article-body">
 <p>2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击者不需要登录，不需要任何应用账号，一个网络请求就可能在服务器上拿到执行代码的权力。</p>
 <p>补丁在当天 14 点发出，但攻击没有等它。</p>
@@ -219,7 +214,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p>利用线走得更快。10 月 17 日，亚马逊蜜罐捕获尝试。10 月 20 日，漏洞编号和细节泄露到公开渠道，原定 10 月 22 日的协调披露被打乱。PHP 安全团队当天发布提前通知，把发布提前到 10 月 21 日。</p>
 <p>10 月 21 日早上，Cloudflare 再次看到攻击，几个小时后补丁才上线。两条线在这里合流：发现用了近三个月协调，泄露到利用只用了几天，补丁发布到攻击到达只隔了几小时。</p>
 <p><strong>发现可以协调，泄露没法协调，时间从此站在攻击者一边。</strong></p>
-<figure><img src="/articles/2026-10-27-php2shell/cover.jpg" alt="服务器大楼地基出现裂缝，维修人员带着补丁板走向地基" loading="lazy"><figcaption>图注：裂缝在应用代码看不见的地基层，补丁要先修到这一层</figcaption></figure>
+
 <h2>机制：两个漏洞都发生在应用代码之前</h2>
 <p>PHP2Shell 是两个漏洞的合称，编号是 CVE-2026-109618 和 CVE-2026-109619，CVSS 4.0 评分都是 9.2 分。它们都住在 PHP 引擎里，不住在任何一个应用里。WordPress、Drupal、Joomla 的代码写得再干净，只要底下的 PHP 版本没修，照样暴露。</p>
 <p>第一个漏洞的触发点在请求解析阶段。服务器收到一个 multipart 请求，PHP 在初始化请求数据时遇到内存耗尽，执行流程被 zend_bailout 机制中断。清理过程在数据还没成型的情况下继续走，把一份还没准备好的内部数据当成了有效数据。攻击者只要构造一个让内存耗尽的请求，就能在应用代码运行之前改写 PHP 的内部状态。</p>
@@ -231,7 +226,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p>风险最高的部署方式是 Apache 的 mod_php。PHP 官方在公告里明确写了这一点：mod_php 下已经演示出未授权请求在应用代码运行之前触发攻击。PHP-FPM、php-cgi、FrankenPHP 和 LiteSpeed 同样在影响范围里，区别只是触发路径不同。受影响的版本从 PHP 5.4 一路到 8.5.11，修复版本是 8.2.35、8.3.36、8.4.27 和 8.5.12。</p>
 <p>官方紧急发布只覆盖 8.2 到 8.5 四个分支，8.1 及更早分支没有同批官方发布版本，走发行版或长期支持渠道的企业要单独确认自家包的修复状态。</p>
 <p><strong>版本清单是第一天的工作，不是升级之后才补的台账。</strong></p>
-<figure><img src="/articles/2026-10-27-php2shell/img2.jpg" alt="两条光带并行奔跑，一条带着放大镜，一条带着箭头，共同冲向一页日历" loading="lazy"><figcaption>图注：发现线走了近三个月，利用线只用了几天</figcaption></figure>
+
 <h2>AI 找洞：十四年的老缺陷，两支队伍三周内各自挖到</h2>
 <p>PHP2Shell 的发现史本身就是一条新闻。2024 年，一名 PHP 核心开发者在一次审计里就看到过内存耗尽模式的苗头，但当时没有找到可利用的路径，修复也就停住了。两年后，两支队伍用 AI 辅助审计，在三周内各自把这条老线索挖成了可利用的漏洞。Wiz 方面表述，一个研究员用一周时间完成了过去世界级团队需要数月才能完成的工作量。</p>
 <p>这句话要拆开理解。AI 没有凭空变出漏洞，它做的是把审计的体力活压短：读源码、猜边界条件、构造触发输入、验证利用链，每一步都比人工快。Calif 的路径是 Patch the Planet 计划里的定向审计，Wiz 的路径是自家 Atlas 工具加两个前沿模型交叉验证。两条路径撞上同一个缺陷，说明缺陷本身足够基础，也说明 AI 找洞已经从个案变成了可重复的流程。</p>
@@ -277,7 +272,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p>02 按对外顺序升级。先升直接对外的服务器，再升客户侧系统，最后升内部系统。升级到 8.2.35、8.3.36、8.4.27 或 8.5.12 中对应自己分支的版本，升级后重启全部工作进程，只重启应用不重启工作进程等于没升。升级前确认备份和回滚路径，升级后先跑一遍核心业务流程再放量。</p>
 <p>03 没有升级窗口的，先上临时缓解，但要写清有效期。PHP 公开的缓解设置要写在 php.ini 或服务器配置里，用应用代码里的 ini_set 设置无效。缓解只能挡住已知路径，PHP 官方明确表示没有完整的缓解办法，升级才是真正的修复。缓解文档必须写上到期日和负责人，到期不复查等于没有缓解。</p>
 <p>04 回溯检查从 10 月 17 日开始。查这段时间的异常请求、异常进程、新增文件和对外连接，重点看 multipart 请求和 session 相关日志。已被扫过的服务器不要只升版本就收工，升级和取证分开做：先隔离可疑进程和文件，再升级，再复查。取证结论没出来之前，对外口径只讲已确认的事实。</p>
-<figure><img src="/articles/2026-10-27-php2shell/img3.jpg" alt="三层浅色围栏护着齿轮与对话气泡组成的业务工厂，门口放着检查清单与盾牌" loading="lazy"><figcaption>图注：围栏、评测、专家决策三层配合，防线建在输出进入业务之前</figcaption></figure>
+
 <h2>站队题：你们团队会怎么选</h2>
 <p>转发给做 AI 安全、IT 架构和运维的朋友，把上面四条清单存一份，下次协调披露被泄露打乱时可以直接对照着用。评论区留一个站队题，也留一个可以私下对账的数字。</p>
 <p>站队题只有一个：A，先全量升级再慢慢验证业务，哪怕半夜也要把对外系统先升上去。B，先给核心系统上缓解措施，再按排期分批升级，业务不能停是第一位的。你们团队在 PHP2Shell 这件事上，查版本花了多久？是半小时就列出了全量清单，还是到现在还有几台服务器不知道跑的是哪个分支？</p>

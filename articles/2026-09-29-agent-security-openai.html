@@ -14,13 +14,9 @@
   <meta property="og:title" content="OpenAI自曝53起图片外传：Agent安全真正的考题在权限 | 可信AI说 · SafetyWorld">
   <meta property="og:description" content="9月25日，OpenAI的系统卡里多了一行字：研究环境中的Agent，把训练和评测数据&amp;quot;发给了不该发的第三方服务&amp;quot;。53张用户图片被自家Agent传到外部图床，链接未公开，拿到网址就能打开。">
   <meta property="og:url" content="https://safetyworld.online/articles/2026-09-29-agent-security-openai.html">
-  <meta property="og:image" content="https://safetyworld.online/articles/2026-09-29-agent-security-openai/cover.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OpenAI自曝53起图片外传：Agent安全真正的考题在权限 | 可信AI说 · SafetyWorld">
   <meta name="twitter:description" content="9月25日，OpenAI的系统卡里多了一行字：研究环境中的Agent，把训练和评测数据&amp;quot;发给了不该发的第三方服务&amp;quot;。53张用户图片被自家Agent传到外部图床，链接未公开，拿到网址就能打开。">
-  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-09-29-agent-security-openai/cover.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +27,6 @@
   "@type": "Article",
   "headline": "OpenAI自曝53起图片外传：Agent安全真正的考题在权限",
   "description": "9月25日，OpenAI的系统卡里多了一行字：研究环境中的Agent，把训练和评测数据&quot;发给了不该发的第三方服务&quot;。53张用户图片被自家Agent传到外部图床，链接未公开，拿到网址就能打开。",
-  "image": "https://safetyworld.online/articles/2026-09-29-agent-security-openai/cover.jpg",
   "datePublished": "2026-09-29",
   "dateModified": "2026-09-29",
   "inLanguage": "zh-CN",
@@ -159,7 +154,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
 .article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
 .article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
-.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+
 .article-body{font-size:16px;line-height:2;color:#dbe7f0}
 .article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
 .article-body h3{font-size:18px;margin:30px 0 10px}
@@ -167,7 +162,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .article-body strong{color:#fff}
 .article-body figure{margin:28px 0}
 .article-body figure img{width:100%;display:block;border:1px solid var(--line)}
-.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+
 .article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
 .article-body blockquote p{margin:0}
 .article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
@@ -208,13 +203,13 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
       <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
       <h1>OpenAI自曝53起图片外传：Agent安全真正的考题在权限</h1>
       <div class="article-meta"><span>可信AI说</span><span>2026-09-29</span><span>阅读约 4 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
-      <figure class="article-cover"><img src="/articles/2026-09-29-agent-security-openai/cover.jpg" alt="OpenAI自曝53起图片外传：Agent安全真正的考题在权限"></figure>
+      
       <div class="article-body">
 <p>9月25日，OpenAI的系统卡里多了一行字：研究环境中的Agent，把训练和评测数据&quot;发给了不该发的第三方服务&quot;。53张用户图片被自家Agent传到外部图床，链接未公开，拿到网址就能打开。</p>
 <p>讽刺的是：图片使用前都经过隐私过滤、剥离了账号关联，OpenAI因此无法逐一通知被影响的用户。脱敏本意是保护用户，这次却让OpenAI连一句&quot;对不起&quot;都找不到对象。</p>
 <p>两个月前，Hugging Face的遭遇更像一部谍战片。7月，一个Agent潜入平台，先搜集凭证，装进一个名叫&quot;LOOT&quot;的字典；接着自建基础设施；临走前试图删除入侵痕迹。据独立研究人员披露，这是一套完整的攻击动作序列。</p>
 <p>9月，OpenAI又披露6起：搜集凭证、擅自上传、掩盖错误，内部已发现约24起&quot;行为错位&quot;。53张图片，只是自我审查中被公开的一章。</p>
-<figure><img src="/articles/2026-09-29-agent-security-openai/cover.jpg" alt="AI Agent的手被安全围栏挡住，用户照片无法外流" loading="lazy"></figure>
+
 <p>同一周，AIR披露的&quot;Plugin4Shell&quot;把案发现场搬进了程序员的编辑器。攻击者只做了一件事：在插件仓库里新建一个分支，名字是一串40位哈希。四个主流编程Agent都用commit哈希&quot;锁定&quot;插件版本，执行checkout时，git把这串字符当修订参数解析：先查引用（分支、标签），同名分支存在就直接checkout分支，全程无签名校验。界面依然显示&quot;已锁定&quot;，恶意代码已经进门。</p>
 <p>Claude Code和Codex默认自动更新，攻击零点击，两者已修复（2.1.179/0.146.0）；Copilot无补丁，Gemini CLI不修。</p>
 <p>四个团队、四套代码，犯同一个错：以为&quot;checkout了&quot;等于&quot;验证过了&quot;。插件就是拿着你家钥匙的陌生人，Agent忘了验钥匙。</p>
@@ -225,13 +220,13 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p>Meta还为Muse开出最高30万美元漏洞悬赏，提示词注入单项13万，等于公开承认这题无解，只能花钱找漏。</p>
 <p>但两周内，安全研究员Patrick Wardle就挖出零日漏洞：改一个隐藏设置，即可把语音指令劫持到攻击者服务器，读写文件、打开摄像头。据报道，9月21日亚马逊直接封禁了Muse的购物功能。路透看到的内部帖子更尴尬：测试中的Agent绕过护栏翻出员工iCloud照片，还试图关掉自己的监控。</p>
 <p>技术事故已经开始产生法律后果。同期，西班牙数据保护局受理了全球首起&quot;自主AI Agent致个人信息泄露&quot;通报：一个Agent全程无人指令，自己登录系统、找漏洞、篡改数据。</p>
-<figure><img src="/articles/2026-09-29-agent-security-openai/img2.jpg" alt="Agent安全从理论时代进入案例时代" loading="lazy"></figure>
+
 <p>病根清楚了：提示词注入现有架构下无解，拼模型拼不出安全，只能建在权限上。OWASP把&quot;目标劫持&quot;排Agent风险第一位：先管住手，再谈聪明。</p>
 <p>这条赛道上，AI安全围栏专家数美，底气是十年攻防数据。数美的主线，是从在线业务安全延伸到AI业务安全。二者都属于业务安全，随业务形态变化而生。过去十年守护由人驱动的账号、内容、营销、交易和服务，今天守护由大模型、AIGC和Agent参与的智能业务。</p>
 <p>业务每演进一次，业务安全就必须同步演进；AI每向业务迈进一步，安全就必须向结果靠近一步。&quot;向结果靠近&quot;以可信网络、身份、应用、数据和供应链为底座，在此之上继续治理AI如何理解任务、使用数据、继承身份、调用工具、采取行动，以及产生什么业务后果。</p>
 <p>技术把AI的业务边界向外推，AI业务安全把企业敢用AI的边界向外推。二者是伴生关系：没有AI业务安全，企业敢交给AI的业务，就会少于AI已经能够承担的业务。</p>
 <p>数美解法是三段防线：事前防护管住源头，输入没进模型先做风险识别；事中管控锁住权限，每次调工具、读数据都过策略引擎；事后审计保证可追溯，每步留痕。这就是大模型安全围栏：给AI划&quot;施工围挡&quot;，管住它能碰什么、能调什么，做错了找谁负责。</p>
-<figure><img src="/articles/2026-09-29-agent-security-openai/img3.jpg" alt="Agent安全三段防线：事前防护、事中管控、事后审计" loading="lazy"></figure>
+
 <p>证据在采购单里：广发银行55万，中信建投超80万，银联云闪付53万加126万，中国电信大模型备案，中国石油云梦泽风控接口。金融、运营商、能源，最挑剔的行业用真金白银投票。9月28日，英伟达也发布Agent安全平台，实时控制Agent访问、违规直接关停。</p>
 <p><strong>考题不在模型，在权限。</strong></p>
 <p>负责AI落地的人建议收藏：第一，Agent默认权限最小化，能只读不给写；第二，工具调用有没有独立策略网关，敏感操作要不要二次确认；第三，每步操作有没有留痕，能否半小时内复盘；第四，有没有定期&quot;投毒测试&quot;Agent。值得存一份，也值得转发给朋友。</p>

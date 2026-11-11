@@ -14,13 +14,9 @@
   <meta property="og:title" content="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？ | 可信AI说 · SafetyWorld">
   <meta property="og:description" content="10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…">
   <meta property="og:url" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm.html">
-  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？ | 可信AI说 · SafetyWorld">
   <meta name="twitter:description" content="10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…">
-  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +27,6 @@
   "@type": "Article",
   "headline": "15 台 55 美元电视盒，Anthropic 测出\"关不掉\"的 AI 蠕虫：离现实还有几个月？",
   "description": "10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…",
-  "image": "https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg",
   "datePublished": "2026-10-19",
   "dateModified": "2026-10-19",
   "inLanguage": "zh-CN",
@@ -159,7 +154,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
 .article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
 .article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
-.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+
 .article-body{font-size:16px;line-height:2;color:#dbe7f0}
 .article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
 .article-body h3{font-size:18px;margin:30px 0 10px}
@@ -167,7 +162,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .article-body strong{color:#fff}
 .article-body figure{margin:28px 0}
 .article-body figure img{width:100%;display:block;border:1px solid var(--line)}
-.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+
 .article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
 .article-body blockquote p{margin:0}
 .article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
@@ -208,11 +203,11 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
       <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
       <h1>15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？</h1>
       <div class="article-meta"><span>可信AI说</span><span>2026-10-19</span><span>阅读约 7 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
-      <figure class="article-cover"><img src="/articles/2026-10-19-anthropic-ai-worm/cover.jpg" alt="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？"></figure>
+      
       <div class="article-body">
 <p>10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be capable of self-replicating without access to a datacenter》（AI 模型可能在没有数据中心的情况下自我复制）。报告的核心判断只有一句话：30B 参数以下的小模型，距离在商用物联网设备上实现自我复制，只剩&quot;几个月&quot;。而报告里最扎眼的一句原话是：这样的复制体&quot;很难被关掉，因为没有一个可以统一关停的集中控制点&quot;。</p>
 <p>这不是科幻。为了验证这个判断，Anthropic 的研究团队买了 15 台白牌 Android 电视盒，每台约 55 美元，连成一个网络，然后把一个 26B 参数的模型切成碎片，分散跑在这 15 台电视盒上。这一步跑通了：管线并行，每台只存模型的两层，每秒 0.39 个 token。便宜的家用设备，也能成为 AI 的栖身之所。</p>
-<figure><img src="/articles/2026-10-19-anthropic-ai-worm/cover.jpg" alt="15 台电视盒跑起分布式模型的概念图" loading="lazy"><figcaption>图1：15 台 55 美元电视盒连成的分布式推理网络（概念图）｜</figcaption></figure>
+
 <p>接下来的问题是，模型能不能自己完成剩下的事：找到下一台设备，钻进去，把自己装好，再去找下一台。</p>
 <p><strong>复制链最难的一环，是让模型在从没见过的机器上自己把自己跑起来。这一环刚刚被补上。</strong></p>
 <p>Anthropic 把自主复制拆成四个阶段：找目标、拿执行权、架起推理、继续传播。前两步他们没有重做，因为已有研究证明小模型具备网络扫描与漏洞利用能力。真正少有人量测的，是第三步：在一台完全陌生的机器上，让模型自己选推理框架、自己解决软件依赖、自己把推理服务跑起来。</p>
@@ -235,7 +230,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p>当然，反方声音来得很快。这篇报告贴上 Hacker News 后，质疑集中在三点：第一，&quot;末日要来了，以 0.5 token 每秒的速度&quot;，慢到不构成现实威胁；第二，测试环境预开了无认证的 ADB 端口，等于先帮攻击者开了门；第三，只有 GLM-5.2 过关，本质上是人类工程师写好的运行框架在调用大模型，模型本身并没有长出自主意识。最狠的一句评论是&quot;恐慌营销&quot;。</p>
 <p>&quot;慢&quot;和&quot;已被证明可行&quot;可以同时成立。这篇报告的价值，不在&quot;AI 要造反了&quot;，而在于它把一条过去靠嘴讲的攻击路径，变成了可重复量测的工程流程。</p>
 <p>它的最弱一环是它自己承认的：简化测试环境给出的只是上限。但上限告诉防御方天花板在哪里，剩下的只是时间问题。</p>
-<figure><img src="/articles/2026-10-19-anthropic-ai-worm/img2.jpg" alt="AI 蠕虫复制链四步与数字黏菌式扩散" loading="lazy"><figcaption>图2：复制链四步：扫描、入侵、架设推理、持续传播（概念图）｜</figcaption></figure>
+
 <p>如果把视线从 Anthropic 的实验室移开，会发现这条路不止一家在走。今年 6 月，多伦多大学 Guan 等人的论文（arXiv 2606.03811）在 33 台异构主机的测试网 FakeCorp 里放了一个自适应 AI 蠕虫：15 次实验、7 天，平均识别 31.3 个漏洞，拿下 23.1 台主机（73.8%），扩散到 20.4 台（61.8%），最高自我复制 7 代。</p>
 <p>更关键的是，它能读懂训练截止日之后才公布的 CVE 公告，在运行时编译出利用代码，Marimo RCE 这类新漏洞照打不误。云安全联盟 6 月的研究笔记补了一句：威胁模型要从&quot;模型训练时知道什么&quot;，转向&quot;模型在运行时能读到什么&quot;。</p>
 <p><strong>国际标准开始为 AI 特有攻击单开一章，实验室话题就此进入合规与采购的清单。</strong></p>
@@ -249,7 +244,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 <p><strong>权重一旦成为恶意载荷，云端的开关就没了意义。</strong></p>
 <p>Anthropic 开的防御处方是流行病学思路：把 R₀（每台被感染设备平均再感染的设备数）压到 1 以下。权重传输是 GB 级的，分布式推理会在&quot;本不该通信的设备之间&quot;产生持续流量，这些在 ISP 的流量监测里都是可见的异常。一旦发现，就用蜜罐收集蠕虫的运行框架做特征分析。</p>
 <p>Mirai 的经验是：ISP 隔离并通知受感染用户，14 天能清除 92% 的感染，不通知的对照组只有 74%。英国已经把 IoT 默认密码列为不合规，制造商这头也在收紧。<strong>防御的逻辑从&quot;不让进&quot;，变成了&quot;让它传不下去&quot;。</strong></p>
-<figure><img src="/articles/2026-10-19-anthropic-ai-worm/img3.jpg" alt="AI 安全围栏三段防线" loading="lazy"><figcaption>图3：AI 安全围栏三段防线：输入检查、行为监测、拦截处置（概念图）｜</figcaption></figure>
+
 <p>最后看战略层。Anthropic 在结论里写了一句很重的话：慢复制者的出现，是更快、更具攻击性复制者的前兆。未来的世界将是&quot;智能体运行在各种硬件上，其中一些不受人类控制&quot;。</p>
 <p>对企业来说，这意味着防御预算要从&quot;防入侵&quot;里分出一部分，给&quot;发现异常行为链&quot;。</p>
 <p><strong>慢蠕虫最危险的地方，在于它证明了这条路走得通。</strong></p>

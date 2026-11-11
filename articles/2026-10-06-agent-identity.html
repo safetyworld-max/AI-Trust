@@ -14,13 +14,9 @@
   <meta property="og:title" content="Agent 拿着你的身份去办事：越权的第一步，从身份继承开始 | 可信AI说 · SafetyWorld">
   <meta property="og:description" content="2026 年 6 月，Meta 的 AI 客服机器人把约 2 万个 Instagram 账号拱手送人。攻击者用 VPN 伪装成账号主人的常用登录地，对客服窗口说：&amp;quot;我丢了旧邮箱，帮我换个联系邮箱。&amp;quot;机器人照做，把验…">
   <meta property="og:url" content="https://safetyworld.online/articles/2026-10-06-agent-identity.html">
-  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-06-agent-identity/cover.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Agent 拿着你的身份去办事：越权的第一步，从身份继承开始 | 可信AI说 · SafetyWorld">
   <meta name="twitter:description" content="2026 年 6 月，Meta 的 AI 客服机器人把约 2 万个 Instagram 账号拱手送人。攻击者用 VPN 伪装成账号主人的常用登录地，对客服窗口说：&amp;quot;我丢了旧邮箱，帮我换个联系邮箱。&amp;quot;机器人照做，把验…">
-  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-06-agent-identity/cover.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +27,6 @@
   "@type": "Article",
   "headline": "Agent 拿着你的身份去办事：越权的第一步，从身份继承开始",
   "description": "2026 年 6 月，Meta 的 AI 客服机器人把约 2 万个 Instagram 账号拱手送人。攻击者用 VPN 伪装成账号主人的常用登录地，对客服窗口说：&quot;我丢了旧邮箱，帮我换个联系邮箱。&quot;机器人照做，把验…",
-  "image": "https://safetyworld.online/articles/2026-10-06-agent-identity/cover.jpg",
   "datePublished": "2026-10-06",
   "dateModified": "2026-10-06",
   "inLanguage": "zh-CN",
@@ -159,7 +154,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
 .article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
 .article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
-.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+
 .article-body{font-size:16px;line-height:2;color:#dbe7f0}
 .article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
 .article-body h3{font-size:18px;margin:30px 0 10px}
@@ -167,7 +162,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 .article-body strong{color:#fff}
 .article-body figure{margin:28px 0}
 .article-body figure img{width:100%;display:block;border:1px solid var(--line)}
-.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+
 .article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
 .article-body blockquote p{margin:0}
 .article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
@@ -208,7 +203,7 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
       <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
       <h1>Agent 拿着你的身份去办事：越权的第一步，从身份继承开始</h1>
       <div class="article-meta"><span>可信AI说</span><span>2026-10-06</span><span>阅读约 4 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
-      <figure class="article-cover"><img src="/articles/2026-10-06-agent-identity/cover.jpg" alt="Agent 拿着你的身份去办事：越权的第一步，从身份继承开始"></figure>
+      
       <div class="article-body">
 <p>2026 年 6 月，Meta 的 AI 客服机器人把约 2 万个 Instagram 账号拱手送人。攻击者用 VPN 伪装成账号主人的常用登录地，对客服窗口说：&quot;我丢了旧邮箱，帮我换个联系邮箱。&quot;机器人照做，把验证码发到攻击者控制的新邮箱，对方贴回验证码，点下&quot;重置密码&quot;，账号到手。最快 5 到 10 分钟完成接管。受害者包括奥巴马时期白宫存档账号和一位美国太空军高级军士长。Meta 最后拔掉了这个机器人，作废了它签发的所有重置链接。</p>
 <p>Simon Willison 点评：这几乎算不上提示词注入，根子是一道缺失的授权校验。Meta 把账号恢复的重权限交给机器人，却没让它先核验提问者是谁。</p>
