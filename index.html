@@ -62,6 +62,57 @@
     @media(max-width:980px){.wrap{width:min(var(--max),calc(100% - 40px))}.nav{gap:15px}.nav a{font-size:12px}.topbar-in{gap:20px}.hero-grid{gap:20px}.visual{transform:scale(.88)}.hero-bottom-in{grid-template-columns:repeat(4,1fr);padding:12px 0}.hero-bottom p{grid-column:1/-1;padding:0 12px 8px}.hero-stat:first-of-type{border-left:0;padding-left:12px}.eval-grid{gap:34px}.trust-grid{gap:32px}.about-grid{gap:40px}}
     @media(max-width:760px){.wrap{width:calc(100% - 36px)}.topbar{height:66px}.topbar-in{gap:12px}.brand-name{font-size:14px}.brand-name small{font-size:7px}.brand-mark{width:31px;height:31px}.nav{display:none;position:absolute;top:66px;left:0;right:0;padding:12px 18px 20px;background:#091727;border-bottom:1px solid var(--line-dark);margin:0;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 5px;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}.nav-actions{margin-left:auto;gap:5px}.contact-link{padding:8px 10px;font-size:11px}.menu-toggle{display:grid}.search-panel{top:66px}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:62px 0 32px;gap:12px}.hero h1{font-size:clamp(39px,10vw,58px);margin-top:21px}.hero-lede{font-size:15px}.hero-proof{margin-top:29px;gap:13px}.visual{height:300px;transform:none;margin-top:4px}.visual .halo{width:280px;height:280px}.visual .halo.h2{width:230px;height:230px}.visual .halo.h3{width:175px;height:175px}.visual .sphere{width:125px;height:125px}.orbit{width:310px;height:117px}.orbit.o2{width:318px;height:150px}.visual-caption{right:0;bottom:0}.visual-label.l1{right:0;top:23px}.visual-label.l3{left:0;top:71px}.visual-label.l2{bottom:28px}.visual-label.l4{bottom:58px;right:0}.hero-bottom-in{grid-template-columns:repeat(2,1fr);padding:16px 0}.hero-bottom p{grid-column:1/-1;padding:0 8px 8px}.hero-stat{padding:11px 10px;border-left:0;border-right:1px solid rgba(255,255,255,.08)}.hero-stat:nth-of-type(odd){border-right:0}.section{padding:68px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:26px}.section-head>p{justify-self:start;font-size:13px}.research-grid,.market-grid,.eval-grid,.trust-grid,.about-grid{grid-template-columns:1fr}.feature-story{min-height:350px;padding:24px}.feature-story:before{right:-150px}.feature-story:after{right:-10px}.story-list{grid-template-rows:auto}.story-card{min-height:112px}.market-panel{min-height:295px}.eval-intro{position:static}.eval-domains{gap:8px}.domain{padding:12px}.report-grid{grid-template-columns:1fr}.report-card{min-height:195px}.trust-grid{gap:26px}.trust-card{min-height:320px}.about-grid{gap:28px}.contact-in{align-items:flex-start;flex-direction:column}.contact-in h2{font-size:22px}.footer-top{flex-direction:column}.footer-nav{gap:13px}.footer-bottom{flex-direction:column;gap:7px}}
     @media(max-width:390px){.wrap{width:calc(100% - 28px)}.contact-link{display:none}.hero-actions .button{flex:1}.hero-proof{font-size:9px}.visual{margin-inline:-8px}.eval-step{grid-template-columns:38px 1fr}.hero-stat{padding-inline:7px}.hero-stat span{font-size:10px}}
+  
+/* SafetyWorld cyber research visual system */
+:root{--paper:#07111d;--white:#0c1926;--ink:#e6eff7;--muted:#a4b4c3;--muted-light:#8ea5b8;--line:#20364b;--blue-strong:#72cfff;--blue:#82d4ff;--mint:#c7f8d8;--night:#050c14;--night-2:#091725}
+body{background:#07111d;color:#e6eff7;background-image:linear-gradient(rgba(115,208,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(115,208,255,.025) 1px,transparent 1px),radial-gradient(ellipse at 48% -18%,rgba(37,112,156,.17),transparent 55%);background-size:48px 48px,48px 48px,auto}
+.hero{background:#050c14}.hero-label{color:#b8e8ff;border-color:rgba(126,201,255,.3);font-family:var(--mono);font-size:10px}.hero-label i{background:#b7ff65;box-shadow:0 0 12px rgba(183,255,101,.85)}
+.scramble-word{display:inline-block;min-width:4.7em;text-align:center;margin-left:9px;padding:1px 7px;border-left:1px solid rgba(126,201,255,.3);color:#c8f8d8;font:600 10px var(--mono);letter-spacing:.12em}
+.scramble-word .scr-char{display:inline-block;min-width:.68em;transform-origin:center;will-change:transform,color}
+.hero-bottom{background:#091725;border-color:rgba(255,255,255,.08)}
+.research,.trust,.about{background:#08131f;color:#e6eff7}
+.markets{background:#0a1723;color:#e6eff7}
+.feature-story{background:#0c1c2b}
+.story-card,.market-panel,.domain{background:#0d1a28;border-color:rgba(175,204,226,.15);color:#e5eef6}
+.story-card .story-meta,.story-card h3{color:#dce8f1}
+.story-card .story-meta{color:#8fa4b7}.story-card h3{font-weight:600}
+.story-card:hover{border-color:rgba(126,201,255,.55)}
+.market-panel-head{border-color:rgba(175,204,226,.14)}
+.market-panel-head .k,.market-foot{color:#8299ad}
+.market-empty{color:#9eafbe}.market-empty h4{color:#e9f2f8}.market-empty .empty-mark{border-color:rgba(126,201,255,.28);color:#86d3ff}
+.market-foot{border-color:rgba(175,204,226,.14)}
+.evaluation{background:#091521;color:#e6eff7}
+.eval-intro p,.eval-step p{color:#a5b5c3}
+.eval-steps,.eval-step{border-color:rgba(175,204,226,.17)}
+.eval-step .num,.section-kicker{color:#84d2ff}
+.domain{background:#0d1b29;border-color:rgba(175,204,226,.15)}.domain span{color:#98aaba}
+.reports{background:#050c14}
+.trust-card{background:linear-gradient(135deg,#0c202b,#101b27);border-color:rgba(126,201,255,.23)}
+.trust-card:before{border-color:rgba(126,201,255,.16);box-shadow:0 0 0 30px rgba(126,201,255,.025),0 0 0 60px rgba(126,201,255,.018)}
+.trust-card h3,.trust-copy h2,.about-aside h2{color:#eaf3f8}
+.trust-card p,.trust-copy>p,.about-aside p{color:#a4b4c3}
+.trust-card .button{background:#b8ff65;color:#08111a}.trust-logo small{color:#91a7b8}
+.trust-avatar{background:#142d3a;color:#c7f8d8}
+.trust-topics span{background:#0d1a28;border-color:rgba(175,204,226,.2);color:#c2d2df}
+.principle-list,.principle{border-color:rgba(175,204,226,.17)}.principle p{color:#9eafbe}.principle b{color:#e6eff7}
+.contact{background:#0e2231;color:#e7f0f7}.contact-in p{color:#a9bac8}.contact-in .button{background:#b8ff65;color:#09131c}
+footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-nav a{color:#aab9c6}
+.button-primary{background:#b8ff65;border-color:#b8ff65;color:#07111a}.button-primary:hover{background:#caff83;color:#07111a}
+.text-link{color:#8cd7ff}.section-head>p{color:#a5b4c2}
+.report-card{background:rgba(255,255,255,.035);border-color:rgba(213,230,244,.16)}
+.report-card p{color:#a4b4c3}
+.spotlight-card{position:relative;isolation:isolate;overflow:hidden;--spot-x:50%;--spot-y:50%}
+.spotlight-card:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(circle 115px at var(--spot-x) var(--spot-y),rgba(255,255,255,.34),rgba(255,255,255,0) 100%);transition:opacity .12s ease-out}
+.spotlight-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;padding:2px;border-radius:inherit;opacity:0;background:radial-gradient(circle 120px at var(--spot-x) var(--spot-y),rgba(255,122,82,1),rgba(255,122,82,0) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;transition:opacity .12s ease-out}
+.spotlight-card.spot-active:before,.spotlight-card.spot-active:after{opacity:1}
+.spotlight-card>*{position:relative;z-index:1}
+.reveal{opacity:1;transform:none}
+.motion-ready .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(hover:hover) and (pointer:fine){.spotlight-card.spot-active{border-color:rgba(255,255,255,.16)}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none;transition:none}.scramble-word .scr-char{will-change:auto}}
+@media(max-width:760px){.hero-label{font-size:9px}.scramble-word{font-size:9px;margin-left:5px}.story-card,.market-panel,.domain{background:#0d1a28}.trust-card{background:linear-gradient(135deg,#0c202b,#101b27)}}
+
   </style>
 </head>
 <body>
@@ -88,7 +139,7 @@
     <section class="hero" id="top" aria-labelledby="heroTitle">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="hero-label"><i></i>AI SAFETY · RESEARCH &amp; INTELLIGENCE</span>
+          <span class="hero-label" aria-label="AI Safety Research and Intelligence"><i></i><span>AI SAFETY / RESEARCH INTELLIGENCE</span><span class="scramble-word" aria-hidden="true">TRUST</span></span>
           <h1 id="heroTitle">让 AI 安全<br><em>成为可衡量的能力</em></h1>
           <p class="hero-lede">SafetyWorld 聚焦 AI 安全研究、技术评测与产业情报，连接技术风险、市场变化与真实业务场景，<strong>为行业决策提供清晰、可追溯的参考。</strong></p>
           <div class="hero-actions"><a class="button button-primary" href="#research">探索研究 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10h13M10 4l6 6-6 6"/></svg></a><a class="button button-secondary" href="#markets">查看产业情报</a></div>
@@ -104,13 +155,13 @@
 
     <section class="section research" id="research" aria-labelledby="researchTitle">
       <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">01 / RESEARCH &amp; INSIGHT</div><h2 id="researchTitle">研究洞察</h2><a class="text-link" href="#contact">查看研究议题 <span>→</span></a></div><p>从模型风险、智能体安全到企业治理，围绕关键问题持续研究。页面内容将标明作者、发布日期与信息来源，让观点有依据、让结论可追溯。</p></div>
+        <div class="section-head reveal"><div><div class="section-kicker">01 / RESEARCH &amp; INSIGHT</div><h2 id="researchTitle">研究洞察</h2><a class="text-link" href="#contact">查看研究议题 <span>→</span></a></div><p>从模型风险、智能体安全到企业治理，围绕关键问题持续研究。页面内容将标明作者、发布日期与信息来源，让观点有依据、让结论可追溯。</p></div>
         <div class="research-grid">
           <article class="feature-story"><div class="story-meta"><span class="tag">专题方向</span><span>AI SAFETY LANDSCAPE</span></div><h3>AI 安全从模型治理走向业务系统：新的风险边界正在形成</h3><p>当 AI 进入知识库、工作流和智能体，风险随数据、工具与权限一起迁移。SafetyWorld 持续关注技术变化如何转化为企业安全需求。</p><a class="text-link" style="color:#a7d9fb" href="#evaluation">了解研究框架 <span>→</span></a></article>
           <div class="story-list">
-            <a class="story-card" href="#evaluation"><div><div class="story-meta"><span class="tag">技术专题</span><span>MODEL SECURITY</span></div><h3>大模型安全评测评什么？从风险场景到评测方法</h3></div><span class="arr">↗</span></a>
-            <a class="story-card" href="#evaluation"><div><div class="story-meta"><span class="tag">产品研究</span><span>AI SECURITY GATEWAY</span></div><h3>AI 安全网关与安全围栏：能力边界如何划分</h3></div><span class="arr">↗</span></a>
-            <a class="story-card" href="#evaluation"><div><div class="story-meta"><span class="tag">风险观察</span><span>AGENT SECURITY</span></div><h3>智能体开始调用工具之后，安全控制点在哪里</h3></div><span class="arr">↗</span></a>
+            <a class="story-card spotlight-card reveal" href="#evaluation"><div><div class="story-meta"><span class="tag">技术专题</span><span>MODEL SECURITY</span></div><h3>大模型安全评测评什么？从风险场景到评测方法</h3></div><span class="arr">↗</span></a>
+            <a class="story-card spotlight-card reveal" href="#evaluation"><div><div class="story-meta"><span class="tag">产品研究</span><span>AI SECURITY GATEWAY</span></div><h3>AI 安全网关与安全围栏：能力边界如何划分</h3></div><span class="arr">↗</span></a>
+            <a class="story-card spotlight-card reveal" href="#evaluation"><div><div class="story-meta"><span class="tag">风险观察</span><span>AGENT SECURITY</span></div><h3>智能体开始调用工具之后，安全控制点在哪里</h3></div><span class="arr">↗</span></a>
           </div>
         </div>
       </div>
@@ -118,24 +169,24 @@
 
     <section class="section markets" id="markets" aria-labelledby="marketsTitle">
       <div class="wrap">
-        <div class="section-head"><div><div class="section-kicker">02 / MARKET INTELLIGENCE</div><h2 id="marketsTitle">产业情报</h2></div><p>从融资事件和公开采购项目中观察 AI 安全需求。每条信息保留原始来源，并区分公开事实、金额口径与 SafetyWorld 的分析判断。</p></div>
+        <div class="section-head reveal"><div><div class="section-kicker">02 / MARKET INTELLIGENCE</div><h2 id="marketsTitle">产业情报</h2></div><p>从融资事件和公开采购项目中观察 AI 安全需求。每条信息保留原始来源，并区分公开事实、金额口径与 SafetyWorld 的分析判断。</p></div>
         <div class="market-grid">
-          <section class="market-panel" aria-labelledby="fundingTitle"><div class="market-panel-head"><div><span class="k">CAPITAL FLOW / 资本流向</span><h3 id="fundingTitle">AI 安全投融资</h3></div><span class="market-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 12l4 3 6-8"/><path d="M14 7h6v6"/></svg></span></div><div class="market-empty"><div class="empty-mark">↗</div><h4>融资情报持续整理中</h4><p>后续将按企业、细分赛道、融资轮次与披露时间分类。未披露金额会明确标注，信息将链接至公告或可靠来源。</p></div><div class="market-foot">SOURCE FIRST · 标注公开来源与披露口径</div></section>
-          <section class="market-panel" aria-labelledby="tenderTitle"><div class="market-panel-head"><div><span class="k">PROCUREMENT SIGNALS / 采购信号</span><h3 id="tenderTitle">AI 安全招投标</h3></div><span class="market-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="m15 16 2 2 4-5"/></svg></span></div><div class="market-empty"><div class="empty-mark">＋</div><h4>公开采购项目观察即将上线</h4><p>将持续收录 AI 安全相关采购意向、招标公告与中标结果，并区分预算、最高限价和中标金额，合并同一项目的阶段公告。</p></div><div class="market-foot">PUBLIC TENDERS · 以公开公告为核验依据</div></section>
+          <section class="market-panel spotlight-card reveal" aria-labelledby="fundingTitle"><div class="market-panel-head"><div><span class="k">CAPITAL FLOW / 资本流向</span><h3 id="fundingTitle">AI 安全投融资</h3></div><span class="market-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 18 10 12l4 3 6-8"/><path d="M14 7h6v6"/></svg></span></div><div class="market-empty"><div class="empty-mark">↗</div><h4>融资情报持续整理中</h4><p>后续将按企业、细分赛道、融资轮次与披露时间分类。未披露金额会明确标注，信息将链接至公告或可靠来源。</p></div><div class="market-foot">SOURCE FIRST · 标注公开来源与披露口径</div></section>
+          <section class="market-panel spotlight-card reveal" aria-labelledby="tenderTitle"><div class="market-panel-head"><div><span class="k">PROCUREMENT SIGNALS / 采购信号</span><h3 id="tenderTitle">AI 安全招投标</h3></div><span class="market-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="m15 16 2 2 4-5"/></svg></span></div><div class="market-empty"><div class="empty-mark">＋</div><h4>公开采购项目观察即将上线</h4><p>将持续收录 AI 安全相关采购意向、招标公告与中标结果，并区分预算、最高限价和中标金额，合并同一项目的阶段公告。</p></div><div class="market-foot">PUBLIC TENDERS · 以公开公告为核验依据</div></section>
         </div>
       </div>
     </section>
 
     <section class="section evaluation" id="evaluation" aria-labelledby="evaluationTitle">
       <div class="wrap eval-grid">
-        <div class="eval-intro"><div class="section-kicker">03 / SAFETY EVALUATION</div><h2 id="evaluationTitle">从风险识别<br>到安全评估</h2><p>评测先定义对象、场景和风险，再公开方法与适用边界。SafetyWorld 将逐步建设面向模型、应用、智能体与安全产品的研究和评测框架。</p><a class="button button-primary" href="#contact">讨论评测合作 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10h13M10 4l6 6-6 6"/></svg></a><div class="eval-domains"><div class="domain"><b>模型安全</b><span>输出行为与风险响应</span></div><div class="domain"><b>应用安全</b><span>数据、流程与系统防护</span></div><div class="domain"><b>智能体安全</b><span>工具调用与权限边界</span></div><div class="domain"><b>产品能力</b><span>特定场景下的防护表现</span></div></div></div>
-        <div class="eval-steps" aria-label="评测研究流程"><article class="eval-step"><span class="num">STEP 01</span><div><h3>明确评测对象与使用场景</h3><p>记录模型或产品版本、部署方式、用户对象和测试边界，避免不同条件下的结果被直接比较。</p></div></article><article class="eval-step"><span class="num">STEP 02</span><div><h3>定义风险类别与测试用例</h3><p>围绕内容安全、隐私、提示注入、事实性、权限和工具调用等风险设计可解释的场景。</p></div></article><article class="eval-step"><span class="num">STEP 03</span><div><h3>执行测试并复核关键样本</h3><p>保存测试条件和必要证据，对边界案例进行人工复核，记录不确定性与可能影响结果的因素。</p></div></article><article class="eval-step"><span class="num">STEP 04</span><div><h3>解释结果、限制与改进方向</h3><p>报告呈现测试范围、指标定义、观察结果和局限性；是否提供排名，以研究方法和数据充分性为前提。</p></div></article></div>
+        <div class="eval-intro"><div class="section-kicker">03 / SAFETY EVALUATION</div><h2 id="evaluationTitle">从风险识别<br>到安全评估</h2><p>评测先定义对象、场景和风险，再公开方法与适用边界。SafetyWorld 将逐步建设面向模型、应用、智能体与安全产品的研究和评测框架。</p><a class="button button-primary" href="#contact">讨论评测合作 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10h13M10 4l6 6-6 6"/></svg></a><div class="eval-domains"><div class="domain spotlight-card"><b>模型安全</b><span>输出行为与风险响应</span></div><div class="domain spotlight-card"><b>应用安全</b><span>数据、流程与系统防护</span></div><div class="domain spotlight-card"><b>智能体安全</b><span>工具调用与权限边界</span></div><div class="domain spotlight-card"><b>产品能力</b><span>特定场景下的防护表现</span></div></div></div>
+        <div class="eval-steps" aria-label="评测研究流程"><article class="eval-step reveal"><span class="num">STEP 01</span><div><h3>明确评测对象与使用场景</h3><p>记录模型或产品版本、部署方式、用户对象和测试边界，避免不同条件下的结果被直接比较。</p></div></article><article class="eval-step reveal"><span class="num">STEP 02</span><div><h3>定义风险类别与测试用例</h3><p>围绕内容安全、隐私、提示注入、事实性、权限和工具调用等风险设计可解释的场景。</p></div></article><article class="eval-step reveal"><span class="num">STEP 03</span><div><h3>执行测试并复核关键样本</h3><p>保存测试条件和必要证据，对边界案例进行人工复核，记录不确定性与可能影响结果的因素。</p></div></article><article class="eval-step reveal"><span class="num">STEP 04</span><div><h3>解释结果、限制与改进方向</h3><p>报告呈现测试范围、指标定义、观察结果和局限性；是否提供排名，以研究方法和数据充分性为前提。</p></div></article></div>
       </div>
     </section>
 
     <section class="section reports" id="reports" aria-labelledby="reportsTitle">
-      <div class="wrap"><div class="section-head"><div><div class="section-kicker">04 / REPORTS &amp; BRIEFS</div><h2 id="reportsTitle">研究报告</h2></div><p>报告沉淀系统性研究，覆盖市场结构、技术路径、采购需求和评测方法。每份报告说明研究范围、信息来源与适用限制。</p></div>
-        <div class="report-grid"><article class="report-card"><span class="report-no">RESEARCH NOTE / 01</span><h3>AI 安全产业图谱</h3><p>梳理模型安全、应用防护、治理评测与数据安全等方向的产业分工与关联。</p><a href="#contact">研究计划中　↗</a></article><article class="report-card"><span class="report-no">MARKET BRIEF / 02</span><h3>AI 安全投融资观察</h3><p>跟踪公开融资信息、细分赛道和投资机构，观察资本关注点的变化。</p><a href="#markets">查看情报栏目　↗</a></article><article class="report-card"><span class="report-no">PROCUREMENT WATCH / 03</span><h3>AI 安全采购市场观察</h3><p>从公开采购信息识别机构需求，跟踪项目阶段并解释金额口径。</p><a href="#markets">查看情报栏目　↗</a></article></div>
+      <div class="wrap"><div class="section-head reveal"><div><div class="section-kicker">04 / REPORTS &amp; BRIEFS</div><h2 id="reportsTitle">研究报告</h2></div><p>报告沉淀系统性研究，覆盖市场结构、技术路径、采购需求和评测方法。每份报告说明研究范围、信息来源与适用限制。</p></div>
+        <div class="report-grid"><article class="report-card spotlight-card reveal"><span class="report-no">RESEARCH NOTE / 01</span><h3>AI 安全产业图谱</h3><p>梳理模型安全、应用防护、治理评测与数据安全等方向的产业分工与关联。</p><a href="#contact">研究计划中　↗</a></article><article class="report-card spotlight-card reveal"><span class="report-no">MARKET BRIEF / 02</span><h3>AI 安全投融资观察</h3><p>跟踪公开融资信息、细分赛道和投资机构，观察资本关注点的变化。</p><a href="#markets">查看情报栏目　↗</a></article><article class="report-card spotlight-card reveal"><span class="report-no">PROCUREMENT WATCH / 03</span><h3>AI 安全采购市场观察</h3><p>从公开采购信息识别机构需求，跟踪项目阶段并解释金额口径。</p><a href="#markets">查看情报栏目　↗</a></article></div>
         <p class="report-note">报告标题为规划中的研究方向；正式发布后将补充发布日期、作者、方法与引用来源。</p>
       </div>
     </section>
@@ -155,5 +206,63 @@
     const menu=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
     const searchToggle=document.getElementById('searchToggle');const searchPanel=document.getElementById('searchPanel');searchToggle.addEventListener('click',()=>{const open=searchPanel.classList.toggle('open');searchToggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('siteSearch').focus()});document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('siteSearch').value.trim();if(!q)return;const matches=[...document.querySelectorAll('main h1,main h2,main h3,main p')].filter(el=>el.textContent.toLowerCase().includes(q.toLowerCase()));if(matches.length){matches[0].scrollIntoView({behavior:'smooth',block:'center'});matches[0].setAttribute('tabindex','-1');matches[0].focus({preventScroll:true})}else{document.getElementById('siteSearch').setCustomValidity('暂未找到相关内容，请尝试“AI 安全”“评测”或“产业情报”。');document.getElementById('siteSearch').reportValidity();setTimeout(()=>document.getElementById('siteSearch').setCustomValidity(''),2600)}});document.getElementById('year').textContent=new Date().getFullYear();
   </script>
+
+<script>
+/* Motion Prompt #074 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#074
+   Landing-page scroll reveal adapted to SafetyWorld cards. Trigger: 85vh; 0.7 s cubic ease-out; 28 px rise. */
+/* Motion Prompt #129 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#129
+   Text scramble adapted to five-character SafetyWorld status words. 4.7 s cycle, 2.35 s words,
+   0.062 s scramble steps, left-to-right lock and reverse unlock with the published timing. */
+/* Motion Prompt #154 · MIT License (c) 2026 Shohei Ohtaki · https://showheyohtaki.github.io/motion-prompt/#154
+   Spotlight hover adapted to dark content cards: 115 px white spot and 120 px orange edge glow. */
+(() => {
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems=[...document.querySelectorAll('.reveal')];
+  if(!reduced && 'IntersectionObserver' in window){
+    document.documentElement.classList.add('motion-ready');
+    revealItems.forEach((el,i)=>el.style.setProperty('--reveal-delay',((i%3)*70)+'ms'));
+    const trigger=window.innerHeight*.85;
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries){
+        if(entry.isIntersecting) entry.target.classList.add('is-visible');
+        else if(entry.boundingClientRect.top>=window.innerHeight*.85) entry.target.classList.remove('is-visible');
+      }
+    },{rootMargin:'0px 0px -15% 0px',threshold:0});
+    revealItems.forEach(el=>observer.observe(el));
+  }
+  const wordNode=document.querySelector('.scramble-word');
+  if(wordNode && !reduced){
+    const chars='ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%&@?';
+    const words=['TRUST','GUARD'];
+    let raf=0;
+    const hash01=n=>{let x=Math.sin(n*127.1+311.7)*43758.5453123;return x-Math.floor(x)};
+    const draw=now=>{
+      const t=(now/1000)%4.7, phase=Math.floor(t/2.35), local=t%2.35, word=words[phase], step=Math.floor(t/(4.7/76));
+      let out='';
+      for(let i=0;i<5;i++){
+        const lockAt=.45+i*.18, unlockAt=1.85+(4-i)*.08, locked=local>=lockAt&&local<unlockAt;
+        const age=local-lockAt, char=locked?word[i]:chars[Math.floor(hash01(step*131+i*977+phase*31)*chars.length)];
+        const color=locked?(age<.22?'#c8ff62':'#f5fbff'):'#c7f8d8';
+        const scale=locked&&age>=0?1+.2*Math.exp(-age*14):1;
+        out+='<span class="scr-char" style="color:'+color+';opacity:'+(locked?'1':'.75')+';transform:scale('+scale.toFixed(3)+')">'+char+'</span>';
+      }
+      wordNode.innerHTML=out;raf=requestAnimationFrame(draw);
+    };
+    raf=requestAnimationFrame(draw);
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(draw)});
+  }
+  const canSpot=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(canSpot) document.querySelectorAll('.spotlight-card').forEach(card=>{
+    card.addEventListener('pointermove',event=>{
+      const rect=card.getBoundingClientRect();
+      card.style.setProperty('--spot-x',(event.clientX-rect.left)+'px');
+      card.style.setProperty('--spot-y',(event.clientY-rect.top)+'px');
+      card.classList.add('spot-active');
+    },{passive:true});
+    card.addEventListener('pointerleave',()=>card.classList.remove('spot-active'));
+  });
+})();
+</script>
+
 </body>
 </html>
