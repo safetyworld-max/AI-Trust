@@ -92,6 +92,8 @@ body{background:var(--paper);color:var(--ink)}
   .page-visual img{height:150px}
 }
 @media(max-width:700px){
+  .report-shelf.archive-shelf{display:grid;overflow:visible;scroll-snap-type:none;padding:0}
+  .report-shelf.archive-shelf .report-book{flex:initial;scroll-snap-align:none}
   .page-head{padding:48px 0 0}
   .page-head h1{font-size:33px}
   .page-visual img{height:120px}
