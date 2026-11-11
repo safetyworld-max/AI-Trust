@@ -208,6 +208,13 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 @media(max-width:760px){.topbar{height:66px}.topbar .nav{background:#efefed;border-color:#cbd2cc}.topbar .nav a{border-color:#d5ddd5}.sw-hero-intro{padding-top:54px}.sw-hero-intro h1{font-size:clamp(27px,6.8vw,39px);line-height:1.32;padding:0 8px}.sw-hero-intro p{font-size:13px;padding:0 10px}.desktop-break{display:none}.sw-stage{height:430px;margin-top:26px;perspective:1000px}.sw-object{width:540px;height:420px;left:44%;top:48px}.sw-face{padding:27px}.sw-front{transform:translateZ(120px)}.sw-side{width:240px;right:-240px;transform:translateZ(120px) rotateY(90deg)}.sw-object-top{transform:translateZ(120px)}.sw-face-title strong{font-size:80px}.sw-side-title{font-size:56px}.sw-mark{font-size:65px}.sw-face-top,.sw-face-bottom{font-size:8px}.sw-hero-foot span:last-child{display:none}.sw-hero-foot{bottom:14px}.hero{min-height:0}}
 @media(prefers-reduced-motion:reduce){.sw-object{animation:none}}
 
+
+/* Based on designlang's measured BPCO palette, spacing and editorial type scale. */
+.hero,.topbar{background-color:#f1f1f1}.topbar{border-bottom-color:#e1e1e1}.sw-hero-intro h1{color:#121212}.sw-hero-intro p{color:#555}.sw-hero-kicker{color:#686868}
+.sw-stage{perspective:1450px}.sw-object{animation:swTurn 18s ease-in-out infinite alternate}
+.sw-object.scroll-linked{animation:none;transform:translate3d(calc(-52% + var(--sw-x,0px)),var(--sw-y,0px),0) rotateX(var(--sw-rx,-4deg)) rotateY(var(--sw-ry,-20deg));will-change:transform}
+@media(prefers-reduced-motion:reduce){.sw-object.scroll-linked{transform:translateX(-52%) rotateX(-4deg) rotateY(-20deg)!important}}
+
 </style>
 </head>
 <body><div class="reading-progress" aria-hidden="true"></div>
@@ -354,5 +361,16 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 
 
 
+<script>
+/* Scroll-linked movement for the SafetyWorld dimensional hero. */
+(()=>{
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const stage=document.querySelector('.sw-stage'),object=document.querySelector('.sw-object');if(!stage||!object)return;
+ let pending=false;
+ function render(){pending=false;const rect=stage.getBoundingClientRect();const p=Math.max(0,Math.min(1,(innerHeight*.8-rect.top)/(rect.height+innerHeight*.45)));object.style.setProperty('--sw-ry',(-25+p*44).toFixed(2)+'deg');object.style.setProperty('--sw-rx',(-4+p*3).toFixed(2)+'deg');object.style.setProperty('--sw-x',(p*36).toFixed(1)+'px');object.style.setProperty('--sw-y',(p*65).toFixed(1)+'px')}
+ function request(){if(!pending){pending=true;requestAnimationFrame(render)}}
+ object.classList.add('scroll-linked');addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});request();
+})();
+</script>
 </body>
 </html>
