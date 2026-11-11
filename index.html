@@ -195,6 +195,23 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 @media(max-width:420px){.trust-articles li{grid-template-columns:minmax(0,1fr);gap:4px}.trust-date{padding-top:0}.hero h1{font-size:clamp(31px,8vw,38px)}}
 @media(prefers-reduced-motion:reduce){.hero .visual{transform:none!important}}
 
+
+/* Architectural editorial hero, inspired by the reference's dimensional presentation */
+.topbar{background:#efefed;color:#171a19;border-bottom:1px solid #d5d8d5}.topbar .brand-name{color:#151816}.topbar .brand-name small{color:#666d68}.topbar .brand-mark{color:#151816;border-color:#151816}.topbar .brand-mark:after{border-color:#949a95}.topbar .nav a,.topbar .search-toggle,.topbar .menu-toggle{color:#2b322e}.topbar .nav a:hover{color:#657c67}.topbar .contact-link{border-color:#1e2821;color:#1e2821}
+.hero{display:block;min-height:0;color:#141817;background:#efefed;overflow:hidden;isolation:isolate}
+.hero:before{display:none}.sw-hero-intro{text-align:center;padding-top:64px;position:relative;z-index:2}.sw-hero-kicker{display:block;color:#6d7871;font:10px var(--mono);letter-spacing:.18em}.sw-hero-intro h1{color:#161b18;font-size:clamp(29px,3.2vw,48px);line-height:1.28;letter-spacing:-.045em;margin:18px auto 12px;max-width:850px}.sw-hero-intro p{font-size:15px;line-height:1.8;color:#606b64;margin:0 auto}.sw-hero-actions{display:flex;justify-content:center;gap:24px;margin-top:19px}.sw-hero-actions a{color:#28362c;font-size:12px;font-weight:650;border-bottom:1px solid #93a19a;padding-bottom:4px}.sw-hero-actions a span{margin-left:5px}
+.sw-stage{height:clamp(440px,51vw,680px);position:relative;perspective:1400px;overflow:hidden;margin-top:30px}.sw-stage:before{content:"";position:absolute;inset:5% 0 0;background:repeating-linear-gradient(90deg,transparent 0 19%,rgba(255,255,255,.55) 19% 20%,transparent 20% 25%),linear-gradient(180deg,rgba(255,255,255,.75),transparent 35%);opacity:.48}
+.sw-object{position:absolute;width: min(65vw,820px);height:550px;left:50%;top:50px;transform-style:preserve-3d;transform:translateX(-52%) rotateX(-4deg) rotateY(-20deg);animation:swTurn 18s ease-in-out infinite alternate}
+.sw-face{position:absolute;inset:0;border:1px solid rgba(20,27,23,.22);color:#181e1a;padding:38px 42px;background:linear-gradient(115deg,rgba(255,255,255,.75),rgba(201,208,202,.38)),repeating-linear-gradient(96deg,rgba(25,35,28,.025) 0px,transparent 1px,transparent 7px),#e0e4df;backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:inset 0 1px rgba(255,255,255,.9)}
+.sw-front{transform:translateZ(180px)}.sw-side{width:360px;left:auto;right:-360px;transform-origin:left center;transform:translateZ(180px) rotateY(90deg);background:linear-gradient(120deg,#cbd1cc,#eef0ed)}
+.sw-object-top{position:absolute;left:-2px;right:-2px;top:-12px;height:14px;background:#252c28;transform:translateZ(180px);box-shadow:0 -2px 3px #737e77}
+.sw-face-top,.sw-face-bottom{display:flex;justify-content:space-between;gap:25px;font:10px/1.25 var(--mono);letter-spacing:.01em}.sw-face-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.sw-face-title strong{font:800 clamp(68px,9vw,132px)/.82 Manrope,var(--sans);letter-spacing:-.09em}.sw-mark{font:100px/1 sans-serif;color:#31443a}.sw-side-title{font:800 88px/.88 Manrope,var(--sans);letter-spacing:-.07em}.sw-side-title span{display:block;font:58px sans-serif;margin-top:20px}.sw-face-bottom{border-top:1px solid #89958a;padding-top:15px}
+.sw-hero-foot{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:3;display:flex;justify-content:space-between;gap:16px;align-items:end;color:#4e5a51;font:9px var(--mono);letter-spacing:.07em}.sw-hero-foot a{background:#eaece8;border:1px solid #aeb8af;padding:10px 14px;color:#17231a}.sw-hero-foot a span{margin-left:10px}
+.cyber-ticker{background:#121b15;color:#c2d4c1}.cyber-ticker b{color:#b8ef92}
+@keyframes swTurn{from{transform:translateX(-52%) rotateX(-4deg) rotateY(-24deg)}to{transform:translateX(-48%) rotateX(-4deg) rotateY(-9deg)}}
+@media(max-width:760px){.topbar{height:66px}.topbar .nav{background:#efefed;border-color:#cbd2cc}.topbar .nav a{border-color:#d5ddd5}.sw-hero-intro{padding-top:54px}.sw-hero-intro h1{font-size:clamp(27px,6.8vw,39px);line-height:1.32;padding:0 8px}.sw-hero-intro p{font-size:13px;padding:0 10px}.desktop-break{display:none}.sw-stage{height:430px;margin-top:26px;perspective:1000px}.sw-object{width:540px;height:420px;left:44%;top:48px}.sw-face{padding:27px}.sw-front{transform:translateZ(120px)}.sw-side{width:240px;right:-240px;transform:translateZ(120px) rotateY(90deg)}.sw-object-top{transform:translateZ(120px)}.sw-face-title strong{font-size:80px}.sw-side-title{font-size:56px}.sw-mark{font-size:65px}.sw-face-top,.sw-face-bottom{font-size:8px}.sw-hero-foot span:last-child{display:none}.sw-hero-foot{bottom:14px}.hero{min-height:0}}
+@media(prefers-reduced-motion:reduce){.sw-object{animation:none}}
+
 </style>
 </head>
 <body><div class="reading-progress" aria-hidden="true"></div>
@@ -218,21 +235,11 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="heroTitle"><canvas class="dissolve-field" aria-hidden="true"></canvas><canvas class="cyber-canvas" aria-hidden="true"></canvas>
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="hero-label" aria-label="AI Safety Research and Intelligence"><i></i><span>AI SAFETY / RESEARCH INTELLIGENCE</span><span class="scramble-word" aria-hidden="true">TRUST</span></span>
-          <h1 id="heroTitle">让 AI 安全<br><em>成为可衡量的能力</em></h1>
-          <p class="hero-lede">SafetyWorld 聚焦 AI 安全研究、技术评测与产业情报，连接技术风险、市场变化与真实业务场景，<strong>为行业决策提供清晰、可追溯的参考。</strong></p>
-          <div class="hero-actions"><a class="button button-primary" href="#research">探索研究 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10h13M10 4l6 6-6 6"/></svg></a><a class="button button-secondary" href="#markets">查看产业情报</a></div>
-          <div class="hero-proof"><span><b>RESEARCH</b> 研究洞察</span><i></i><span><b>EVALUATION</b> 技术评测</span><i></i><span><b>MARKET SIGNALS</b> 产业情报</span></div>
-        </div>
-        <div class="visual" aria-hidden="true">
-          <div class="halo"></div><div class="halo h2"></div><div class="halo h3"></div><div class="orbit"><i class="node"></i></div><div class="orbit o2"><i class="node"></i></div><div class="sphere"><div class="sphere-grid"></div></div>
-          <span class="visual-label l1">MODEL / 01</span><span class="visual-label l2">RISK SIGNALS</span><span class="visual-label l3">TRUST BOUNDARY</span><span class="visual-label l4">EVALUATION / 04</span><i class="visual-line"></i><i class="visual-line v2"></i><span class="visual-caption">MEASURE · UNDERSTAND · IMPROVE</span>
-        </div><div class="field-caption" aria-hidden="true">SAFETY WORLD &nbsp; / &nbsp; SIGNALS IN MOTION</div>
-      </div>
-    </section>
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+<div class="sw-hero-intro wrap"><span class="sw-hero-kicker">INDEPENDENT RESEARCH &nbsp; / &nbsp; AI SAFETY</span><h1 id="heroTitle">让 AI 安全，成为可衡量的能力。</h1><p>聚焦 AI 安全研究、技术评测与产业情报，<br class="desktop-break">让复杂问题更清晰，让重要判断更有依据。</p><div class="sw-hero-actions"><a href="#research">探索研究 <span>↗</span></a><a href="#markets">查看产业情报 <span>↗</span></a></div></div>
+<div class="sw-stage" aria-hidden="true"><div class="sw-object"><div class="sw-face sw-front"><div class="sw-face-top"><span>SAFETYWORLD<br>AI SAFETY RESEARCH</span><span>RESEARCH / 01<br>INTELLIGENCE / 02</span></div><div class="sw-face-title"><strong>AI<br>SAFETY</strong><span class="sw-mark">✳</span></div><div class="sw-face-bottom"><span>UNDERSTAND THE RISKS.<br>MEASURE WHAT MATTERS.</span><span>RESEARCH<br>EVALUATION<br>INTELLIGENCE</span></div></div><div class="sw-face sw-side"><div class="sw-face-top"><span>SAFETYWORLD<br>AI SAFETY RESEARCH</span><span>2026 / NOW</span></div><div class="sw-side-title">TRUST<br>BY<br>DESIGN<span>✳</span></div><div class="sw-face-bottom"><span>MAKE AI SAFER<br>FOR EVERYONE.</span><span>MODEL / AGENT<br>APPLICATION / DATA</span></div></div><div class="sw-object-top"></div></div></div>
+<div class="sw-hero-foot wrap"><span>SAFETYWORLD / AI SAFETY RESEARCH</span><a href="#research">向下探索 <span>↓</span></a><span>INSIGHT · EVALUATION · INTELLIGENCE</span></div>
+</section>
     <div class="cyber-ticker" aria-hidden="true"><div class="cyber-ticker-track"><span><b>◈</b> MODEL SECURITY</span><span><b>◈</b> RISK INTELLIGENCE</span><span><b>◈</b> AGENT SAFETY</span><span><b>◈</b> TRUSTED AI</span><span><b>◈</b> SECURITY EVALUATION</span><span><b>◈</b> MODEL SECURITY</span><span><b>◈</b> RISK INTELLIGENCE</span><span><b>◈</b> AGENT SAFETY</span><span><b>◈</b> TRUSTED AI</span><span><b>◈</b> SECURITY EVALUATION</span></div></div><div class="hero-bottom"><div class="wrap hero-bottom-in"><p><span>OUR FOCUS</span>把分散的信息，整理成可以理解和使用的判断。</p><div class="hero-stat"><b>01 / INSIGHT</b><span>研究趋势与风险</span></div><div class="hero-stat"><b>02 / EVALUATE</b><span>建立清晰评测方法</span></div><div class="hero-stat"><b>03 / TRACK</b><span>追踪资本与采购</span></div><div class="hero-stat"><b>04 / EXPLAIN</b><span>让专业议题被看见</span></div></div></div>
 
     <section class="section research" id="research" aria-labelledby="researchTitle">
@@ -347,79 +354,9 @@ footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-n
 </script>
 
 
-<script>
-(()=>{
- const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- const bar=document.querySelector('.reading-progress');
- const progress=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%'};
- addEventListener('scroll',progress,{passive:true});addEventListener('resize',progress,{passive:true});progress();
- if(reduced)return;
- const visual=document.querySelector('.visual'),hero=document.querySelector('.hero'),canvas=document.querySelector('.cyber-canvas');
- if(matchMedia('(hover:hover) and (pointer:fine)').matches){
-  hero.addEventListener('pointermove',e=>{let r=hero.getBoundingClientRect();visual.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*12+'deg');visual.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*8+'deg')},{passive:true});
-  hero.addEventListener('pointerleave',()=>{visual.style.setProperty('--ry','0deg');visual.style.setProperty('--rx','0deg')});
- }
- const ctx=canvas.getContext('2d');if(!ctx)return;
- let w=0,h=0,dpr=1,points=[],frame=0,visible=true,last=0;
- function resize(){w=hero.clientWidth;h=hero.clientHeight;dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);let count=Math.min(75,Math.max(30,Math.floor(w*h/11000)));points=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.5,phase:Math.random()*6.3}))}
- function draw(t){if(!visible||document.hidden){frame=0;return}let dt=Math.min((t-last)/16.7||1,2);last=t;ctx.clearRect(0,0,w,h);for(const p of points){p.x+=p.vx*dt;p.y+=p.vy*dt;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1}
- for(let i=0;i<points.length;i++){let p=points[i];for(let j=i+1;j<points.length;j++){let q=points[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);if(d<140){ctx.strokeStyle='rgba(80,211,238,'+((1-d/140)*.18)+')';ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}ctx.fillStyle='rgba(143,240,255,'+(.42+.3*Math.sin(t/900+p.phase))+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}
- frame=requestAnimationFrame(draw)}
- function start(){if(visible&&!document.hidden&&!frame){last=0;frame=requestAnimationFrame(draw)}}
- resize();addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',start);
- if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start()},{threshold:0}).observe(hero);
- start();
-})();
-</script>
 
-<script>
-/* Procedural evolving field, with static CSS fallback. */
-(()=>{
- if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- const canvas=document.querySelector('.dissolve-field'),hero=document.querySelector('.hero');
- const gl=canvas.getContext('webgl',{alpha:false,antialias:false,powerPreference:'low-power'});if(!gl)return;
- const vert='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
- const frag=`precision mediump float;
- uniform vec2 u_res; uniform float u_time;
- float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
- float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}
- float fbm(vec2 p){float s=0.,a=.5;for(int i=0;i<5;i++){s+=a*noise(p);p=p*2.04+vec2(9.2,3.7);a*=.5;}return s;}
- void main(){
- vec2 uv=gl_FragCoord.xy/u_res;vec2 p=(gl_FragCoord.xy-.5*u_res)/u_res.y;
- float t=u_time*.13;vec2 center=vec2(.44,.02);if(u_res.x/u_res.y<1.0)center=vec2(.08,-.20);
- vec2 q=p-center;float r=length(q),a=atan(q.y,q.x);
- float n=fbm(q*3.3+vec2(t,-t*.42));
- float warp=fbm(q*5.0+vec2(-t*.6,t*.7));
- float shape=.42+.085*sin(3.*a+t)+.09*(n-.5)+.045*(warp-.5);
- float edge=shape-r;
- float threads=pow(abs(sin((r+.055*n)*135.-t*2.)),12.);
- float wisps=pow(max(0.,fbm(q*6.+vec2(t*.45,-t))-.47),1.4);
- float glow=exp(-abs(edge)*8.);
- float body=smoothstep(-.09,.06,edge);
- float grain=hash(gl_FragCoord.xy+floor(u_time*8.))-.5;
- vec3 col=vec3(.012,.025,.033);
- col+=vec3(.035,.12,.13)*exp(-r*2.1);
- col+=body*(vec3(.10,.25,.24)*(.25+.75*n)+vec3(.07,.22,.22)*threads);
- col+=glow*vec3(.16,.36,.32)*(.22+.7*n);
- col+=vec3(.18,.49,.42)*wisps*smoothstep(.68,.2,r)*.65;
- vec2 cell=floor((q+vec2(t*.015,0.))*185.);
- float dots=step(.975,hash(cell))*smoothstep(.78,.29,r)*smoothstep(-.18,.08,edge+warp*.15);
- col+=dots*vec3(.42,.75,.60)*(.25+.75*hash(cell+4.));
- col+=grain*.018;gl_FragColor=vec4(max(col,0.),1.);
- }`;
- function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return gl.getShaderParameter(s,gl.COMPILE_STATUS)?s:null}
- let vs=shader(gl.VERTEX_SHADER,vert),fs=shader(gl.FRAGMENT_SHADER,frag);if(!vs||!fs)return;
- let prog=gl.createProgram();gl.attachShader(prog,vs);gl.attachShader(prog,fs);gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return;gl.useProgram(prog);
- let buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
- let loc=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
- let res=gl.getUniformLocation(prog,'u_res'),time=gl.getUniformLocation(prog,'u_time'),raf=0,visible=true;
- function resize(){let scale=Math.min(devicePixelRatio||1,1.25);canvas.width=Math.max(1,Math.floor(canvas.clientWidth*scale));canvas.height=Math.max(1,Math.floor(canvas.clientHeight*scale));gl.viewport(0,0,canvas.width,canvas.height);gl.uniform2f(res,canvas.width,canvas.height)}
- function draw(ms){raf=0;if(!visible||document.hidden)return;gl.uniform1f(time,ms*.001);gl.drawArrays(gl.TRIANGLES,0,6);raf=requestAnimationFrame(draw)}
- function start(){if(visible&&!document.hidden&&!raf)raf=requestAnimationFrame(draw)}
- resize();addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',start);
- if('IntersectionObserver'in window)new IntersectionObserver(e=>{visible=e[0].isIntersecting;start()}).observe(hero);start();
-})();
-</script>
+
+
 
 </body>
 </html>
