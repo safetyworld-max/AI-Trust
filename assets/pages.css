@@ -209,3 +209,26 @@ body{background:var(--paper);color:var(--ink)}
 .tender-market .tender-list li>div span{white-space:nowrap}
 .tender-market .tender-list li p{max-width:1000px}
 @media(max-width:700px){.tender-market .tender-list li{padding:16px 10px}.tender-market .tender-list li.featured-bid{padding-left:14px}.tender-market .tender-list li>div{display:block}.tender-market .tender-list li>div span{display:block;margin-top:5px;white-space:normal}}
+
+
+/* ---------- domestic / global funding coverage ---------- */
+.funding-market .funding-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:24px;align-items:start}
+.funding-market .funding-group{min-width:0;padding:22px 22px 10px;border:1px solid #d5ddd0;background:rgba(255,255,255,.22)}
+.funding-market .funding-group-head{padding-bottom:15px;border-bottom:1px solid #cfd8c8}
+.funding-market .funding-group-head>span{font:10px var(--mono);letter-spacing:.13em;color:#77876d}
+.funding-market .funding-group-head h3{font-size:18px;letter-spacing:-.025em;margin:8px 0 3px;color:var(--ink)}
+.funding-market .funding-group-head p{font-size:11px;color:#778071;margin:0}
+.funding-market .funding-group .intel-list{margin-top:0}
+.funding-market .funding-group .intel-list li{padding:16px 0;border-top:1px solid #d2d9ce}
+.funding-market .funding-group .intel-list li:first-child{border-top:0}
+.funding-market .funding-group .intel-list li>div{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.funding-market .funding-group .intel-list strong{font-size:13px}
+.funding-market .funding-group .intel-list li>div span{font:10px var(--mono);color:#59704d;text-align:right}
+.funding-market .funding-group .intel-list li p{margin:6px 0 0;color:#66715f;font-size:11px;line-height:1.8}
+.funding-market .funding-group .intel-list a{color:#405e32;text-decoration:underline;text-decoration-color:#a6b697;text-underline-offset:3px}
+.funding-market .funding-group .intel-list a:hover{color:#243a1d;text-decoration-color:#607e48}
+.funding-market .funding-group .intel-list li.historic-funding{background:linear-gradient(90deg,rgba(228,234,221,.68),transparent);padding-left:10px;padding-right:8px}
+.funding-market .funding-group .intel-list li.historic-funding>div span{color:#7b806f}
+.funding-market>.market-note{margin-top:20px}
+@media(max-width:980px){.funding-market .funding-groups{gap:16px}.funding-market .funding-group{padding:18px 16px 8px}}
+@media(max-width:700px){.funding-market .funding-groups{grid-template-columns:1fr;gap:14px;margin-top:18px}.funding-market .funding-group{padding:17px 14px 8px}.funding-market .funding-group .intel-list li>div{display:block}.funding-market .funding-group .intel-list li>div span{display:block;margin-top:4px;text-align:left}.funding-market .funding-group .intel-list li p{font-size:11px}}
