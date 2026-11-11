@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07111e">
+  <title>PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了 | 可信AI说 · SafetyWorld</title>
+  <meta name="description" content="2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…">
+  <link rel="canonical" href="https://safetyworld.online/articles/2026-10-27-php2shell.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="SafetyWorld">
+  <meta property="og:title" content="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了 | 可信AI说 · SafetyWorld">
+  <meta property="og:description" content="2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…">
+  <meta property="og:url" content="https://safetyworld.online/articles/2026-10-27-php2shell.html">
+  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了 | 可信AI说 · SafetyWorld">
+  <meta name="twitter:description" content="2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…">
+  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了",
+  "description": "2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击…",
+  "image": "https://safetyworld.online/articles/2026-10-27-php2shell/cover.jpg",
+  "datePublished": "2026-10-27",
+  "dateModified": "2026-10-27",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Organization",
+    "name": "可信AI说",
+    "url": "https://safetyworld.online/#trusted"
+  },
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "name": "SafetyWorld",
+    "url": "https://safetyworld.online/"
+  },
+  "mainEntityOfPage": "https://safetyworld.online/articles/2026-10-27-php2shell.html"
+}
+  </script>
+<style>
+    :root{--night:#07111e;--night-2:#0b1928;--navy:#10243a;--paper:#f4f6f8;--white:#fff;--ink:#102236;--muted:#617286;--muted-light:#a3b2c2;--line:#dce3e9;--line-dark:rgba(197,215,232,.16);--blue:#7ec9ff;--blue-strong:#2677bf;--mint:#c8f0e0;--amber:#edb86c;--sans:"Noto Sans SC",Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,monospace;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(var(--max),calc(100% - 56px));margin-inline:auto}.mono{font-family:var(--mono);letter-spacing:.08em}.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.17em;text-transform:uppercase}.skip{position:absolute;left:-9999px;top:8px;background:white;color:black;padding:10px}.skip:focus{left:8px;z-index:1000}
+    .topbar{height:76px;position:sticky;top:0;z-index:50;background:rgba(7,17,30,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);color:#eef5fb}.topbar-in{height:100%;display:flex;align-items:center;gap:32px}.brand{display:flex;align-items:center;gap:12px;flex:none}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(126,201,255,.55);border-radius:50%;color:var(--blue);font:500 14px var(--mono);position:relative}.brand-mark:after{content:"";position:absolute;inset:5px;border:1px solid rgba(126,201,255,.22);border-radius:50%}.brand-name{font:800 16px Manrope,var(--sans);letter-spacing:.08em}.brand-name small{display:block;font:400 8px var(--mono);letter-spacing:.18em;color:#8196aa;margin-top:2px}.nav{display:flex;gap:26px;margin-left:auto;align-items:center}.nav a{color:#b7c5d2;font-size:13px;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a:focus-visible{color:var(--blue)}.nav-actions{display:flex;align-items:center;gap:14px}.search-toggle,.menu-toggle{border:0;background:none;color:#dce8f2;padding:8px;display:grid;place-items:center}.search-toggle svg,.menu-toggle svg{width:19px;height:19px}.contact-link{border:1px solid rgba(126,201,255,.5);color:var(--blue);padding:9px 14px;font-size:12px;white-space:nowrap}.menu-toggle{display:none}.search-panel{display:none;position:absolute;top:76px;left:0;right:0;background:#0c1b2b;border-bottom:1px solid var(--line-dark);padding:16px 0}.search-panel.open{display:block}.search-form{display:flex;gap:10px}.search-form input{flex:1;min-width:0;padding:13px 15px;border:1px solid rgba(255,255,255,.18);background:#07111e;color:white;outline:none}.search-form button{border:0;background:var(--blue);color:#061321;padding:0 20px;font-weight:700}
+    .hero{position:relative;overflow:hidden;background:var(--night);color:#f2f7fb;min-height:628px;display:flex;align-items:center}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 77% 49%,rgba(36,117,173,.23),transparent 38%),linear-gradient(115deg,transparent 42%,rgba(255,255,255,.025) 42.1%,transparent 42.3%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;padding:82px 0 74px}.hero-copy{max-width:650px}.hero-label{display:inline-flex;align-items:center;gap:10px;color:#b9d1e4;border:1px solid rgba(126,201,255,.26);padding:7px 11px;font:11px var(--mono);letter-spacing:.13em}.hero-label i{width:6px;height:6px;border-radius:50%;background:#9de4cb;box-shadow:0 0 12px #9de4cb}.hero h1{font-size:clamp(42px,5.4vw,70px);line-height:1.16;letter-spacing:-.055em;margin:26px 0 21px;font-weight:700}.hero h1 em{font-style:normal;color:var(--blue)}.hero-lede{max-width:560px;color:#afbdcb;font-size:17px;line-height:1.9;margin:0}.hero-lede strong{color:#e8f4fe;font-weight:600}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;font-size:13px;font-weight:700;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--blue);color:#061522}.button-secondary{border-color:rgba(214,230,242,.25);color:#eaf2f8}.button svg{width:15px;height:15px}.hero-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:42px;color:#8296aa;font:10px var(--mono);letter-spacing:.08em}.hero-proof span{display:flex;align-items:center;gap:8px}.hero-proof b{color:#c7d7e5;font-weight:400}.hero-proof i{width:1px;height:13px;background:rgba(255,255,255,.18)}
+    .visual{height:424px;position:relative;display:grid;place-items:center;isolation:isolate}.visual .halo{position:absolute;border:1px solid rgba(126,201,255,.13);border-radius:50%;width:390px;height:390px}.visual .halo.h2{width:310px;height:310px;border-style:dashed;animation:spin 70s linear infinite}.visual .halo.h3{width:230px;height:230px;border-color:rgba(195,239,222,.2)}.visual .sphere{width:166px;height:166px;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,rgba(217,244,255,.42),rgba(75,159,211,.17) 31%,rgba(20,69,108,.23) 58%,rgba(7,17,30,.15) 73%);box-shadow:0 0 80px rgba(48,139,196,.23),inset 0 0 40px rgba(168,220,248,.12)}.sphere:before,.sphere:after{content:"";position:absolute;inset:16px 0;border:1px solid rgba(150,214,245,.4);border-radius:50%}.sphere:after{inset:0 24px}.sphere-grid{position:absolute;inset:0;border-radius:50%;background:linear-gradient(0deg,transparent 49.7%,rgba(150,214,245,.32) 50%,transparent 50.3%),linear-gradient(90deg,transparent 49.7%,rgba(150,214,245,.27) 50%,transparent 50.3%);mask-image:radial-gradient(circle,#000 0 62%,transparent 63%)}.orbit{position:absolute;width:425px;height:154px;border:1px solid rgba(126,201,255,.33);border-radius:50%;transform:rotate(-28deg)}.orbit.o2{width:430px;height:202px;transform:rotate(31deg);border-color:rgba(195,239,222,.24)}.orbit .node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 18px var(--blue);top:21px;left:60px}.orbit.o2 .node{top:auto;left:auto;right:72px;bottom:30px;background:#a9e7d1;box-shadow:0 0 18px #a9e7d1}.visual-label{position:absolute;font:10px var(--mono);color:#91a8bd;letter-spacing:.14em}.visual-label.l1{top:44px;right:2px}.visual-label.l2{bottom:40px;left:0}.visual-label.l3{top:110px;left:0;color:#c4e7f5}.visual-label.l4{bottom:100px;right:-8px;color:#bce7d6}.visual-line{position:absolute;width:1px;height:40px;background:linear-gradient(transparent,rgba(126,201,255,.5));top:72px;right:70px}.visual-line.v2{top:auto;right:auto;bottom:68px;left:87px;transform:rotate(70deg)}.visual-caption{position:absolute;bottom:3px;right:10px;color:#647b90;font:9px var(--mono);letter-spacing:.14em}.hero-bottom{background:#0b1928;border-top:1px solid rgba(255,255,255,.08);color:#a9b8c6}.hero-bottom-in{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:center;min-height:86px}.hero-bottom p{font-size:12px;margin:0;color:#d6e0e9}.hero-bottom p span{color:#8399ac;display:block;font:9px var(--mono);letter-spacing:.14em;margin-bottom:5px}.hero-stat{padding:12px 19px;border-left:1px solid rgba(255,255,255,.09)}.hero-stat b{font:500 11px var(--mono);color:#dceaf5;display:block}.hero-stat span{font-size:11px;color:#879bae}
+    .section{padding:96px 0}.section-head{display:grid;grid-template-columns:1fr .65fr;gap:30px;align-items:end;margin-bottom:38px}.section-kicker{display:flex;align-items:center;gap:12px;color:var(--blue-strong);font:10px var(--mono);letter-spacing:.16em;margin-bottom:13px}.section-kicker:before{content:"";height:1px;width:25px;background:currentColor}.section-head h2{font-size:clamp(28px,3.6vw,42px);line-height:1.25;letter-spacing:-.035em;margin:0;font-weight:700}.section-head>p{color:var(--muted);font-size:14px;line-height:1.9;margin:0;max-width:470px;justify-self:end}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue-strong);font-size:12px;font-weight:700;margin-top:22px}.text-link span{transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+    .research{background:#f7f8fa}.research-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.feature-story{background:var(--night-2);color:#f2f6fa;min-height:390px;position:relative;overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:flex-end}.feature-story:before{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(126,201,255,.18);border-radius:50%;right:-40px;top:-180px;box-shadow:0 0 0 45px rgba(126,201,255,.025),0 0 0 90px rgba(126,201,255,.02)}.feature-story:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(195,239,222,.25);border-radius:50%;right:72px;top:-75px;background:radial-gradient(circle at 44% 45%,rgba(126,201,255,.22),transparent 67%)}.feature-story>*{position:relative}.story-meta{display:flex;align-items:center;gap:11px;color:#9cb2c6;font:10px var(--mono);letter-spacing:.08em}.story-meta .tag{color:#a6dfff;border:1px solid rgba(126,201,255,.33);padding:4px 8px}.feature-story h3{font-size:clamp(23px,2.8vw,34px);line-height:1.45;letter-spacing:-.03em;max-width:590px;margin:17px 0 9px}.feature-story p{color:#abbaca;font-size:13px;max-width:540px;margin:0;line-height:1.9}.story-list{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}.story-card{background:white;border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px;transition:border .2s,transform .2s}.story-card:hover{border-color:#9fcdf1;transform:translateY(-2px)}.story-card .story-meta{color:#8493a2}.story-card h3{font-size:16px;line-height:1.55;margin:10px 0 0;font-weight:650}.story-card .arr{align-self:flex-end;color:var(--blue-strong);font:15px var(--mono)}
+    .markets{background:var(--white)}.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.market-panel{border:1px solid var(--line);background:#fff;min-height:340px;display:flex;flex-direction:column}.market-panel-head{padding:22px 24px 18px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}.market-panel-head .k{font:10px var(--mono);letter-spacing:.14em;color:#71869a}.market-panel-head h3{font-size:20px;margin:6px 0 0}.market-icon{width:40px;height:40px;border:1px solid #dce8f1;display:grid;place-items:center;color:var(--blue-strong)}.market-icon svg{width:18px;height:18px}.market-empty{margin:auto;text-align:center;padding:32px;color:var(--muted);max-width:440px}.market-empty .empty-mark{width:48px;height:48px;border:1px solid #dce7ef;border-radius:50%;display:grid;place-items:center;color:#82a4bf;margin:0 auto 14px;font:18px var(--mono)}.market-empty h4{color:var(--ink);margin:0 0 7px;font-size:15px}.market-empty p{font-size:12px;line-height:1.8;margin:0}.market-foot{border-top:1px solid var(--line);padding:13px 20px;color:#7c8b98;font:10px var(--mono);letter-spacing:.04em}
+    .evaluation{background:#eaf0f4}.eval-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:56px;align-items:start}.eval-intro{position:sticky;top:110px}.eval-intro h2{font-size:clamp(30px,3.6vw,42px);line-height:1.3;letter-spacing:-.035em;margin:0 0 16px}.eval-intro p{color:var(--muted);line-height:1.9;font-size:14px;margin:0 0 22px}.eval-steps{border-top:1px solid #cfd9e1}.eval-step{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:21px 0;border-bottom:1px solid #cfd9e1}.eval-step .num{font:11px var(--mono);color:var(--blue-strong);padding-top:4px}.eval-step h3{margin:0 0 6px;font-size:16px}.eval-step p{margin:0;color:#67798b;font-size:13px;line-height:1.8}.eval-domains{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:23px}.domain{background:rgba(255,255,255,.62);border:1px solid #d8e0e6;padding:15px}.domain b{display:block;font-size:13px;margin-bottom:3px}.domain span{font-size:11px;color:#728396}
+    .reports{background:var(--night);color:#eef4f8}.reports .section-head>p{color:#9baebf}.reports .section-kicker{color:var(--blue)}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.report-card{border:1px solid rgba(213,230,244,.16);background:rgba(255,255,255,.035);padding:23px;min-height:235px;display:flex;flex-direction:column;transition:border-color .2s,background .2s}.report-card:hover{border-color:rgba(126,201,255,.55);background:rgba(255,255,255,.06)}.report-card .report-no{color:var(--blue);font:10px var(--mono);letter-spacing:.14em}.report-card h3{font-size:17px;line-height:1.5;margin:21px 0 9px}.report-card p{margin:0;color:#9eafbe;font-size:12px;line-height:1.8}.report-card a{margin-top:auto;padding-top:22px;color:#b8dbf2;font-size:12px;font-weight:650}.report-note{margin-top:17px;color:#8094a8;font:10px var(--mono);letter-spacing:.04em}
+    .trust{background:#f7f8fa}.trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.trust-card{background:linear-gradient(135deg,#e9f4f8,#f0f6f4);border:1px solid #d9e6e9;min-height:330px;position:relative;overflow:hidden;padding:31px;display:flex;flex-direction:column;justify-content:space-between}.trust-card:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(50,127,160,.18);border-radius:50%;top:-108px;right:-50px;box-shadow:0 0 0 30px rgba(50,127,160,.035),0 0 0 60px rgba(50,127,160,.025)}.trust-card>*{position:relative}.trust-logo{display:flex;align-items:center;gap:13px}.trust-avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#0e3040;color:#b7ead8;font:15px var(--mono)}.trust-logo b{font-size:15px}.trust-logo small{display:block;color:#708698;font:9px var(--mono);letter-spacing:.12em;margin-top:3px}.trust-card h3{font-size:26px;line-height:1.45;max-width:380px;margin:28px 0 10px}.trust-card p{font-size:13px;color:#61798b;max-width:380px;margin:0;line-height:1.9}.trust-card .button{align-self:flex-start;background:#0d2a3a;color:white;margin-top:23px}.trust-copy .section-kicker{margin-bottom:12px}.trust-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 16px}.trust-copy>p{color:var(--muted);font-size:14px;line-height:1.95;margin:0;max-width:510px}.trust-topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.trust-topics span{font-size:11px;padding:6px 10px;border:1px solid #d9e2e8;color:#556b7e;background:#fff}
+    .about{background:#fff}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}.about-aside h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 18px}.about-aside p{font-size:14px;color:var(--muted);line-height:1.9;margin:0}.principle-list{border-top:1px solid var(--line)}.principle{display:grid;grid-template-columns:42px 1fr;gap:17px;padding:17px 0;border-bottom:1px solid var(--line)}.principle .n{font:10px var(--mono);color:var(--blue-strong);padding-top:4px}.principle b{font-size:14px;display:block;margin-bottom:3px}.principle p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+    .contact{background:#dfeaf1;padding:58px 0}.contact-in{display:flex;align-items:center;justify-content:space-between;gap:24px}.contact-in h2{margin:0;font-size:25px;letter-spacing:-.025em}.contact-in p{margin:7px 0 0;color:#617689;font-size:13px}.contact-in .button{background:var(--night);color:#fff;white-space:nowrap}
+    footer{background:var(--night);color:#dce6ef;padding:32px 0 26px}.footer-top{display:flex;justify-content:space-between;gap:30px;padding-bottom:27px;border-bottom:1px solid rgba(255,255,255,.1)}.footer-brand p{color:#8ea1b3;font-size:11px;max-width:470px;line-height:1.8;margin:13px 0 0}.footer-nav{display:flex;gap:21px;flex-wrap:wrap;align-content:flex-start}.footer-nav a{font-size:11px;color:#a9b8c6}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:17px;color:#6f8498;font:9px var(--mono);letter-spacing:.08em}
+    @keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    @media(max-width:980px){.wrap{width:min(var(--max),calc(100% - 40px))}.nav{gap:15px}.nav a{font-size:12px}.topbar-in{gap:20px}.hero-grid{gap:20px}.visual{transform:scale(.88)}.hero-bottom-in{grid-template-columns:repeat(4,1fr);padding:12px 0}.hero-bottom p{grid-column:1/-1;padding:0 12px 8px}.hero-stat:first-of-type{border-left:0;padding-left:12px}.eval-grid{gap:34px}.trust-grid{gap:32px}.about-grid{gap:40px}}
+    @media(max-width:760px){.wrap{width:calc(100% - 36px)}.topbar{height:66px}.topbar-in{gap:12px}.brand-name{font-size:14px}.brand-name small{font-size:7px}.brand-mark{width:31px;height:31px}.nav{display:none;position:absolute;top:66px;left:0;right:0;padding:12px 18px 20px;background:#091727;border-bottom:1px solid var(--line-dark);margin:0;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 5px;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}.nav-actions{margin-left:auto;gap:5px}.contact-link{padding:8px 10px;font-size:11px}.menu-toggle{display:grid}.search-panel{top:66px}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:62px 0 32px;gap:12px}.hero h1{font-size:clamp(39px,10vw,58px);margin-top:21px}.hero-lede{font-size:15px}.hero-proof{margin-top:29px;gap:13px}.visual{height:300px;transform:none;margin-top:4px}.visual .halo{width:280px;height:280px}.visual .halo.h2{width:230px;height:230px}.visual .halo.h3{width:175px;height:175px}.visual .sphere{width:125px;height:125px}.orbit{width:310px;height:117px}.orbit.o2{width:318px;height:150px}.visual-caption{right:0;bottom:0}.visual-label.l1{right:0;top:23px}.visual-label.l3{left:0;top:71px}.visual-label.l2{bottom:28px}.visual-label.l4{bottom:58px;right:0}.hero-bottom-in{grid-template-columns:repeat(2,1fr);padding:16px 0}.hero-bottom p{grid-column:1/-1;padding:0 8px 8px}.hero-stat{padding:11px 10px;border-left:0;border-right:1px solid rgba(255,255,255,.08)}.hero-stat:nth-of-type(odd){border-right:0}.section{padding:68px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:26px}.section-head>p{justify-self:start;font-size:13px}.research-grid,.market-grid,.eval-grid,.trust-grid,.about-grid{grid-template-columns:1fr}.feature-story{min-height:350px;padding:24px}.feature-story:before{right:-150px}.feature-story:after{right:-10px}.story-list{grid-template-rows:auto}.story-card{min-height:112px}.market-panel{min-height:295px}.eval-intro{position:static}.eval-domains{gap:8px}.domain{padding:12px}.report-grid{grid-template-columns:1fr}.report-card{min-height:195px}.trust-grid{gap:26px}.trust-card{min-height:320px}.about-grid{gap:28px}.contact-in{align-items:flex-start;flex-direction:column}.contact-in h2{font-size:22px}.footer-top{flex-direction:column}.footer-nav{gap:13px}.footer-bottom{flex-direction:column;gap:7px}}
+    @media(max-width:390px){.wrap{width:calc(100% - 28px)}.contact-link{display:none}.hero-actions .button{flex:1}.hero-proof{font-size:9px}.visual{margin-inline:-8px}.eval-step{grid-template-columns:38px 1fr}.hero-stat{padding-inline:7px}.hero-stat span{font-size:10px}}
+  
+/* SafetyWorld cyber research visual system */
+:root{--paper:#07111d;--white:#0c1926;--ink:#e6eff7;--muted:#a4b4c3;--muted-light:#8ea5b8;--line:#20364b;--blue-strong:#72cfff;--blue:#82d4ff;--mint:#c7f8d8;--night:#050c14;--night-2:#091725}
+body{background:#07111d;color:#e6eff7;background-image:linear-gradient(rgba(115,208,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(115,208,255,.025) 1px,transparent 1px),radial-gradient(ellipse at 48% -18%,rgba(37,112,156,.17),transparent 55%);background-size:48px 48px,48px 48px,auto}
+.hero{background:#050c14}.hero-label{color:#b8e8ff;border-color:rgba(126,201,255,.3);font-family:var(--mono);font-size:10px}.hero-label i{background:#b7ff65;box-shadow:0 0 12px rgba(183,255,101,.85)}
+.scramble-word{display:inline-block;min-width:4.7em;text-align:center;margin-left:9px;padding:1px 7px;border-left:1px solid rgba(126,201,255,.3);color:#c8f8d8;font:600 10px var(--mono);letter-spacing:.12em}
+.scramble-word .scr-char{display:inline-block;min-width:.68em;transform-origin:center;will-change:transform,color}
+.hero-bottom{background:#091725;border-color:rgba(255,255,255,.08)}
+.research,.trust,.about{background:#08131f;color:#e6eff7}
+.markets{background:#0a1723;color:#e6eff7}
+.feature-story{background:#0c1c2b}
+.story-card,.market-panel,.domain{background:#0d1a28;border-color:rgba(175,204,226,.15);color:#e5eef6}
+.story-card .story-meta,.story-card h3{color:#dce8f1}
+.story-card .story-meta{color:#8fa4b7}.story-card h3{font-weight:600}
+.story-card:hover{border-color:rgba(126,201,255,.55)}
+.market-panel-head{border-color:rgba(175,204,226,.14)}
+.market-panel-head .k,.market-foot{color:#8299ad}
+.market-empty{color:#9eafbe}.market-empty h4{color:#e9f2f8}.market-empty .empty-mark{border-color:rgba(126,201,255,.28);color:#86d3ff}
+.market-foot{border-color:rgba(175,204,226,.14)}
+.evaluation{background:#091521;color:#e6eff7}
+.eval-intro p,.eval-step p{color:#a5b5c3}
+.eval-steps,.eval-step{border-color:rgba(175,204,226,.17)}
+.eval-step .num,.section-kicker{color:#84d2ff}
+.domain{background:#0d1b29;border-color:rgba(175,204,226,.15)}.domain span{color:#98aaba}
+.reports{background:#050c14}
+.trust-card{background:linear-gradient(135deg,#0c202b,#101b27);border-color:rgba(126,201,255,.23)}
+.trust-card:before{border-color:rgba(126,201,255,.16);box-shadow:0 0 0 30px rgba(126,201,255,.025),0 0 0 60px rgba(126,201,255,.018)}
+.trust-card h3,.trust-copy h2,.about-aside h2{color:#eaf3f8}
+.trust-card p,.trust-copy>p,.about-aside p{color:#a4b4c3}
+.trust-card .button{background:#b8ff65;color:#08111a}.trust-logo small{color:#91a7b8}
+.trust-avatar{background:#142d3a;color:#c7f8d8}
+.trust-topics span{background:#0d1a28;border-color:rgba(175,204,226,.2);color:#c2d2df}
+.principle-list,.principle{border-color:rgba(175,204,226,.17)}.principle p{color:#9eafbe}.principle b{color:#e6eff7}
+.contact{background:#0e2231;color:#e7f0f7}.contact-in p{color:#a9bac8}.contact-in .button{background:#b8ff65;color:#09131c}
+footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-nav a{color:#aab9c6}
+.button-primary{background:#b8ff65;border-color:#b8ff65;color:#07111a}.button-primary:hover{background:#caff83;color:#07111a}
+.text-link{color:#8cd7ff}.section-head>p{color:#a5b4c2}
+.report-card{background:rgba(255,255,255,.035);border-color:rgba(213,230,244,.16)}
+.report-card p{color:#a4b4c3}
+.spotlight-card{position:relative;isolation:isolate;overflow:hidden;--spot-x:50%;--spot-y:50%}
+.spotlight-card:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(circle 115px at var(--spot-x) var(--spot-y),rgba(255,255,255,.34),rgba(255,255,255,0) 100%);transition:opacity .12s ease-out}
+.spotlight-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;padding:2px;border-radius:inherit;opacity:0;background:radial-gradient(circle 120px at var(--spot-x) var(--spot-y),rgba(255,122,82,1),rgba(255,122,82,0) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;transition:opacity .12s ease-out}
+.spotlight-card.spot-active:before,.spotlight-card.spot-active:after{opacity:1}
+.spotlight-card>*{position:relative;z-index:1}
+.reveal{opacity:1;transform:none}
+.motion-ready .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(hover:hover) and (pointer:fine){.spotlight-card.spot-active{border-color:rgba(255,255,255,.16)}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none;transition:none}.scramble-word .scr-char{will-change:auto}}
+@media(max-width:760px){.hero-label{font-size:9px}.scramble-word{font-size:9px;margin-left:5px}.story-card,.market-panel,.domain{background:#0d1a28}.trust-card{background:linear-gradient(135deg,#0c202b,#101b27)}}
+
+  
+/* Dynamic security interface */
+.reading-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,#4edcff,#b8ff65);box-shadow:0 0 14px #8dffbd;pointer-events:none}
+.hero{isolation:isolate}.hero-grid{z-index:2}.cyber-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}.hero:before{z-index:1;background:linear-gradient(90deg,rgba(5,12,20,.94) 0%,rgba(5,12,20,.79) 38%,rgba(5,12,20,.1) 100%),radial-gradient(ellipse at 78% 50%,rgba(32,164,211,.16),transparent 48%)}
+.visual{transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.visual:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(96,241,255,.18) 50deg,transparent 80deg);animation:radarSweep 7s linear infinite;filter:blur(1px);pointer-events:none}
+.visual:after{content:"";position:absolute;inset:10% 4%;background:linear-gradient(transparent 48%,rgba(124,255,215,.18) 49.7%,rgba(152,255,231,.7) 50%,transparent 50.4%);background-size:100% 180%;animation:scanPass 5s linear infinite;mask-image:radial-gradient(ellipse,#000,transparent 72%);pointer-events:none}
+.visual .halo:first-child{border-color:rgba(99,225,255,.35);box-shadow:0 0 45px rgba(57,198,240,.1),inset 0 0 40px rgba(57,198,240,.06);animation:haloPulse 4s ease-in-out infinite}
+.visual .sphere{animation:corePulse 4s ease-in-out infinite}.visual .sphere-grid{animation:spin 18s linear infinite}
+.visual .orbit{animation:orbitBreath 5s ease-in-out infinite}.visual .orbit.o2{animation-delay:-2.5s}
+.hero-label i{animation:signalPulse 2s infinite}.visual-label{animation:labelGlow 4s ease-in-out infinite alternate}.visual-label.l2,.visual-label.l4{animation-delay:-2s}
+.cyber-ticker{position:relative;overflow:hidden;border-bottom:1px solid rgba(100,221,246,.15);background:#07131e;color:#86afba;font:10px var(--mono);letter-spacing:.15em;white-space:nowrap}
+.cyber-ticker-track{display:flex;width:max-content;animation:streamMove 35s linear infinite}.cyber-ticker-track span{padding:12px 38px}.cyber-ticker b{color:#b8ff65;font-weight:400}
+.section-kicker:before{box-shadow:0 0 10px #74dfff}.button-primary{box-shadow:0 0 20px rgba(184,255,101,.12)}.button-primary:hover{box-shadow:0 0 30px rgba(184,255,101,.35)}
+.feature-story{isolation:isolate}.feature-story:after{animation:featurePulse 7s ease-in-out infinite alternate}
+@keyframes radarSweep{to{transform:rotate(360deg)}}@keyframes scanPass{0%{background-position:0 -140%}100%{background-position:0 240%}}@keyframes haloPulse{50%{box-shadow:0 0 65px rgba(57,198,240,.22),inset 0 0 55px rgba(57,198,240,.1)}}@keyframes corePulse{50%{box-shadow:0 0 110px rgba(48,185,230,.36),inset 0 0 52px rgba(168,240,248,.22);filter:brightness(1.2)}}@keyframes orbitBreath{50%{opacity:.5;filter:drop-shadow(0 0 6px #5fdcfa)}}@keyframes signalPulse{50%{opacity:.4;box-shadow:0 0 22px #b7ff65}}@keyframes labelGlow{from{opacity:.5}to{opacity:1;text-shadow:0 0 12px #5ddaf3}}@keyframes streamMove{to{transform:translateX(-50%)}}@keyframes featurePulse{to{transform:scale(1.12);opacity:.55}}
+@media(max-width:760px){.hero:before{background:linear-gradient(180deg,rgba(5,12,20,.8),rgba(5,12,20,.45))}.visual:before{width:290px;height:290px}.cyber-ticker-track{animation-duration:26s}}
+@media(prefers-reduced-motion:reduce){.visual,.visual:before,.visual:after,.visual .halo,.visual .sphere,.visual .sphere-grid,.visual .orbit,.hero-label i,.visual-label,.cyber-ticker-track,.feature-story:after{animation:none!important;transform:none!important}.cyber-canvas{display:none}}
+
+
+/* Photography: Unsplash / Rick Rothenberg, Logan Voss, A Chosen Soul.
+   Sources: unsplash.com/photos/ZVuVzcSk7cs, unsplash.com/photos/DLofzojj51Q,
+   unsplash.com/photos/MOIGsaj8te0. */
+.hero{background:#050c14 url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=2000&q=85") center 46%/cover no-repeat}
+.hero:before{background:linear-gradient(90deg,rgba(3,10,18,.97) 0%,rgba(3,10,18,.9) 34%,rgba(3,10,18,.4) 73%,rgba(3,10,18,.25) 100%),linear-gradient(0deg,rgba(3,10,18,.8),transparent 35%);z-index:1}
+.hero-grid{min-height:628px}.hero .visual .sphere,.hero .visual .halo,.hero .visual .orbit,.hero .visual:before,.hero .visual:after{opacity:.35}
+.feature-story{background:linear-gradient(0deg,rgba(4,13,23,.98) 0%,rgba(4,13,23,.75) 43%,rgba(4,13,23,.15) 100%),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=1200&q=80") center/cover}
+.feature-story:before,.feature-story:after{opacity:.24}
+.report-card:nth-child(1){background:linear-gradient(0deg,rgba(5,14,24,.98),rgba(5,14,24,.65)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(2){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.72)),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(3){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.75)),url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=900&q=75") center/cover}
+.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.98),rgba(6,21,29,.85)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=1200&q=75") center/cover}
+@media(max-width:760px){.hero{background-position:64% center}.hero:before{background:linear-gradient(180deg,rgba(3,10,18,.86),rgba(3,10,18,.68) 65%,rgba(3,10,18,.91))}.hero-grid{min-height:0}.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.96),rgba(6,21,29,.82)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=800&q=75") center/cover}}
+
+</style>
+<style>
+.article{padding:64px 0 80px}.article .wrap{max-width:820px}
+.crumb{font:11px var(--mono);letter-spacing:.1em;color:var(--muted-light);margin-bottom:22px}
+.crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
+.article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
+.article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+.article-body{font-size:16px;line-height:2;color:#dbe7f0}
+.article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
+.article-body h3{font-size:18px;margin:30px 0 10px}
+.article-body p{margin:0 0 18px}
+.article-body strong{color:#fff}
+.article-body figure{margin:28px 0}
+.article-body figure img{width:100%;display:block;border:1px solid var(--line)}
+.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+.article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
+.article-body blockquote p{margin:0}
+.article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+.article-body code{background:rgba(126,201,255,.12);padding:2px 6px;font-size:14px}
+.article-nav{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:44px;padding-top:24px}
+.article-nav a{color:var(--blue);font-size:13px;line-height:1.6;max-width:46%}
+.article-nav a.next{text-align:right;margin-left:auto}
+.article-nav span{display:block;color:var(--muted-light);font:10px var(--mono);letter-spacing:.12em;margin-bottom:4px}
+.archive-list{list-style:none;margin:0;padding:0}
+.archive-list li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.archive-list .d{font:11px var(--mono);color:var(--muted-light);letter-spacing:.06em;padding-top:4px}
+.archive-list a.t{font-size:17px;font-weight:650;line-height:1.55;color:#eef4f9}
+.archive-list a.t:hover{color:var(--blue)}
+.archive-list p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.archive-head{margin-bottom:8px}
+</style>
+</head><body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="/" aria-label="SafetyWorld 首页">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span>
+      </a>
+      <nav class="nav" id="mainNav" aria-label="主导航">
+        <a href="/#research">研究洞察</a><a href="/articles/">文章归档</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/#about">关于我们</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="打开站内搜索" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <a class="contact-link" href="/#contact">研究合作</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel"><form class="wrap search-form" id="searchForm" role="search"><input id="siteSearch" type="search" placeholder="搜索 AI 安全研究、评测与产业情报" aria-label="搜索网站内容"><button type="submit">查找</button></form></div>
+  </header>
+  <main id="main">
+    <article class="article"><div class="wrap">
+      <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
+      <h1>PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了</h1>
+      <div class="article-meta"><span>可信AI说</span><span>2026-10-27</span><span>阅读约 8 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
+      <figure class="article-cover"><img src="/articles/2026-10-27-php2shell/cover.jpg" alt="PHP2Shell：两个 9.2 分漏洞，补丁还没发出攻击就到了"></figure>
+      <div class="article-body">
+<p>2026 年 10 月 21 日早上 7 点 43 分，Cloudflare 记录到针对 PHP 的早期攻击尝试。那时距离官方补丁发布还有 6 个多小时。更早的 10 月 17 日，亚马逊威胁情报团队的蜜罐已经捕获过一次同类尝试。攻击者不需要登录，不需要任何应用账号，一个网络请求就可能在服务器上拿到执行代码的权力。</p>
+<p>补丁在当天 14 点发出，但攻击没有等它。</p>
+<p><strong>补丁发出之前，攻击已经到了，这就是 PHP2Shell 留给所有人的第一课。</strong></p>
+<h2>两条线：一条在找洞，一条在打洞</h2>
+<p>先把时间线压成两条线。发现线从 2026 年 8 月开始。安全公司 Calif 在 OpenAI 的 Patch the Planet 计划里用 GPT-5.6 Sol 审计 PHP 源码，8 月初就定位到可利用的缺陷。Wiz Research 在 8 月 19 日独立发现同一组缺陷，用的工具组合是 Gemini 4 Argon、GPT-5.6 Sol 和自家的 Wiz Atlas，两天内就在 Drupal 和 WordPress 上确认了未授权远程执行。</p>
+<p>8 月 24 日，Wiz 把报告交给 PHP 安全团队，OpenAI 方面随后也独立发现了更完整的版本。9 月，PHP 开始协调修复。</p>
+<p>利用线走得更快。10 月 17 日，亚马逊蜜罐捕获尝试。10 月 20 日，漏洞编号和细节泄露到公开渠道，原定 10 月 22 日的协调披露被打乱。PHP 安全团队当天发布提前通知，把发布提前到 10 月 21 日。</p>
+<p>10 月 21 日早上，Cloudflare 再次看到攻击，几个小时后补丁才上线。两条线在这里合流：发现用了近三个月协调，泄露到利用只用了几天，补丁发布到攻击到达只隔了几小时。</p>
+<p><strong>发现可以协调，泄露没法协调，时间从此站在攻击者一边。</strong></p>
+<figure><img src="/articles/2026-10-27-php2shell/cover.jpg" alt="服务器大楼地基出现裂缝，维修人员带着补丁板走向地基" loading="lazy"><figcaption>图注：裂缝在应用代码看不见的地基层，补丁要先修到这一层</figcaption></figure>
+<h2>机制：两个漏洞都发生在应用代码之前</h2>
+<p>PHP2Shell 是两个漏洞的合称，编号是 CVE-2026-109618 和 CVE-2026-109619，CVSS 4.0 评分都是 9.2 分。它们都住在 PHP 引擎里，不住在任何一个应用里。WordPress、Drupal、Joomla 的代码写得再干净，只要底下的 PHP 版本没修，照样暴露。</p>
+<p>第一个漏洞的触发点在请求解析阶段。服务器收到一个 multipart 请求，PHP 在初始化请求数据时遇到内存耗尽，执行流程被 zend_bailout 机制中断。清理过程在数据还没成型的情况下继续走，把一份还没准备好的内部数据当成了有效数据。攻击者只要构造一个让内存耗尽的请求，就能在应用代码运行之前改写 PHP 的内部状态。</p>
+<p>整个过程不需要登录，不需要交互，应用层的鉴权、过滤、日志都还没轮到出场。</p>
+<p><strong>触发点在应用代码之前，应用层清单拦不住它。</strong></p>
+<p>第二个漏洞的触发点在请求之间。PHP-FPM 的工作进程会被反复复用，一个请求结束，某些全局状态本该清零，却因为内存释放顺序的问题留了下来。攻击者用三步走完这条链：第一步发一个请求把特定全局状态填好，第二步发一个请求让进程异常终止，第三步在同一个工作进程上发请求，把上一个请求残留的状态直接拿来用。公开披露里提到的 session.upload_progress 就是这类全局状态的典型例子。</p>
+<p>三个请求单独看都像正常流量，连起来才是一次攻击。</p>
+<p><strong>三个正常请求连起来，就是一次攻击，单次检查看不出问题。</strong></p>
+<p>风险最高的部署方式是 Apache 的 mod_php。PHP 官方在公告里明确写了这一点：mod_php 下已经演示出未授权请求在应用代码运行之前触发攻击。PHP-FPM、php-cgi、FrankenPHP 和 LiteSpeed 同样在影响范围里，区别只是触发路径不同。受影响的版本从 PHP 5.4 一路到 8.5.11，修复版本是 8.2.35、8.3.36、8.4.27 和 8.5.12。</p>
+<p>官方紧急发布只覆盖 8.2 到 8.5 四个分支，8.1 及更早分支没有同批官方发布版本，走发行版或长期支持渠道的企业要单独确认自家包的修复状态。</p>
+<p><strong>版本清单是第一天的工作，不是升级之后才补的台账。</strong></p>
+<figure><img src="/articles/2026-10-27-php2shell/img2.jpg" alt="两条光带并行奔跑，一条带着放大镜，一条带着箭头，共同冲向一页日历" loading="lazy"><figcaption>图注：发现线走了近三个月，利用线只用了几天</figcaption></figure>
+<h2>AI 找洞：十四年的老缺陷，两支队伍三周内各自挖到</h2>
+<p>PHP2Shell 的发现史本身就是一条新闻。2024 年，一名 PHP 核心开发者在一次审计里就看到过内存耗尽模式的苗头，但当时没有找到可利用的路径，修复也就停住了。两年后，两支队伍用 AI 辅助审计，在三周内各自把这条老线索挖成了可利用的漏洞。Wiz 方面表述，一个研究员用一周时间完成了过去世界级团队需要数月才能完成的工作量。</p>
+<p>这句话要拆开理解。AI 没有凭空变出漏洞，它做的是把审计的体力活压短：读源码、猜边界条件、构造触发输入、验证利用链，每一步都比人工快。Calif 的路径是 Patch the Planet 计划里的定向审计，Wiz 的路径是自家 Atlas 工具加两个前沿模型交叉验证。两条路径撞上同一个缺陷，说明缺陷本身足够基础，也说明 AI 找洞已经从个案变成了可重复的流程。</p>
+<p><strong>两支队伍撞上同一个缺陷，说明缺陷足够基础。</strong></p>
+<p>OpenAI 随后牵头协调多方，把修复、缓解和披露放在一张时间表上。</p>
+<p>但协调披露这张时间表有一个前提：所有人都在表内。10 月 20 日的泄露把这个前提打破了。泄露者不一定是攻击者，可能是某个提前拿到通知的环节把信息带了出去，结果是一样的：防守方的节奏被公开信息接管，补丁被迫提前，攻击者拿到细节的时间比原计划早了两天。协调披露保护的从来不只是补丁本身，还有补丁发布前那段无人知晓的窗口期。</p>
+<p><strong>AI 把找洞变成了可重复的流程，泄露把防守的窗口期直接清零。</strong></p>
+<h2>对照组：上一周的教训，正好是这一周的预告</h2>
+<p>把 PHP2Shell 放进 10 月的序列里看，画面更完整。10 月 8 日那篇讲 Anthropic Cyber Mission 的文章里有一组漏斗数字：官方看板收到 29,439 个漏洞报告，经过外部评审和确认，最后只有 516 个走到了上游修复，比例是 8.4%。同一周，Google 从 10 月 1 日起暂停开源漏洞赏金计划的产品漏洞提报，理由是自动化提交显著增加，绝大多数无效。那两件事讲的是同一个瓶颈：发现产能暴涨，验证和修复产能没有跟上。</p>
+<p>PHP2Shell 把瓶颈往后推了一格。漏洞已经确认，补丁已经发出，瓶颈变成了部署：多少服务器能在攻击到达之前完成升级。CERT-EU 在 10 月 21 日发布安全公告 2026-018，英国国家网络安全中心也敦促各机构立即行动。机构的反应速度说明事件的量级，但公告和敦促本身不会替任何一台服务器升级。</p>
+<p><strong>公告不会替任何一台服务器升级。</strong></p>
+<p>上一周的漏斗讲的是修不过来，这一周的现实是升不上去。</p>
+<p>这里还有一个容易被忽略的对照。Google 暂停赏金计划时，行业里有一种声音说 AI 报告太多是噪音。PHP2Shell 给出了另一面：AI 报告里确实有噪音，但噪音中间藏着 9.2 分的真信号，而且真信号的利用开发同样被 AI 加速了。把 AI 报告一概当成噪音或一概当成真理，都会在下一周付出代价。</p>
+<p><strong>上一周卡在修不过来，这一周卡在升不上去，瓶颈只是换了个位置。</strong></p>
+<h2>本质三层：从代码层，到披露层，再到产业层</h2>
+<p>技术层先说清一个判断。PHP2Shell 之后，防线的重心要从应用代码移到运行时。过去很多团队的安全清单以应用为单位：代码审过没有，依赖扫过没有，WAF 规则加上没有。这套清单对 PHP2Shell 全部失效，因为触发点在应用代码之前，清单上的每一项都还没开始执行。</p>
+<p>运行时版本、运行时配置、运行时行为监测，第一次成为比应用清单更优先的检查项。检查顺序变了，预算和人力分配也要跟着变。</p>
+<p><strong>运行时先查，应用后查，这个顺序是 PHP2Shell 定下的。</strong></p>
+<p>结构层再看披露机制。协调披露的设计是给防守方争取时间：发现者先私下报告，厂商修好，补丁和公告同一天发出，用户升级和攻击者拿到细节之间只留一个很小的窗口。PHP2Shell 的窗口被泄露提前捅破了，补丁发布当天的攻击记录证明，窗口一旦破裂，防守方连半天都拿不到。以后任何一次协调披露都要按泄露已经发生来排计划：缓解措施先就位，升级顺序先排好，监测规则先上线，而不是等到公告当天才开始动手。</p>
+<p><strong>披露计划要按泄露已经发生来排。</strong></p>
+<p>战略层看产业。IDC 在《中国 AI 安全技术发展路线图，2026》里预测，中国 AI 安全市场到 2030 年达到 340 亿元，五年复合增长率超过 50%，61% 的中国企业计划在未来 1 到 3 年内采购安全大模型产品和服务。数字背后是一条逻辑：AI 既在帮防守方找洞，也在帮攻击方缩短利用开发的周期，安全投入的回报不再取决于单次发现，而取决于发现、修复、部署、验证这条链转得有多快。谁的链转得快，谁就在下一轮泄露里少损失几天。</p>
+<p><strong>应用代码写得再干净，也挡不住脚下的地板先塌了。</strong></p>
+<h2>一个非共识认知：应用没问题，系统照样出问题</h2>
+<p>从业者调研里有一个值得单独拎出来的判断，来源是甲方安全负责人南山小卫庄的公开调研复盘，属于从业者观察，不是官方结论。他的核心观点是组件安全推不出系统安全：单个 Skill、单个 MCP Server、单个 API 的鉴权都没问题，组合起来仍然可能完成一个不应该完成的动作。PHP2Shell 是这个判断在传统软件世界里的翻版：应用代码没问题，依赖没问题，WAF 规则没问题，运行时这一层出问题，整个系统照样被拿下。</p>
+<p>他的另一句话同样适用：方案顺序应该是资产、风险、框架、能力。先看清资产长什么样，再看风险从哪里来，再定框架，最后才选工具。很多团队的顺序是反的：先买工具，再套框架，最后才发现资产清单里连 PHP 版本这一列都没有。PHP2Shell 的第一天工作不是买新产品，是把资产清单补全：哪些服务器跑 PHP，跑的是哪个分支，是发行版包还是官方包，前面有没有 CDN 或 WAF 挡着，能不能在不重启业务的情况下先上缓解措施。</p>
+<p>业务风险独立成源这一点，在 PHP2Shell 里也很具体。一段内容在技术上没有任何问题，放到错误的业务场景里风险依然成立。同理，一个网站在功能上完全正常，底下的运行时版本过期，业务风险已经成立，不需要等到被入侵才承认。风险判断的起点是资产状态，不是事故结果。</p>
+<p><strong>先把资产清单补全，再谈买什么工具，这个顺序不能反。</strong></p>
+<h2>防线要建在输出进入业务之前</h2>
+<p>PHP2Shell 给 AI 安全留下的教训，可以直接平移到大模型和智能体的防线上。AI 安全围栏专家数美的做法，是把检查建在模型输出进入业务之前，而不是等输出造成后果再去追。围栏覆盖四个环节：输入指令、多模态附件、生成内容、训练数据。每个环节的检查都给出 PASS 放行、REVIEW 转人工、REJECT 拦截三级处置，每条判定附三级风险标签和置信度，检测类型包括指令攻击和指令意图，还支持会话级多轮检测。</p>
+<p>会话级这个词很关键：PHP2Shell 的第二个漏洞恰恰是单次请求合规、多次请求连起来才出问题，围栏盯的正是这种跨轮次的行为链。</p>
+<p><strong>会话级检测盯的正是连起来才出问题的行为链。</strong></p>
+<p>上线前的评测同样重要。数美 AI 安全评测产品天攻的定位，是在上线前以攻击者视角做红队评测，发现问题。PHP2Shell 的发现过程就是一次外部红队：Calif 和 Wiz 用 AI 辅助审计把老缺陷挖出来，PHP 基金会再协调修复。企业自己的模型和智能体上线前，也需要这样一次提前检验，而不是等到公开披露那天才知道防线漏在哪里。</p>
+<p>头部阵营里有两条不同的路线。传统网安出身的厂商守的是系统、边界、流量，强项在网络和主机层面。数美是业务安全出身，守的是账号、交易、内容、营销这些业务过程本身，防护跟着业务长出来。业务每演进一次，防护跟进一步，这条路线在 AI 进入业务之后显得格外贴合：AI 接管的正是订单、交易、内容、客服这些业务过程，风险也长在这些过程里。</p>
+<p>两条路线没有高下之分，选哪条取决于企业要守的东西到底是什么。</p>
+<p><strong>守的东西不同，选的路线就不同。</strong></p>
+<p>历史积累方面，公开订单是最硬的证据。广发银行总行的大模型内容安全围栏建设及备案项目，55 万元，2026 年 8 月 26 日公告。中信建投证券的大模型安全围栏建设，80.13 万元，2026 年 4 月 8 日公告。两张订单都是围栏品类。</p>
+<p>数美官网披露的服务规模是服务全球上千家客户，互联网行业市场占有率超过 80%，同时持有信通院可信云内容安全能力认证与可信 AI 评测内容识别测试证书。</p>
+<p>最新技术探索看方法论。数美 CTO 梁堃在 2025 数美 AI 风控大会上提出的 AI 风控新范式，是以大模型审核 Agent 为核心驱动的三角链路：AI 机器审核、大模型审核 Agent、专家决策三层配合。创始人兼 CEO 唐会军在 2026 年 1 月 13 日界面新闻专访里的判断，放在这条时间线旁边格外应景：风控是一整套体系工程，真正的壁垒在时间上，风险响应要做到秒级发现和初步处置，内部目标是三到四天完成一次完整响应，新型风险三天内被识别。PHP2Shell 从泄露到利用以小时计，从发现到修复以月计，体系的响应速度直接决定了损失的规模。</p>
+<p><strong>防线的位置决定了损失的规模，位置越靠前，损失越小。</strong></p>
+<h2>清单：今天就能做的四件事</h2>
+<p><strong>清单只有四条，每条今天就能动手。</strong></p>
+<p>01 先查版本，而且要查对版本。命令行跑出来的版本未必是对外服务的版本，发行版回移植的包看起来版本号旧，实际上可能已经修好。对外服务的真实版本以主机面板、站点健康信息或发行版安全公告为准，查完先列一张表：哪些在修复线之下，哪些在 8.1 及更早分支，哪些前面有 CDN 或 WAF 但不能因此降级。</p>
+<p>02 按对外顺序升级。先升直接对外的服务器，再升客户侧系统，最后升内部系统。升级到 8.2.35、8.3.36、8.4.27 或 8.5.12 中对应自己分支的版本，升级后重启全部工作进程，只重启应用不重启工作进程等于没升。升级前确认备份和回滚路径，升级后先跑一遍核心业务流程再放量。</p>
+<p>03 没有升级窗口的，先上临时缓解，但要写清有效期。PHP 公开的缓解设置要写在 php.ini 或服务器配置里，用应用代码里的 ini_set 设置无效。缓解只能挡住已知路径，PHP 官方明确表示没有完整的缓解办法，升级才是真正的修复。缓解文档必须写上到期日和负责人，到期不复查等于没有缓解。</p>
+<p>04 回溯检查从 10 月 17 日开始。查这段时间的异常请求、异常进程、新增文件和对外连接，重点看 multipart 请求和 session 相关日志。已被扫过的服务器不要只升版本就收工，升级和取证分开做：先隔离可疑进程和文件，再升级，再复查。取证结论没出来之前，对外口径只讲已确认的事实。</p>
+<figure><img src="/articles/2026-10-27-php2shell/img3.jpg" alt="三层浅色围栏护着齿轮与对话气泡组成的业务工厂，门口放着检查清单与盾牌" loading="lazy"><figcaption>图注：围栏、评测、专家决策三层配合，防线建在输出进入业务之前</figcaption></figure>
+<h2>站队题：你们团队会怎么选</h2>
+<p>转发给做 AI 安全、IT 架构和运维的朋友，把上面四条清单存一份，下次协调披露被泄露打乱时可以直接对照着用。评论区留一个站队题，也留一个可以私下对账的数字。</p>
+<p>站队题只有一个：A，先全量升级再慢慢验证业务，哪怕半夜也要把对外系统先升上去。B，先给核心系统上缓解措施，再按排期分批升级，业务不能停是第一位的。你们团队在 PHP2Shell 这件事上，查版本花了多久？是半小时就列出了全量清单，还是到现在还有几台服务器不知道跑的是哪个分支？</p>
+      </div>
+<nav class="article-nav"><a href="/articles/2026-10-27-ai-liveness-bypass.html"><span>← 上一篇 · 2026-10-27</span>点头、眨眼、转头全是 AI 演的：你的脸，正在替别人过验证</a><a class="next" href="/articles/2026-10-28-agent-monitor-fence.html"><span>下一篇 · 2026-10-28 →</span>Agent 安全一周三连击：监控被关、开源社区被盯、付费墙被绕，防线要从哪一层重建？</a></nav>
+    </div></article>
+  </main>
+  <footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span></a><p>AI 安全研究、评测与产业情报。关注 AI 安全的技术边界、产业变化与真实业务需求。</p></div><nav class="footer-nav" aria-label="页脚导航"><a href="/#research">研究洞察</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/articles/">文章归档</a><a href="/#about">关于我们</a><a href="/#contact">研究合作</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> SAFETYWORLD · AI SAFETY RESEARCH</span><span>INSIGHT · EVALUATION · INTELLIGENCE</span></div></div></footer>
+  <script>
+    const menu=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+    const searchToggle=document.getElementById('searchToggle');const searchPanel=document.getElementById('searchPanel');searchToggle.addEventListener('click',()=>{const open=searchPanel.classList.toggle('open');searchToggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('siteSearch').focus()});document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('siteSearch').value.trim();if(!q)return;const matches=[...document.querySelectorAll('main h1,main h2,main h3,main p')].filter(el=>el.textContent.toLowerCase().includes(q.toLowerCase()));if(matches.length){matches[0].scrollIntoView({behavior:'smooth',block:'center'});matches[0].setAttribute('tabindex','-1');matches[0].focus({preventScroll:true})}else{document.getElementById('siteSearch').setCustomValidity('暂未找到相关内容，请尝试“AI 安全”“评测”或“产业情报”。');document.getElementById('siteSearch').reportValidity();setTimeout(()=>document.getElementById('siteSearch').setCustomValidity(''),2600)}});document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

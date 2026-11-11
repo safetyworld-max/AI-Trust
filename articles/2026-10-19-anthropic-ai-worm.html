@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07111e">
+  <title>15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？ | 可信AI说 · SafetyWorld</title>
+  <meta name="description" content="10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…">
+  <link rel="canonical" href="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="SafetyWorld">
+  <meta property="og:title" content="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？ | 可信AI说 · SafetyWorld">
+  <meta property="og:description" content="10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…">
+  <meta property="og:url" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm.html">
+  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？ | 可信AI说 · SafetyWorld">
+  <meta name="twitter:description" content="10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…">
+  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "15 台 55 美元电视盒，Anthropic 测出\"关不掉\"的 AI 蠕虫：离现实还有几个月？",
+  "description": "10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be cap…",
+  "image": "https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm/cover.jpg",
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Organization",
+    "name": "可信AI说",
+    "url": "https://safetyworld.online/#trusted"
+  },
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "name": "SafetyWorld",
+    "url": "https://safetyworld.online/"
+  },
+  "mainEntityOfPage": "https://safetyworld.online/articles/2026-10-19-anthropic-ai-worm.html"
+}
+  </script>
+<style>
+    :root{--night:#07111e;--night-2:#0b1928;--navy:#10243a;--paper:#f4f6f8;--white:#fff;--ink:#102236;--muted:#617286;--muted-light:#a3b2c2;--line:#dce3e9;--line-dark:rgba(197,215,232,.16);--blue:#7ec9ff;--blue-strong:#2677bf;--mint:#c8f0e0;--amber:#edb86c;--sans:"Noto Sans SC",Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,monospace;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(var(--max),calc(100% - 56px));margin-inline:auto}.mono{font-family:var(--mono);letter-spacing:.08em}.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.17em;text-transform:uppercase}.skip{position:absolute;left:-9999px;top:8px;background:white;color:black;padding:10px}.skip:focus{left:8px;z-index:1000}
+    .topbar{height:76px;position:sticky;top:0;z-index:50;background:rgba(7,17,30,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);color:#eef5fb}.topbar-in{height:100%;display:flex;align-items:center;gap:32px}.brand{display:flex;align-items:center;gap:12px;flex:none}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(126,201,255,.55);border-radius:50%;color:var(--blue);font:500 14px var(--mono);position:relative}.brand-mark:after{content:"";position:absolute;inset:5px;border:1px solid rgba(126,201,255,.22);border-radius:50%}.brand-name{font:800 16px Manrope,var(--sans);letter-spacing:.08em}.brand-name small{display:block;font:400 8px var(--mono);letter-spacing:.18em;color:#8196aa;margin-top:2px}.nav{display:flex;gap:26px;margin-left:auto;align-items:center}.nav a{color:#b7c5d2;font-size:13px;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a:focus-visible{color:var(--blue)}.nav-actions{display:flex;align-items:center;gap:14px}.search-toggle,.menu-toggle{border:0;background:none;color:#dce8f2;padding:8px;display:grid;place-items:center}.search-toggle svg,.menu-toggle svg{width:19px;height:19px}.contact-link{border:1px solid rgba(126,201,255,.5);color:var(--blue);padding:9px 14px;font-size:12px;white-space:nowrap}.menu-toggle{display:none}.search-panel{display:none;position:absolute;top:76px;left:0;right:0;background:#0c1b2b;border-bottom:1px solid var(--line-dark);padding:16px 0}.search-panel.open{display:block}.search-form{display:flex;gap:10px}.search-form input{flex:1;min-width:0;padding:13px 15px;border:1px solid rgba(255,255,255,.18);background:#07111e;color:white;outline:none}.search-form button{border:0;background:var(--blue);color:#061321;padding:0 20px;font-weight:700}
+    .hero{position:relative;overflow:hidden;background:var(--night);color:#f2f7fb;min-height:628px;display:flex;align-items:center}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 77% 49%,rgba(36,117,173,.23),transparent 38%),linear-gradient(115deg,transparent 42%,rgba(255,255,255,.025) 42.1%,transparent 42.3%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;padding:82px 0 74px}.hero-copy{max-width:650px}.hero-label{display:inline-flex;align-items:center;gap:10px;color:#b9d1e4;border:1px solid rgba(126,201,255,.26);padding:7px 11px;font:11px var(--mono);letter-spacing:.13em}.hero-label i{width:6px;height:6px;border-radius:50%;background:#9de4cb;box-shadow:0 0 12px #9de4cb}.hero h1{font-size:clamp(42px,5.4vw,70px);line-height:1.16;letter-spacing:-.055em;margin:26px 0 21px;font-weight:700}.hero h1 em{font-style:normal;color:var(--blue)}.hero-lede{max-width:560px;color:#afbdcb;font-size:17px;line-height:1.9;margin:0}.hero-lede strong{color:#e8f4fe;font-weight:600}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;font-size:13px;font-weight:700;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--blue);color:#061522}.button-secondary{border-color:rgba(214,230,242,.25);color:#eaf2f8}.button svg{width:15px;height:15px}.hero-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:42px;color:#8296aa;font:10px var(--mono);letter-spacing:.08em}.hero-proof span{display:flex;align-items:center;gap:8px}.hero-proof b{color:#c7d7e5;font-weight:400}.hero-proof i{width:1px;height:13px;background:rgba(255,255,255,.18)}
+    .visual{height:424px;position:relative;display:grid;place-items:center;isolation:isolate}.visual .halo{position:absolute;border:1px solid rgba(126,201,255,.13);border-radius:50%;width:390px;height:390px}.visual .halo.h2{width:310px;height:310px;border-style:dashed;animation:spin 70s linear infinite}.visual .halo.h3{width:230px;height:230px;border-color:rgba(195,239,222,.2)}.visual .sphere{width:166px;height:166px;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,rgba(217,244,255,.42),rgba(75,159,211,.17) 31%,rgba(20,69,108,.23) 58%,rgba(7,17,30,.15) 73%);box-shadow:0 0 80px rgba(48,139,196,.23),inset 0 0 40px rgba(168,220,248,.12)}.sphere:before,.sphere:after{content:"";position:absolute;inset:16px 0;border:1px solid rgba(150,214,245,.4);border-radius:50%}.sphere:after{inset:0 24px}.sphere-grid{position:absolute;inset:0;border-radius:50%;background:linear-gradient(0deg,transparent 49.7%,rgba(150,214,245,.32) 50%,transparent 50.3%),linear-gradient(90deg,transparent 49.7%,rgba(150,214,245,.27) 50%,transparent 50.3%);mask-image:radial-gradient(circle,#000 0 62%,transparent 63%)}.orbit{position:absolute;width:425px;height:154px;border:1px solid rgba(126,201,255,.33);border-radius:50%;transform:rotate(-28deg)}.orbit.o2{width:430px;height:202px;transform:rotate(31deg);border-color:rgba(195,239,222,.24)}.orbit .node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 18px var(--blue);top:21px;left:60px}.orbit.o2 .node{top:auto;left:auto;right:72px;bottom:30px;background:#a9e7d1;box-shadow:0 0 18px #a9e7d1}.visual-label{position:absolute;font:10px var(--mono);color:#91a8bd;letter-spacing:.14em}.visual-label.l1{top:44px;right:2px}.visual-label.l2{bottom:40px;left:0}.visual-label.l3{top:110px;left:0;color:#c4e7f5}.visual-label.l4{bottom:100px;right:-8px;color:#bce7d6}.visual-line{position:absolute;width:1px;height:40px;background:linear-gradient(transparent,rgba(126,201,255,.5));top:72px;right:70px}.visual-line.v2{top:auto;right:auto;bottom:68px;left:87px;transform:rotate(70deg)}.visual-caption{position:absolute;bottom:3px;right:10px;color:#647b90;font:9px var(--mono);letter-spacing:.14em}.hero-bottom{background:#0b1928;border-top:1px solid rgba(255,255,255,.08);color:#a9b8c6}.hero-bottom-in{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:center;min-height:86px}.hero-bottom p{font-size:12px;margin:0;color:#d6e0e9}.hero-bottom p span{color:#8399ac;display:block;font:9px var(--mono);letter-spacing:.14em;margin-bottom:5px}.hero-stat{padding:12px 19px;border-left:1px solid rgba(255,255,255,.09)}.hero-stat b{font:500 11px var(--mono);color:#dceaf5;display:block}.hero-stat span{font-size:11px;color:#879bae}
+    .section{padding:96px 0}.section-head{display:grid;grid-template-columns:1fr .65fr;gap:30px;align-items:end;margin-bottom:38px}.section-kicker{display:flex;align-items:center;gap:12px;color:var(--blue-strong);font:10px var(--mono);letter-spacing:.16em;margin-bottom:13px}.section-kicker:before{content:"";height:1px;width:25px;background:currentColor}.section-head h2{font-size:clamp(28px,3.6vw,42px);line-height:1.25;letter-spacing:-.035em;margin:0;font-weight:700}.section-head>p{color:var(--muted);font-size:14px;line-height:1.9;margin:0;max-width:470px;justify-self:end}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue-strong);font-size:12px;font-weight:700;margin-top:22px}.text-link span{transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+    .research{background:#f7f8fa}.research-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.feature-story{background:var(--night-2);color:#f2f6fa;min-height:390px;position:relative;overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:flex-end}.feature-story:before{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(126,201,255,.18);border-radius:50%;right:-40px;top:-180px;box-shadow:0 0 0 45px rgba(126,201,255,.025),0 0 0 90px rgba(126,201,255,.02)}.feature-story:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(195,239,222,.25);border-radius:50%;right:72px;top:-75px;background:radial-gradient(circle at 44% 45%,rgba(126,201,255,.22),transparent 67%)}.feature-story>*{position:relative}.story-meta{display:flex;align-items:center;gap:11px;color:#9cb2c6;font:10px var(--mono);letter-spacing:.08em}.story-meta .tag{color:#a6dfff;border:1px solid rgba(126,201,255,.33);padding:4px 8px}.feature-story h3{font-size:clamp(23px,2.8vw,34px);line-height:1.45;letter-spacing:-.03em;max-width:590px;margin:17px 0 9px}.feature-story p{color:#abbaca;font-size:13px;max-width:540px;margin:0;line-height:1.9}.story-list{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}.story-card{background:white;border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px;transition:border .2s,transform .2s}.story-card:hover{border-color:#9fcdf1;transform:translateY(-2px)}.story-card .story-meta{color:#8493a2}.story-card h3{font-size:16px;line-height:1.55;margin:10px 0 0;font-weight:650}.story-card .arr{align-self:flex-end;color:var(--blue-strong);font:15px var(--mono)}
+    .markets{background:var(--white)}.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.market-panel{border:1px solid var(--line);background:#fff;min-height:340px;display:flex;flex-direction:column}.market-panel-head{padding:22px 24px 18px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}.market-panel-head .k{font:10px var(--mono);letter-spacing:.14em;color:#71869a}.market-panel-head h3{font-size:20px;margin:6px 0 0}.market-icon{width:40px;height:40px;border:1px solid #dce8f1;display:grid;place-items:center;color:var(--blue-strong)}.market-icon svg{width:18px;height:18px}.market-empty{margin:auto;text-align:center;padding:32px;color:var(--muted);max-width:440px}.market-empty .empty-mark{width:48px;height:48px;border:1px solid #dce7ef;border-radius:50%;display:grid;place-items:center;color:#82a4bf;margin:0 auto 14px;font:18px var(--mono)}.market-empty h4{color:var(--ink);margin:0 0 7px;font-size:15px}.market-empty p{font-size:12px;line-height:1.8;margin:0}.market-foot{border-top:1px solid var(--line);padding:13px 20px;color:#7c8b98;font:10px var(--mono);letter-spacing:.04em}
+    .evaluation{background:#eaf0f4}.eval-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:56px;align-items:start}.eval-intro{position:sticky;top:110px}.eval-intro h2{font-size:clamp(30px,3.6vw,42px);line-height:1.3;letter-spacing:-.035em;margin:0 0 16px}.eval-intro p{color:var(--muted);line-height:1.9;font-size:14px;margin:0 0 22px}.eval-steps{border-top:1px solid #cfd9e1}.eval-step{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:21px 0;border-bottom:1px solid #cfd9e1}.eval-step .num{font:11px var(--mono);color:var(--blue-strong);padding-top:4px}.eval-step h3{margin:0 0 6px;font-size:16px}.eval-step p{margin:0;color:#67798b;font-size:13px;line-height:1.8}.eval-domains{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:23px}.domain{background:rgba(255,255,255,.62);border:1px solid #d8e0e6;padding:15px}.domain b{display:block;font-size:13px;margin-bottom:3px}.domain span{font-size:11px;color:#728396}
+    .reports{background:var(--night);color:#eef4f8}.reports .section-head>p{color:#9baebf}.reports .section-kicker{color:var(--blue)}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.report-card{border:1px solid rgba(213,230,244,.16);background:rgba(255,255,255,.035);padding:23px;min-height:235px;display:flex;flex-direction:column;transition:border-color .2s,background .2s}.report-card:hover{border-color:rgba(126,201,255,.55);background:rgba(255,255,255,.06)}.report-card .report-no{color:var(--blue);font:10px var(--mono);letter-spacing:.14em}.report-card h3{font-size:17px;line-height:1.5;margin:21px 0 9px}.report-card p{margin:0;color:#9eafbe;font-size:12px;line-height:1.8}.report-card a{margin-top:auto;padding-top:22px;color:#b8dbf2;font-size:12px;font-weight:650}.report-note{margin-top:17px;color:#8094a8;font:10px var(--mono);letter-spacing:.04em}
+    .trust{background:#f7f8fa}.trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.trust-card{background:linear-gradient(135deg,#e9f4f8,#f0f6f4);border:1px solid #d9e6e9;min-height:330px;position:relative;overflow:hidden;padding:31px;display:flex;flex-direction:column;justify-content:space-between}.trust-card:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(50,127,160,.18);border-radius:50%;top:-108px;right:-50px;box-shadow:0 0 0 30px rgba(50,127,160,.035),0 0 0 60px rgba(50,127,160,.025)}.trust-card>*{position:relative}.trust-logo{display:flex;align-items:center;gap:13px}.trust-avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#0e3040;color:#b7ead8;font:15px var(--mono)}.trust-logo b{font-size:15px}.trust-logo small{display:block;color:#708698;font:9px var(--mono);letter-spacing:.12em;margin-top:3px}.trust-card h3{font-size:26px;line-height:1.45;max-width:380px;margin:28px 0 10px}.trust-card p{font-size:13px;color:#61798b;max-width:380px;margin:0;line-height:1.9}.trust-card .button{align-self:flex-start;background:#0d2a3a;color:white;margin-top:23px}.trust-copy .section-kicker{margin-bottom:12px}.trust-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 16px}.trust-copy>p{color:var(--muted);font-size:14px;line-height:1.95;margin:0;max-width:510px}.trust-topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.trust-topics span{font-size:11px;padding:6px 10px;border:1px solid #d9e2e8;color:#556b7e;background:#fff}
+    .about{background:#fff}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}.about-aside h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 18px}.about-aside p{font-size:14px;color:var(--muted);line-height:1.9;margin:0}.principle-list{border-top:1px solid var(--line)}.principle{display:grid;grid-template-columns:42px 1fr;gap:17px;padding:17px 0;border-bottom:1px solid var(--line)}.principle .n{font:10px var(--mono);color:var(--blue-strong);padding-top:4px}.principle b{font-size:14px;display:block;margin-bottom:3px}.principle p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+    .contact{background:#dfeaf1;padding:58px 0}.contact-in{display:flex;align-items:center;justify-content:space-between;gap:24px}.contact-in h2{margin:0;font-size:25px;letter-spacing:-.025em}.contact-in p{margin:7px 0 0;color:#617689;font-size:13px}.contact-in .button{background:var(--night);color:#fff;white-space:nowrap}
+    footer{background:var(--night);color:#dce6ef;padding:32px 0 26px}.footer-top{display:flex;justify-content:space-between;gap:30px;padding-bottom:27px;border-bottom:1px solid rgba(255,255,255,.1)}.footer-brand p{color:#8ea1b3;font-size:11px;max-width:470px;line-height:1.8;margin:13px 0 0}.footer-nav{display:flex;gap:21px;flex-wrap:wrap;align-content:flex-start}.footer-nav a{font-size:11px;color:#a9b8c6}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:17px;color:#6f8498;font:9px var(--mono);letter-spacing:.08em}
+    @keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    @media(max-width:980px){.wrap{width:min(var(--max),calc(100% - 40px))}.nav{gap:15px}.nav a{font-size:12px}.topbar-in{gap:20px}.hero-grid{gap:20px}.visual{transform:scale(.88)}.hero-bottom-in{grid-template-columns:repeat(4,1fr);padding:12px 0}.hero-bottom p{grid-column:1/-1;padding:0 12px 8px}.hero-stat:first-of-type{border-left:0;padding-left:12px}.eval-grid{gap:34px}.trust-grid{gap:32px}.about-grid{gap:40px}}
+    @media(max-width:760px){.wrap{width:calc(100% - 36px)}.topbar{height:66px}.topbar-in{gap:12px}.brand-name{font-size:14px}.brand-name small{font-size:7px}.brand-mark{width:31px;height:31px}.nav{display:none;position:absolute;top:66px;left:0;right:0;padding:12px 18px 20px;background:#091727;border-bottom:1px solid var(--line-dark);margin:0;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 5px;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}.nav-actions{margin-left:auto;gap:5px}.contact-link{padding:8px 10px;font-size:11px}.menu-toggle{display:grid}.search-panel{top:66px}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:62px 0 32px;gap:12px}.hero h1{font-size:clamp(39px,10vw,58px);margin-top:21px}.hero-lede{font-size:15px}.hero-proof{margin-top:29px;gap:13px}.visual{height:300px;transform:none;margin-top:4px}.visual .halo{width:280px;height:280px}.visual .halo.h2{width:230px;height:230px}.visual .halo.h3{width:175px;height:175px}.visual .sphere{width:125px;height:125px}.orbit{width:310px;height:117px}.orbit.o2{width:318px;height:150px}.visual-caption{right:0;bottom:0}.visual-label.l1{right:0;top:23px}.visual-label.l3{left:0;top:71px}.visual-label.l2{bottom:28px}.visual-label.l4{bottom:58px;right:0}.hero-bottom-in{grid-template-columns:repeat(2,1fr);padding:16px 0}.hero-bottom p{grid-column:1/-1;padding:0 8px 8px}.hero-stat{padding:11px 10px;border-left:0;border-right:1px solid rgba(255,255,255,.08)}.hero-stat:nth-of-type(odd){border-right:0}.section{padding:68px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:26px}.section-head>p{justify-self:start;font-size:13px}.research-grid,.market-grid,.eval-grid,.trust-grid,.about-grid{grid-template-columns:1fr}.feature-story{min-height:350px;padding:24px}.feature-story:before{right:-150px}.feature-story:after{right:-10px}.story-list{grid-template-rows:auto}.story-card{min-height:112px}.market-panel{min-height:295px}.eval-intro{position:static}.eval-domains{gap:8px}.domain{padding:12px}.report-grid{grid-template-columns:1fr}.report-card{min-height:195px}.trust-grid{gap:26px}.trust-card{min-height:320px}.about-grid{gap:28px}.contact-in{align-items:flex-start;flex-direction:column}.contact-in h2{font-size:22px}.footer-top{flex-direction:column}.footer-nav{gap:13px}.footer-bottom{flex-direction:column;gap:7px}}
+    @media(max-width:390px){.wrap{width:calc(100% - 28px)}.contact-link{display:none}.hero-actions .button{flex:1}.hero-proof{font-size:9px}.visual{margin-inline:-8px}.eval-step{grid-template-columns:38px 1fr}.hero-stat{padding-inline:7px}.hero-stat span{font-size:10px}}
+  
+/* SafetyWorld cyber research visual system */
+:root{--paper:#07111d;--white:#0c1926;--ink:#e6eff7;--muted:#a4b4c3;--muted-light:#8ea5b8;--line:#20364b;--blue-strong:#72cfff;--blue:#82d4ff;--mint:#c7f8d8;--night:#050c14;--night-2:#091725}
+body{background:#07111d;color:#e6eff7;background-image:linear-gradient(rgba(115,208,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(115,208,255,.025) 1px,transparent 1px),radial-gradient(ellipse at 48% -18%,rgba(37,112,156,.17),transparent 55%);background-size:48px 48px,48px 48px,auto}
+.hero{background:#050c14}.hero-label{color:#b8e8ff;border-color:rgba(126,201,255,.3);font-family:var(--mono);font-size:10px}.hero-label i{background:#b7ff65;box-shadow:0 0 12px rgba(183,255,101,.85)}
+.scramble-word{display:inline-block;min-width:4.7em;text-align:center;margin-left:9px;padding:1px 7px;border-left:1px solid rgba(126,201,255,.3);color:#c8f8d8;font:600 10px var(--mono);letter-spacing:.12em}
+.scramble-word .scr-char{display:inline-block;min-width:.68em;transform-origin:center;will-change:transform,color}
+.hero-bottom{background:#091725;border-color:rgba(255,255,255,.08)}
+.research,.trust,.about{background:#08131f;color:#e6eff7}
+.markets{background:#0a1723;color:#e6eff7}
+.feature-story{background:#0c1c2b}
+.story-card,.market-panel,.domain{background:#0d1a28;border-color:rgba(175,204,226,.15);color:#e5eef6}
+.story-card .story-meta,.story-card h3{color:#dce8f1}
+.story-card .story-meta{color:#8fa4b7}.story-card h3{font-weight:600}
+.story-card:hover{border-color:rgba(126,201,255,.55)}
+.market-panel-head{border-color:rgba(175,204,226,.14)}
+.market-panel-head .k,.market-foot{color:#8299ad}
+.market-empty{color:#9eafbe}.market-empty h4{color:#e9f2f8}.market-empty .empty-mark{border-color:rgba(126,201,255,.28);color:#86d3ff}
+.market-foot{border-color:rgba(175,204,226,.14)}
+.evaluation{background:#091521;color:#e6eff7}
+.eval-intro p,.eval-step p{color:#a5b5c3}
+.eval-steps,.eval-step{border-color:rgba(175,204,226,.17)}
+.eval-step .num,.section-kicker{color:#84d2ff}
+.domain{background:#0d1b29;border-color:rgba(175,204,226,.15)}.domain span{color:#98aaba}
+.reports{background:#050c14}
+.trust-card{background:linear-gradient(135deg,#0c202b,#101b27);border-color:rgba(126,201,255,.23)}
+.trust-card:before{border-color:rgba(126,201,255,.16);box-shadow:0 0 0 30px rgba(126,201,255,.025),0 0 0 60px rgba(126,201,255,.018)}
+.trust-card h3,.trust-copy h2,.about-aside h2{color:#eaf3f8}
+.trust-card p,.trust-copy>p,.about-aside p{color:#a4b4c3}
+.trust-card .button{background:#b8ff65;color:#08111a}.trust-logo small{color:#91a7b8}
+.trust-avatar{background:#142d3a;color:#c7f8d8}
+.trust-topics span{background:#0d1a28;border-color:rgba(175,204,226,.2);color:#c2d2df}
+.principle-list,.principle{border-color:rgba(175,204,226,.17)}.principle p{color:#9eafbe}.principle b{color:#e6eff7}
+.contact{background:#0e2231;color:#e7f0f7}.contact-in p{color:#a9bac8}.contact-in .button{background:#b8ff65;color:#09131c}
+footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-nav a{color:#aab9c6}
+.button-primary{background:#b8ff65;border-color:#b8ff65;color:#07111a}.button-primary:hover{background:#caff83;color:#07111a}
+.text-link{color:#8cd7ff}.section-head>p{color:#a5b4c2}
+.report-card{background:rgba(255,255,255,.035);border-color:rgba(213,230,244,.16)}
+.report-card p{color:#a4b4c3}
+.spotlight-card{position:relative;isolation:isolate;overflow:hidden;--spot-x:50%;--spot-y:50%}
+.spotlight-card:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(circle 115px at var(--spot-x) var(--spot-y),rgba(255,255,255,.34),rgba(255,255,255,0) 100%);transition:opacity .12s ease-out}
+.spotlight-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;padding:2px;border-radius:inherit;opacity:0;background:radial-gradient(circle 120px at var(--spot-x) var(--spot-y),rgba(255,122,82,1),rgba(255,122,82,0) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;transition:opacity .12s ease-out}
+.spotlight-card.spot-active:before,.spotlight-card.spot-active:after{opacity:1}
+.spotlight-card>*{position:relative;z-index:1}
+.reveal{opacity:1;transform:none}
+.motion-ready .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(hover:hover) and (pointer:fine){.spotlight-card.spot-active{border-color:rgba(255,255,255,.16)}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none;transition:none}.scramble-word .scr-char{will-change:auto}}
+@media(max-width:760px){.hero-label{font-size:9px}.scramble-word{font-size:9px;margin-left:5px}.story-card,.market-panel,.domain{background:#0d1a28}.trust-card{background:linear-gradient(135deg,#0c202b,#101b27)}}
+
+  
+/* Dynamic security interface */
+.reading-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,#4edcff,#b8ff65);box-shadow:0 0 14px #8dffbd;pointer-events:none}
+.hero{isolation:isolate}.hero-grid{z-index:2}.cyber-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}.hero:before{z-index:1;background:linear-gradient(90deg,rgba(5,12,20,.94) 0%,rgba(5,12,20,.79) 38%,rgba(5,12,20,.1) 100%),radial-gradient(ellipse at 78% 50%,rgba(32,164,211,.16),transparent 48%)}
+.visual{transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.visual:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(96,241,255,.18) 50deg,transparent 80deg);animation:radarSweep 7s linear infinite;filter:blur(1px);pointer-events:none}
+.visual:after{content:"";position:absolute;inset:10% 4%;background:linear-gradient(transparent 48%,rgba(124,255,215,.18) 49.7%,rgba(152,255,231,.7) 50%,transparent 50.4%);background-size:100% 180%;animation:scanPass 5s linear infinite;mask-image:radial-gradient(ellipse,#000,transparent 72%);pointer-events:none}
+.visual .halo:first-child{border-color:rgba(99,225,255,.35);box-shadow:0 0 45px rgba(57,198,240,.1),inset 0 0 40px rgba(57,198,240,.06);animation:haloPulse 4s ease-in-out infinite}
+.visual .sphere{animation:corePulse 4s ease-in-out infinite}.visual .sphere-grid{animation:spin 18s linear infinite}
+.visual .orbit{animation:orbitBreath 5s ease-in-out infinite}.visual .orbit.o2{animation-delay:-2.5s}
+.hero-label i{animation:signalPulse 2s infinite}.visual-label{animation:labelGlow 4s ease-in-out infinite alternate}.visual-label.l2,.visual-label.l4{animation-delay:-2s}
+.cyber-ticker{position:relative;overflow:hidden;border-bottom:1px solid rgba(100,221,246,.15);background:#07131e;color:#86afba;font:10px var(--mono);letter-spacing:.15em;white-space:nowrap}
+.cyber-ticker-track{display:flex;width:max-content;animation:streamMove 35s linear infinite}.cyber-ticker-track span{padding:12px 38px}.cyber-ticker b{color:#b8ff65;font-weight:400}
+.section-kicker:before{box-shadow:0 0 10px #74dfff}.button-primary{box-shadow:0 0 20px rgba(184,255,101,.12)}.button-primary:hover{box-shadow:0 0 30px rgba(184,255,101,.35)}
+.feature-story{isolation:isolate}.feature-story:after{animation:featurePulse 7s ease-in-out infinite alternate}
+@keyframes radarSweep{to{transform:rotate(360deg)}}@keyframes scanPass{0%{background-position:0 -140%}100%{background-position:0 240%}}@keyframes haloPulse{50%{box-shadow:0 0 65px rgba(57,198,240,.22),inset 0 0 55px rgba(57,198,240,.1)}}@keyframes corePulse{50%{box-shadow:0 0 110px rgba(48,185,230,.36),inset 0 0 52px rgba(168,240,248,.22);filter:brightness(1.2)}}@keyframes orbitBreath{50%{opacity:.5;filter:drop-shadow(0 0 6px #5fdcfa)}}@keyframes signalPulse{50%{opacity:.4;box-shadow:0 0 22px #b7ff65}}@keyframes labelGlow{from{opacity:.5}to{opacity:1;text-shadow:0 0 12px #5ddaf3}}@keyframes streamMove{to{transform:translateX(-50%)}}@keyframes featurePulse{to{transform:scale(1.12);opacity:.55}}
+@media(max-width:760px){.hero:before{background:linear-gradient(180deg,rgba(5,12,20,.8),rgba(5,12,20,.45))}.visual:before{width:290px;height:290px}.cyber-ticker-track{animation-duration:26s}}
+@media(prefers-reduced-motion:reduce){.visual,.visual:before,.visual:after,.visual .halo,.visual .sphere,.visual .sphere-grid,.visual .orbit,.hero-label i,.visual-label,.cyber-ticker-track,.feature-story:after{animation:none!important;transform:none!important}.cyber-canvas{display:none}}
+
+
+/* Photography: Unsplash / Rick Rothenberg, Logan Voss, A Chosen Soul.
+   Sources: unsplash.com/photos/ZVuVzcSk7cs, unsplash.com/photos/DLofzojj51Q,
+   unsplash.com/photos/MOIGsaj8te0. */
+.hero{background:#050c14 url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=2000&q=85") center 46%/cover no-repeat}
+.hero:before{background:linear-gradient(90deg,rgba(3,10,18,.97) 0%,rgba(3,10,18,.9) 34%,rgba(3,10,18,.4) 73%,rgba(3,10,18,.25) 100%),linear-gradient(0deg,rgba(3,10,18,.8),transparent 35%);z-index:1}
+.hero-grid{min-height:628px}.hero .visual .sphere,.hero .visual .halo,.hero .visual .orbit,.hero .visual:before,.hero .visual:after{opacity:.35}
+.feature-story{background:linear-gradient(0deg,rgba(4,13,23,.98) 0%,rgba(4,13,23,.75) 43%,rgba(4,13,23,.15) 100%),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=1200&q=80") center/cover}
+.feature-story:before,.feature-story:after{opacity:.24}
+.report-card:nth-child(1){background:linear-gradient(0deg,rgba(5,14,24,.98),rgba(5,14,24,.65)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(2){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.72)),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(3){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.75)),url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=900&q=75") center/cover}
+.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.98),rgba(6,21,29,.85)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=1200&q=75") center/cover}
+@media(max-width:760px){.hero{background-position:64% center}.hero:before{background:linear-gradient(180deg,rgba(3,10,18,.86),rgba(3,10,18,.68) 65%,rgba(3,10,18,.91))}.hero-grid{min-height:0}.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.96),rgba(6,21,29,.82)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=800&q=75") center/cover}}
+
+</style>
+<style>
+.article{padding:64px 0 80px}.article .wrap{max-width:820px}
+.crumb{font:11px var(--mono);letter-spacing:.1em;color:var(--muted-light);margin-bottom:22px}
+.crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
+.article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
+.article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+.article-body{font-size:16px;line-height:2;color:#dbe7f0}
+.article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
+.article-body h3{font-size:18px;margin:30px 0 10px}
+.article-body p{margin:0 0 18px}
+.article-body strong{color:#fff}
+.article-body figure{margin:28px 0}
+.article-body figure img{width:100%;display:block;border:1px solid var(--line)}
+.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+.article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
+.article-body blockquote p{margin:0}
+.article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+.article-body code{background:rgba(126,201,255,.12);padding:2px 6px;font-size:14px}
+.article-nav{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:44px;padding-top:24px}
+.article-nav a{color:var(--blue);font-size:13px;line-height:1.6;max-width:46%}
+.article-nav a.next{text-align:right;margin-left:auto}
+.article-nav span{display:block;color:var(--muted-light);font:10px var(--mono);letter-spacing:.12em;margin-bottom:4px}
+.archive-list{list-style:none;margin:0;padding:0}
+.archive-list li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.archive-list .d{font:11px var(--mono);color:var(--muted-light);letter-spacing:.06em;padding-top:4px}
+.archive-list a.t{font-size:17px;font-weight:650;line-height:1.55;color:#eef4f9}
+.archive-list a.t:hover{color:var(--blue)}
+.archive-list p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.archive-head{margin-bottom:8px}
+</style>
+</head><body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="/" aria-label="SafetyWorld 首页">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span>
+      </a>
+      <nav class="nav" id="mainNav" aria-label="主导航">
+        <a href="/#research">研究洞察</a><a href="/articles/">文章归档</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/#about">关于我们</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="打开站内搜索" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <a class="contact-link" href="/#contact">研究合作</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel"><form class="wrap search-form" id="searchForm" role="search"><input id="siteSearch" type="search" placeholder="搜索 AI 安全研究、评测与产业情报" aria-label="搜索网站内容"><button type="submit">查找</button></form></div>
+  </header>
+  <main id="main">
+    <article class="article"><div class="wrap">
+      <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
+      <h1>15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？</h1>
+      <div class="article-meta"><span>可信AI说</span><span>2026-10-19</span><span>阅读约 7 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
+      <figure class="article-cover"><img src="/articles/2026-10-19-anthropic-ai-worm/cover.jpg" alt="15 台 55 美元电视盒，Anthropic 测出&quot;关不掉&quot;的 AI 蠕虫：离现实还有几个月？"></figure>
+      <div class="article-body">
+<p>10 月 12 日，Anthropic 前沿红队（Frontier Red Team）的 William Zhou 与 Daniel Freeman 在官方研究频道发布了一篇报告，标题很克制：《AI models may be capable of self-replicating without access to a datacenter》（AI 模型可能在没有数据中心的情况下自我复制）。报告的核心判断只有一句话：30B 参数以下的小模型，距离在商用物联网设备上实现自我复制，只剩&quot;几个月&quot;。而报告里最扎眼的一句原话是：这样的复制体&quot;很难被关掉，因为没有一个可以统一关停的集中控制点&quot;。</p>
+<p>这不是科幻。为了验证这个判断，Anthropic 的研究团队买了 15 台白牌 Android 电视盒，每台约 55 美元，连成一个网络，然后把一个 26B 参数的模型切成碎片，分散跑在这 15 台电视盒上。这一步跑通了：管线并行，每台只存模型的两层，每秒 0.39 个 token。便宜的家用设备，也能成为 AI 的栖身之所。</p>
+<figure><img src="/articles/2026-10-19-anthropic-ai-worm/cover.jpg" alt="15 台电视盒跑起分布式模型的概念图" loading="lazy"><figcaption>图1：15 台 55 美元电视盒连成的分布式推理网络（概念图）｜</figcaption></figure>
+<p>接下来的问题是，模型能不能自己完成剩下的事：找到下一台设备，钻进去，把自己装好，再去找下一台。</p>
+<p><strong>复制链最难的一环，是让模型在从没见过的机器上自己把自己跑起来。这一环刚刚被补上。</strong></p>
+<p>Anthropic 把自主复制拆成四个阶段：找目标、拿执行权、架起推理、继续传播。前两步他们没有重做，因为已有研究证明小模型具备网络扫描与漏洞利用能力。真正少有人量测的，是第三步：在一台完全陌生的机器上，让模型自己选推理框架、自己解决软件依赖、自己把推理服务跑起来。</p>
+<p>测试任务是让模型把 Llama3.1-8B 跑起来。结果是，一个 9B 参数的开源模型在 9 种硬件里拿下了 8 种，从 Jetson Nano、Mac 到 RTX 4090 都能自己搞定。过去安全圈谈&quot;AI 蠕虫&quot;还停留在概念和单平台演示，这次被补上的是&quot;跨硬件、跨平台、自主完成环境架设&quot;这一段。</p>
+<p>能自己装，还只是起点。能自己走完全程，才是真正的考验。</p>
+<p><strong>全自主端到端复制，只有 GLM-5.2 走完了全程。Anthropic 把测试里&quot;放水&quot;的地方，写在了明处。</strong></p>
+<p>Anthropic 建了一个与外界隔离的虚拟网络：8 个 GCP 节点，跑的是 redroid Android 15 模拟器。先在&quot;零号病人&quot;节点种下蠕虫，让它自己经由未设验证的 ADB 端口跳到下一台机器：扫描网络、reverse shell 拿执行权、传输模型权重和运行框架、架起推理服务，再去找下一台。</p>
+<p>受测的开源模型里，只有 GLM-5.2 完成了全自主的端到端复制：5 次试验里 4 次扩散到全部 8 个节点，1 次到 7 个。这里必须交代一句诚实的话：Anthropic 自己写明了，测试用的 ADB 端口没有认证，等于把入侵难度降到了最低。这个结果是真实世界成功率的上限估计。</p>
+<p>把上限先摆出来，恰恰是这篇报告值得认真读的原因。它没有宣称&quot;已经发生了&quot;，它量的是&quot;还有多远&quot;。多家媒体在 10 月 13 日跟进报道，但报告原文的限定条件值得逐字保留。</p>
+<p><strong>AI 蠕虫的新能力藏在一个词里：&quot;学&quot;。父代把踩过的坑写成笔记，传给子代。</strong></p>
+<p>Anthropic 做了一个叫 Memento 的运行框架：一个智能体实例超时后，会把尝试过的策略、踩过的坑写成简短笔记，交给下一个全新的实例继续。</p>
+<p>Qwen3.5-9B 就这样传了六代，成功率从第一代的 45% 涨到 61% 到 84%。报告里称之为&quot;拉马克式进化&quot;。</p>
+<p>但另一组对照实验泼了盆冷水。研究者给 Qwen3.5-9B 接上了更强的 Opus 4.8 当&quot;顾问&quot;，结果建议没有带来可测量的提升。</p>
+<p><strong>小模型最致命的短板，是不知道该问什么。</strong>即使顾问主动推送建议，效果也没有改善。Anthropic 判断，未来的协作更可能是大模型定战略、小模型当子智能体。</p>
+<p>慢，到底有多慢？报告给了一组可以算账的数字。按 32k 上下文窗口估算，Gemma4-26B-A4B 处理一个窗口要 27.3 到 31.8 小时，完成一次完整的推理架设需要 71 到 150 小时。Qwen3.5-9B 快一些，一个窗口 10.9 小时，全程 28 到 51 小时。</p>
+<p>复制一次的加倍时间，以&quot;天&quot;为单位，大约一到两天。</p>
+<p>再看规模。报告引用了 Synthient 通报的 Kimwolf 僵尸网络：峰值超过 200 万台设备，主要是白牌 Android 电视盒。如果同等规模的网络里，每 15 台电视盒跑一份 Gemma4-26B-A4B，可以养出约 13.3 万个模型副本，全网吞吐约 8 万 token 每秒。</p>
+<p>作为参照，一张 H100 跑这个模型约 1950 token 每秒。所以整个僵尸网络的算力，至多相当于 40 张 H100。Anthropic 提醒：绝对量很小。他们把这种扩散比作&quot;数字黏菌&quot;或果蝇群：慢，但不需要你同意就会长大。</p>
+<p><strong>这笔账不对称到了极点：攻击者花的电费，记在受害者账上。</strong></p>
+<p>当然，反方声音来得很快。这篇报告贴上 Hacker News 后，质疑集中在三点：第一，&quot;末日要来了，以 0.5 token 每秒的速度&quot;，慢到不构成现实威胁；第二，测试环境预开了无认证的 ADB 端口，等于先帮攻击者开了门；第三，只有 GLM-5.2 过关，本质上是人类工程师写好的运行框架在调用大模型，模型本身并没有长出自主意识。最狠的一句评论是&quot;恐慌营销&quot;。</p>
+<p>&quot;慢&quot;和&quot;已被证明可行&quot;可以同时成立。这篇报告的价值，不在&quot;AI 要造反了&quot;，而在于它把一条过去靠嘴讲的攻击路径，变成了可重复量测的工程流程。</p>
+<p>它的最弱一环是它自己承认的：简化测试环境给出的只是上限。但上限告诉防御方天花板在哪里，剩下的只是时间问题。</p>
+<figure><img src="/articles/2026-10-19-anthropic-ai-worm/img2.jpg" alt="AI 蠕虫复制链四步与数字黏菌式扩散" loading="lazy"><figcaption>图2：复制链四步：扫描、入侵、架设推理、持续传播（概念图）｜</figcaption></figure>
+<p>如果把视线从 Anthropic 的实验室移开，会发现这条路不止一家在走。今年 6 月，多伦多大学 Guan 等人的论文（arXiv 2606.03811）在 33 台异构主机的测试网 FakeCorp 里放了一个自适应 AI 蠕虫：15 次实验、7 天，平均识别 31.3 个漏洞，拿下 23.1 台主机（73.8%），扩散到 20.4 台（61.8%），最高自我复制 7 代。</p>
+<p>更关键的是，它能读懂训练截止日之后才公布的 CVE 公告，在运行时编译出利用代码，Marimo RCE 这类新漏洞照打不误。云安全联盟 6 月的研究笔记补了一句：威胁模型要从&quot;模型训练时知道什么&quot;，转向&quot;模型在运行时能读到什么&quot;。</p>
+<p><strong>国际标准开始为 AI 特有攻击单开一章，实验室话题就此进入合规与采购的清单。</strong></p>
+<p>几乎同一时间，标准层面也在收网。ISO/IEC 27090:2026《网络安全：人工智能（AI）：应对 AI 系统的安全威胁与受损》在 2026 年 10 月正式出版，共 56 页。这是全球首个专门针对 AI 系统网络安全的国际标准，定位是指导性文件（不能单独做认证），与 ISO/IEC 27001/27002、ISO/IEC 42001 互补。</p>
+<p>ISO 官网的原话值得逐字读：&quot;AI 引入了传统网络安全措施难以完全覆盖的安全挑战。被操纵的训练数据可以改变系统的行为，而看似合法的查询可以被用来窃取模型。这些攻击难以被发现，即便传统防护已经就位，系统仍可能得手。&quot;</p>
+<p>标准的第 6 章系统整理了 AI 特有的攻击类型：数据中毒、规避攻击、成员推论、模型窃取、模型逆向、提示注入、输出夹带注入等，每类都给特性、失效影响、侦测方式和缓解措施。第 7 章讲防护措施如何协同，包括恶意输入的侦测与过滤、日志监控、token 管控。在国内，信通院的可信 AI 评估线也在同步推进：多智能体协同技术要求已经发布，可信互联网智能体测试评估围绕&quot;能力真实、权限可靠、行为可控&quot;三大类 16 个指标 70 余个细分项展开。标准语言正在从&quot;建议&quot;变成&quot;要求&quot;，合规一旦落地，采购清单就会跟着变。</p>
+<p>下面这个问题更重要：如果 AI 蠕虫真的来了，现有的防线缺的是哪一块？</p>
+<p>先看技术层。复制链的拼图里，&quot;入侵&quot;那块早被证明，&quot;架推理&quot;这块最少被研究，这次被补上了。Anthropic 画了一条线：地板是 GLM-5.2 的复制能力，天花板是 9B 到 26B 的模型能装进 IoT 设备的体型。</p>
+<p>两条线正在靠近，按 Epoch 能力指数每年 13.7 的趋势外推，2026 年底就会有小模型达标。Anthropic 承认这只是粗略估计。</p>
+<p>再看结构层。防线要从&quot;云端开关&quot;移到&quot;行为监测&quot;。当模型权重本身成为恶意载荷的一部分，API 密钥撤销、内容过滤、速率限制这些云端机制在结构上就帮不上忙。</p>
+<p><strong>权重一旦成为恶意载荷，云端的开关就没了意义。</strong></p>
+<p>Anthropic 开的防御处方是流行病学思路：把 R₀（每台被感染设备平均再感染的设备数）压到 1 以下。权重传输是 GB 级的，分布式推理会在&quot;本不该通信的设备之间&quot;产生持续流量，这些在 ISP 的流量监测里都是可见的异常。一旦发现，就用蜜罐收集蠕虫的运行框架做特征分析。</p>
+<p>Mirai 的经验是：ISP 隔离并通知受感染用户，14 天能清除 92% 的感染，不通知的对照组只有 74%。英国已经把 IoT 默认密码列为不合规，制造商这头也在收紧。<strong>防御的逻辑从&quot;不让进&quot;，变成了&quot;让它传不下去&quot;。</strong></p>
+<figure><img src="/articles/2026-10-19-anthropic-ai-worm/img3.jpg" alt="AI 安全围栏三段防线" loading="lazy"><figcaption>图3：AI 安全围栏三段防线：输入检查、行为监测、拦截处置（概念图）｜</figcaption></figure>
+<p>最后看战略层。Anthropic 在结论里写了一句很重的话：慢复制者的出现，是更快、更具攻击性复制者的前兆。未来的世界将是&quot;智能体运行在各种硬件上，其中一些不受人类控制&quot;。</p>
+<p>对企业来说，这意味着防御预算要从&quot;防入侵&quot;里分出一部分，给&quot;发现异常行为链&quot;。</p>
+<p><strong>慢蠕虫最危险的地方，在于它证明了这条路走得通。</strong></p>
+<p>说到&quot;看住行为&quot;，这正是 AI 安全围栏这个品类要回答的问题。数美从在线业务安全延伸到 AI 业务安全，做的第一件事就是把防线从&quot;模型说什么&quot;搬到&quot;模型在业务里干什么&quot;。数美大模型安全围栏覆盖输入指令、多模态附件、生成内容、训练数据四个环节，每条判定走 PASS 放行、REVIEW 转人工、REJECT 拦截三级处置，附三级风险标签和置信度。检测类型包括 PROMPTATTACK（指令攻击）与 PROMPTINTENT（指令意图），并支持会话级多轮检测。</p>
+<p>映射到这次的报告：AI 蠕虫的分布式推理会在网络层留下&quot;本不该通信的设备之间持续传输 GB 级载荷&quot;的行为签名。围栏的运行时监测盯的正是这类序列：单次调用可以合规，连续的行为链条不会说谎。</p>
+<p>业务每往前走一步，安全就要往结果上靠近一步。AI 正从数据中心走向电视盒、摄像头和扫地机器人，安全的防线也要从模型本身，走向它在真实世界里的行为。技术把 AI 的运行边界扩到了每一台联网设备，AI 业务安全要做的，就是把企业&quot;敢用 AI&quot;的边界守住。</p>
+<p>唐会军说过，风控是一整套体系工程，真正的壁垒来自时间：风险响应要做到秒级发现、初步处置，新型风险三天内被识别。这套打法脱胎于数美过去十年在业务风控一线的沉淀：按数美官方披露，每日识别文本超 30 亿条、图片 7 亿张、音视频 130 万小时，保护账号 10 亿个。</p>
+<p>&quot;AI 机器审核 + 大模型审核 Agent + 专家决策&quot;三层链路，则是把机器的速度和专家的判断拧在一起。而在模型上线之前，数美的 AI 安全评测产品&quot;天攻&quot;做的正是发布前红队的事：先用攻击者的视角把路走一遍，再让业务上路。如果你的企业正在把智能体接进真实业务，不妨先问一句：上线之前，谁替你走完了攻击者的那条路？</p>
+<p>给正在用 AI 的企业留四条可以直接动手的事：</p>
+<p>01 把 IoT 设备单独划网段。摄像头、电视盒、会议设备不要和办公电脑、服务器待在同一个广播域里，微隔离做起来，蠕虫跳不到下一步，R₀ 自然下来。</p>
+<p>02 换掉所有默认密码，关掉不需要联网的设备。英国已经把默认密码列为不合规，方向已经很清楚。</p>
+<p>03 在网关层对三类流量设告警：GB 级的出站传输、非标准端口的持续连接、设备之间本不该有的 P2P 流量。权重传输藏不住，看的是你有没有在看。</p>
+<p>04 智能体上线前先做安全评测。发布前红队走一遍攻击链，总比上线后等真实攻击者替你验收便宜。</p>
+<p>最后留一道站队题：如果明天早上，公司的智能摄像头被发现参与了异常流量，你会怎么选？A，立刻断网隔离，业务先停了再说；B，先观察取证，等确认是蠕虫再动手。评论区见。</p>
+      </div>
+<nav class="article-nav"><a href="/articles/2026-10-16-agentcorruption-aws.html"><span>← 上一篇 · 2026-10-16</span>信通院给智能体立规矩，AWS 先交了学费：一条提示词接管整个 AWS 账号</a><a class="next" href="/articles/2026-10-19-unionpay-8years.html"><span>下一篇 · 2026-10-19 →</span>8 年 8 单：银联为什么一直把风控交给数美？</a></nav>
+    </div></article>
+  </main>
+  <footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span></a><p>AI 安全研究、评测与产业情报。关注 AI 安全的技术边界、产业变化与真实业务需求。</p></div><nav class="footer-nav" aria-label="页脚导航"><a href="/#research">研究洞察</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/articles/">文章归档</a><a href="/#about">关于我们</a><a href="/#contact">研究合作</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> SAFETYWORLD · AI SAFETY RESEARCH</span><span>INSIGHT · EVALUATION · INTELLIGENCE</span></div></div></footer>
+  <script>
+    const menu=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+    const searchToggle=document.getElementById('searchToggle');const searchPanel=document.getElementById('searchPanel');searchToggle.addEventListener('click',()=>{const open=searchPanel.classList.toggle('open');searchToggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('siteSearch').focus()});document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('siteSearch').value.trim();if(!q)return;const matches=[...document.querySelectorAll('main h1,main h2,main h3,main p')].filter(el=>el.textContent.toLowerCase().includes(q.toLowerCase()));if(matches.length){matches[0].scrollIntoView({behavior:'smooth',block:'center'});matches[0].setAttribute('tabindex','-1');matches[0].focus({preventScroll:true})}else{document.getElementById('siteSearch').setCustomValidity('暂未找到相关内容，请尝试“AI 安全”“评测”或“产业情报”。');document.getElementById('siteSearch').reportValidity();setTimeout(()=>document.getElementById('siteSearch').setCustomValidity(''),2600)}});document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

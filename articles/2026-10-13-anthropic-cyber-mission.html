@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#07111e">
+  <title>挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入&quot;产能过剩&quot;时代？ | 可信AI说 · SafetyWorld</title>
+  <meta name="description" content="10 月 8 日，Anthropic 公布了一张成绩单。过去六个月，它的模型在广泛使用的开源软件里挖出了 29,439 个潜在漏洞。六家外部安全公司评审了其中 6,123 条，确认 5,674 条有效，真阳性率 92.7%。听起来像一…">
+  <link rel="canonical" href="https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="SafetyWorld">
+  <meta property="og:title" content="挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入&quot;产能过剩&quot;时代？ | 可信AI说 · SafetyWorld">
+  <meta property="og:description" content="10 月 8 日，Anthropic 公布了一张成绩单。过去六个月，它的模型在广泛使用的开源软件里挖出了 29,439 个潜在漏洞。六家外部安全公司评审了其中 6,123 条，确认 5,674 条有效，真阳性率 92.7%。听起来像一…">
+  <meta property="og:url" content="https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission.html">
+  <meta property="og:image" content="https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入&quot;产能过剩&quot;时代？ | 可信AI说 · SafetyWorld">
+  <meta name="twitter:description" content="10 月 8 日，Anthropic 公布了一张成绩单。过去六个月，它的模型在广泛使用的开源软件里挖出了 29,439 个潜在漏洞。六家外部安全公司评审了其中 6,123 条，确认 5,674 条有效，真阳性率 92.7%。听起来像一…">
+  <meta name="twitter:image" content="https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission/cover.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入\"产能过剩\"时代？",
+  "description": "10 月 8 日，Anthropic 公布了一张成绩单。过去六个月，它的模型在广泛使用的开源软件里挖出了 29,439 个潜在漏洞。六家外部安全公司评审了其中 6,123 条，确认 5,674 条有效，真阳性率 92.7%。听起来像一…",
+  "image": "https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission/cover.jpg",
+  "datePublished": "2026-10-13",
+  "dateModified": "2026-10-13",
+  "inLanguage": "zh-CN",
+  "author": {
+    "@type": "Organization",
+    "name": "可信AI说",
+    "url": "https://safetyworld.online/#trusted"
+  },
+  "publisher": {
+    "@type": "ResearchOrganization",
+    "name": "SafetyWorld",
+    "url": "https://safetyworld.online/"
+  },
+  "mainEntityOfPage": "https://safetyworld.online/articles/2026-10-13-anthropic-cyber-mission.html"
+}
+  </script>
+<style>
+    :root{--night:#07111e;--night-2:#0b1928;--navy:#10243a;--paper:#f4f6f8;--white:#fff;--ink:#102236;--muted:#617286;--muted-light:#a3b2c2;--line:#dce3e9;--line-dark:rgba(197,215,232,.16);--blue:#7ec9ff;--blue-strong:#2677bf;--mint:#c8f0e0;--amber:#edb86c;--sans:"Noto Sans SC",Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--mono:"DM Mono",ui-monospace,monospace;--max:1200px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(var(--max),calc(100% - 56px));margin-inline:auto}.mono{font-family:var(--mono);letter-spacing:.08em}.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.17em;text-transform:uppercase}.skip{position:absolute;left:-9999px;top:8px;background:white;color:black;padding:10px}.skip:focus{left:8px;z-index:1000}
+    .topbar{height:76px;position:sticky;top:0;z-index:50;background:rgba(7,17,30,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);color:#eef5fb}.topbar-in{height:100%;display:flex;align-items:center;gap:32px}.brand{display:flex;align-items:center;gap:12px;flex:none}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(126,201,255,.55);border-radius:50%;color:var(--blue);font:500 14px var(--mono);position:relative}.brand-mark:after{content:"";position:absolute;inset:5px;border:1px solid rgba(126,201,255,.22);border-radius:50%}.brand-name{font:800 16px Manrope,var(--sans);letter-spacing:.08em}.brand-name small{display:block;font:400 8px var(--mono);letter-spacing:.18em;color:#8196aa;margin-top:2px}.nav{display:flex;gap:26px;margin-left:auto;align-items:center}.nav a{color:#b7c5d2;font-size:13px;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a:focus-visible{color:var(--blue)}.nav-actions{display:flex;align-items:center;gap:14px}.search-toggle,.menu-toggle{border:0;background:none;color:#dce8f2;padding:8px;display:grid;place-items:center}.search-toggle svg,.menu-toggle svg{width:19px;height:19px}.contact-link{border:1px solid rgba(126,201,255,.5);color:var(--blue);padding:9px 14px;font-size:12px;white-space:nowrap}.menu-toggle{display:none}.search-panel{display:none;position:absolute;top:76px;left:0;right:0;background:#0c1b2b;border-bottom:1px solid var(--line-dark);padding:16px 0}.search-panel.open{display:block}.search-form{display:flex;gap:10px}.search-form input{flex:1;min-width:0;padding:13px 15px;border:1px solid rgba(255,255,255,.18);background:#07111e;color:white;outline:none}.search-form button{border:0;background:var(--blue);color:#061321;padding:0 20px;font-weight:700}
+    .hero{position:relative;overflow:hidden;background:var(--night);color:#f2f7fb;min-height:628px;display:flex;align-items:center}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 77% 49%,rgba(36,117,173,.23),transparent 38%),linear-gradient(115deg,transparent 42%,rgba(255,255,255,.025) 42.1%,transparent 42.3%);pointer-events:none}.hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:50px;align-items:center;padding:82px 0 74px}.hero-copy{max-width:650px}.hero-label{display:inline-flex;align-items:center;gap:10px;color:#b9d1e4;border:1px solid rgba(126,201,255,.26);padding:7px 11px;font:11px var(--mono);letter-spacing:.13em}.hero-label i{width:6px;height:6px;border-radius:50%;background:#9de4cb;box-shadow:0 0 12px #9de4cb}.hero h1{font-size:clamp(42px,5.4vw,70px);line-height:1.16;letter-spacing:-.055em;margin:26px 0 21px;font-weight:700}.hero h1 em{font-style:normal;color:var(--blue)}.hero-lede{max-width:560px;color:#afbdcb;font-size:17px;line-height:1.9;margin:0}.hero-lede strong{color:#e8f4fe;font-weight:600}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 19px;font-size:13px;font-weight:700;border:1px solid transparent;transition:transform .2s,background .2s,border-color .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--blue);color:#061522}.button-secondary{border-color:rgba(214,230,242,.25);color:#eaf2f8}.button svg{width:15px;height:15px}.hero-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:42px;color:#8296aa;font:10px var(--mono);letter-spacing:.08em}.hero-proof span{display:flex;align-items:center;gap:8px}.hero-proof b{color:#c7d7e5;font-weight:400}.hero-proof i{width:1px;height:13px;background:rgba(255,255,255,.18)}
+    .visual{height:424px;position:relative;display:grid;place-items:center;isolation:isolate}.visual .halo{position:absolute;border:1px solid rgba(126,201,255,.13);border-radius:50%;width:390px;height:390px}.visual .halo.h2{width:310px;height:310px;border-style:dashed;animation:spin 70s linear infinite}.visual .halo.h3{width:230px;height:230px;border-color:rgba(195,239,222,.2)}.visual .sphere{width:166px;height:166px;border-radius:50%;position:relative;background:radial-gradient(circle at 34% 28%,rgba(217,244,255,.42),rgba(75,159,211,.17) 31%,rgba(20,69,108,.23) 58%,rgba(7,17,30,.15) 73%);box-shadow:0 0 80px rgba(48,139,196,.23),inset 0 0 40px rgba(168,220,248,.12)}.sphere:before,.sphere:after{content:"";position:absolute;inset:16px 0;border:1px solid rgba(150,214,245,.4);border-radius:50%}.sphere:after{inset:0 24px}.sphere-grid{position:absolute;inset:0;border-radius:50%;background:linear-gradient(0deg,transparent 49.7%,rgba(150,214,245,.32) 50%,transparent 50.3%),linear-gradient(90deg,transparent 49.7%,rgba(150,214,245,.27) 50%,transparent 50.3%);mask-image:radial-gradient(circle,#000 0 62%,transparent 63%)}.orbit{position:absolute;width:425px;height:154px;border:1px solid rgba(126,201,255,.33);border-radius:50%;transform:rotate(-28deg)}.orbit.o2{width:430px;height:202px;transform:rotate(31deg);border-color:rgba(195,239,222,.24)}.orbit .node{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 18px var(--blue);top:21px;left:60px}.orbit.o2 .node{top:auto;left:auto;right:72px;bottom:30px;background:#a9e7d1;box-shadow:0 0 18px #a9e7d1}.visual-label{position:absolute;font:10px var(--mono);color:#91a8bd;letter-spacing:.14em}.visual-label.l1{top:44px;right:2px}.visual-label.l2{bottom:40px;left:0}.visual-label.l3{top:110px;left:0;color:#c4e7f5}.visual-label.l4{bottom:100px;right:-8px;color:#bce7d6}.visual-line{position:absolute;width:1px;height:40px;background:linear-gradient(transparent,rgba(126,201,255,.5));top:72px;right:70px}.visual-line.v2{top:auto;right:auto;bottom:68px;left:87px;transform:rotate(70deg)}.visual-caption{position:absolute;bottom:3px;right:10px;color:#647b90;font:9px var(--mono);letter-spacing:.14em}.hero-bottom{background:#0b1928;border-top:1px solid rgba(255,255,255,.08);color:#a9b8c6}.hero-bottom-in{display:grid;grid-template-columns:1.2fr repeat(4,1fr);align-items:center;min-height:86px}.hero-bottom p{font-size:12px;margin:0;color:#d6e0e9}.hero-bottom p span{color:#8399ac;display:block;font:9px var(--mono);letter-spacing:.14em;margin-bottom:5px}.hero-stat{padding:12px 19px;border-left:1px solid rgba(255,255,255,.09)}.hero-stat b{font:500 11px var(--mono);color:#dceaf5;display:block}.hero-stat span{font-size:11px;color:#879bae}
+    .section{padding:96px 0}.section-head{display:grid;grid-template-columns:1fr .65fr;gap:30px;align-items:end;margin-bottom:38px}.section-kicker{display:flex;align-items:center;gap:12px;color:var(--blue-strong);font:10px var(--mono);letter-spacing:.16em;margin-bottom:13px}.section-kicker:before{content:"";height:1px;width:25px;background:currentColor}.section-head h2{font-size:clamp(28px,3.6vw,42px);line-height:1.25;letter-spacing:-.035em;margin:0;font-weight:700}.section-head>p{color:var(--muted);font-size:14px;line-height:1.9;margin:0;max-width:470px;justify-self:end}.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue-strong);font-size:12px;font-weight:700;margin-top:22px}.text-link span{transition:transform .2s}.text-link:hover span{transform:translateX(4px)}
+    .research{background:#f7f8fa}.research-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.feature-story{background:var(--night-2);color:#f2f6fa;min-height:390px;position:relative;overflow:hidden;padding:32px;display:flex;flex-direction:column;justify-content:flex-end}.feature-story:before{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(126,201,255,.18);border-radius:50%;right:-40px;top:-180px;box-shadow:0 0 0 45px rgba(126,201,255,.025),0 0 0 90px rgba(126,201,255,.02)}.feature-story:after{content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(195,239,222,.25);border-radius:50%;right:72px;top:-75px;background:radial-gradient(circle at 44% 45%,rgba(126,201,255,.22),transparent 67%)}.feature-story>*{position:relative}.story-meta{display:flex;align-items:center;gap:11px;color:#9cb2c6;font:10px var(--mono);letter-spacing:.08em}.story-meta .tag{color:#a6dfff;border:1px solid rgba(126,201,255,.33);padding:4px 8px}.feature-story h3{font-size:clamp(23px,2.8vw,34px);line-height:1.45;letter-spacing:-.03em;max-width:590px;margin:17px 0 9px}.feature-story p{color:#abbaca;font-size:13px;max-width:540px;margin:0;line-height:1.9}.story-list{display:grid;grid-template-rows:repeat(3,1fr);gap:12px}.story-card{background:white;border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;min-height:120px;transition:border .2s,transform .2s}.story-card:hover{border-color:#9fcdf1;transform:translateY(-2px)}.story-card .story-meta{color:#8493a2}.story-card h3{font-size:16px;line-height:1.55;margin:10px 0 0;font-weight:650}.story-card .arr{align-self:flex-end;color:var(--blue-strong);font:15px var(--mono)}
+    .markets{background:var(--white)}.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.market-panel{border:1px solid var(--line);background:#fff;min-height:340px;display:flex;flex-direction:column}.market-panel-head{padding:22px 24px 18px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}.market-panel-head .k{font:10px var(--mono);letter-spacing:.14em;color:#71869a}.market-panel-head h3{font-size:20px;margin:6px 0 0}.market-icon{width:40px;height:40px;border:1px solid #dce8f1;display:grid;place-items:center;color:var(--blue-strong)}.market-icon svg{width:18px;height:18px}.market-empty{margin:auto;text-align:center;padding:32px;color:var(--muted);max-width:440px}.market-empty .empty-mark{width:48px;height:48px;border:1px solid #dce7ef;border-radius:50%;display:grid;place-items:center;color:#82a4bf;margin:0 auto 14px;font:18px var(--mono)}.market-empty h4{color:var(--ink);margin:0 0 7px;font-size:15px}.market-empty p{font-size:12px;line-height:1.8;margin:0}.market-foot{border-top:1px solid var(--line);padding:13px 20px;color:#7c8b98;font:10px var(--mono);letter-spacing:.04em}
+    .evaluation{background:#eaf0f4}.eval-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:56px;align-items:start}.eval-intro{position:sticky;top:110px}.eval-intro h2{font-size:clamp(30px,3.6vw,42px);line-height:1.3;letter-spacing:-.035em;margin:0 0 16px}.eval-intro p{color:var(--muted);line-height:1.9;font-size:14px;margin:0 0 22px}.eval-steps{border-top:1px solid #cfd9e1}.eval-step{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:21px 0;border-bottom:1px solid #cfd9e1}.eval-step .num{font:11px var(--mono);color:var(--blue-strong);padding-top:4px}.eval-step h3{margin:0 0 6px;font-size:16px}.eval-step p{margin:0;color:#67798b;font-size:13px;line-height:1.8}.eval-domains{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:23px}.domain{background:rgba(255,255,255,.62);border:1px solid #d8e0e6;padding:15px}.domain b{display:block;font-size:13px;margin-bottom:3px}.domain span{font-size:11px;color:#728396}
+    .reports{background:var(--night);color:#eef4f8}.reports .section-head>p{color:#9baebf}.reports .section-kicker{color:var(--blue)}.report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.report-card{border:1px solid rgba(213,230,244,.16);background:rgba(255,255,255,.035);padding:23px;min-height:235px;display:flex;flex-direction:column;transition:border-color .2s,background .2s}.report-card:hover{border-color:rgba(126,201,255,.55);background:rgba(255,255,255,.06)}.report-card .report-no{color:var(--blue);font:10px var(--mono);letter-spacing:.14em}.report-card h3{font-size:17px;line-height:1.5;margin:21px 0 9px}.report-card p{margin:0;color:#9eafbe;font-size:12px;line-height:1.8}.report-card a{margin-top:auto;padding-top:22px;color:#b8dbf2;font-size:12px;font-weight:650}.report-note{margin-top:17px;color:#8094a8;font:10px var(--mono);letter-spacing:.04em}
+    .trust{background:#f7f8fa}.trust-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.trust-card{background:linear-gradient(135deg,#e9f4f8,#f0f6f4);border:1px solid #d9e6e9;min-height:330px;position:relative;overflow:hidden;padding:31px;display:flex;flex-direction:column;justify-content:space-between}.trust-card:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(50,127,160,.18);border-radius:50%;top:-108px;right:-50px;box-shadow:0 0 0 30px rgba(50,127,160,.035),0 0 0 60px rgba(50,127,160,.025)}.trust-card>*{position:relative}.trust-logo{display:flex;align-items:center;gap:13px}.trust-avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#0e3040;color:#b7ead8;font:15px var(--mono)}.trust-logo b{font-size:15px}.trust-logo small{display:block;color:#708698;font:9px var(--mono);letter-spacing:.12em;margin-top:3px}.trust-card h3{font-size:26px;line-height:1.45;max-width:380px;margin:28px 0 10px}.trust-card p{font-size:13px;color:#61798b;max-width:380px;margin:0;line-height:1.9}.trust-card .button{align-self:flex-start;background:#0d2a3a;color:white;margin-top:23px}.trust-copy .section-kicker{margin-bottom:12px}.trust-copy h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 16px}.trust-copy>p{color:var(--muted);font-size:14px;line-height:1.95;margin:0;max-width:510px}.trust-topics{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.trust-topics span{font-size:11px;padding:6px 10px;border:1px solid #d9e2e8;color:#556b7e;background:#fff}
+    .about{background:#fff}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}.about-aside h2{font-size:clamp(28px,3.4vw,40px);line-height:1.35;letter-spacing:-.035em;margin:0 0 18px}.about-aside p{font-size:14px;color:var(--muted);line-height:1.9;margin:0}.principle-list{border-top:1px solid var(--line)}.principle{display:grid;grid-template-columns:42px 1fr;gap:17px;padding:17px 0;border-bottom:1px solid var(--line)}.principle .n{font:10px var(--mono);color:var(--blue-strong);padding-top:4px}.principle b{font-size:14px;display:block;margin-bottom:3px}.principle p{font-size:12px;color:var(--muted);margin:0;line-height:1.8}
+    .contact{background:#dfeaf1;padding:58px 0}.contact-in{display:flex;align-items:center;justify-content:space-between;gap:24px}.contact-in h2{margin:0;font-size:25px;letter-spacing:-.025em}.contact-in p{margin:7px 0 0;color:#617689;font-size:13px}.contact-in .button{background:var(--night);color:#fff;white-space:nowrap}
+    footer{background:var(--night);color:#dce6ef;padding:32px 0 26px}.footer-top{display:flex;justify-content:space-between;gap:30px;padding-bottom:27px;border-bottom:1px solid rgba(255,255,255,.1)}.footer-brand p{color:#8ea1b3;font-size:11px;max-width:470px;line-height:1.8;margin:13px 0 0}.footer-nav{display:flex;gap:21px;flex-wrap:wrap;align-content:flex-start}.footer-nav a{font-size:11px;color:#a9b8c6}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:17px;color:#6f8498;font:9px var(--mono);letter-spacing:.08em}
+    @keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    @media(max-width:980px){.wrap{width:min(var(--max),calc(100% - 40px))}.nav{gap:15px}.nav a{font-size:12px}.topbar-in{gap:20px}.hero-grid{gap:20px}.visual{transform:scale(.88)}.hero-bottom-in{grid-template-columns:repeat(4,1fr);padding:12px 0}.hero-bottom p{grid-column:1/-1;padding:0 12px 8px}.hero-stat:first-of-type{border-left:0;padding-left:12px}.eval-grid{gap:34px}.trust-grid{gap:32px}.about-grid{gap:40px}}
+    @media(max-width:760px){.wrap{width:calc(100% - 36px)}.topbar{height:66px}.topbar-in{gap:12px}.brand-name{font-size:14px}.brand-name small{font-size:7px}.brand-mark{width:31px;height:31px}.nav{display:none;position:absolute;top:66px;left:0;right:0;padding:12px 18px 20px;background:#091727;border-bottom:1px solid var(--line-dark);margin:0;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 5px;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}.nav-actions{margin-left:auto;gap:5px}.contact-link{padding:8px 10px;font-size:11px}.menu-toggle{display:grid}.search-panel{top:66px}.hero{min-height:auto}.hero-grid{grid-template-columns:1fr;padding:62px 0 32px;gap:12px}.hero h1{font-size:clamp(39px,10vw,58px);margin-top:21px}.hero-lede{font-size:15px}.hero-proof{margin-top:29px;gap:13px}.visual{height:300px;transform:none;margin-top:4px}.visual .halo{width:280px;height:280px}.visual .halo.h2{width:230px;height:230px}.visual .halo.h3{width:175px;height:175px}.visual .sphere{width:125px;height:125px}.orbit{width:310px;height:117px}.orbit.o2{width:318px;height:150px}.visual-caption{right:0;bottom:0}.visual-label.l1{right:0;top:23px}.visual-label.l3{left:0;top:71px}.visual-label.l2{bottom:28px}.visual-label.l4{bottom:58px;right:0}.hero-bottom-in{grid-template-columns:repeat(2,1fr);padding:16px 0}.hero-bottom p{grid-column:1/-1;padding:0 8px 8px}.hero-stat{padding:11px 10px;border-left:0;border-right:1px solid rgba(255,255,255,.08)}.hero-stat:nth-of-type(odd){border-right:0}.section{padding:68px 0}.section-head{grid-template-columns:1fr;gap:12px;margin-bottom:26px}.section-head>p{justify-self:start;font-size:13px}.research-grid,.market-grid,.eval-grid,.trust-grid,.about-grid{grid-template-columns:1fr}.feature-story{min-height:350px;padding:24px}.feature-story:before{right:-150px}.feature-story:after{right:-10px}.story-list{grid-template-rows:auto}.story-card{min-height:112px}.market-panel{min-height:295px}.eval-intro{position:static}.eval-domains{gap:8px}.domain{padding:12px}.report-grid{grid-template-columns:1fr}.report-card{min-height:195px}.trust-grid{gap:26px}.trust-card{min-height:320px}.about-grid{gap:28px}.contact-in{align-items:flex-start;flex-direction:column}.contact-in h2{font-size:22px}.footer-top{flex-direction:column}.footer-nav{gap:13px}.footer-bottom{flex-direction:column;gap:7px}}
+    @media(max-width:390px){.wrap{width:calc(100% - 28px)}.contact-link{display:none}.hero-actions .button{flex:1}.hero-proof{font-size:9px}.visual{margin-inline:-8px}.eval-step{grid-template-columns:38px 1fr}.hero-stat{padding-inline:7px}.hero-stat span{font-size:10px}}
+  
+/* SafetyWorld cyber research visual system */
+:root{--paper:#07111d;--white:#0c1926;--ink:#e6eff7;--muted:#a4b4c3;--muted-light:#8ea5b8;--line:#20364b;--blue-strong:#72cfff;--blue:#82d4ff;--mint:#c7f8d8;--night:#050c14;--night-2:#091725}
+body{background:#07111d;color:#e6eff7;background-image:linear-gradient(rgba(115,208,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(115,208,255,.025) 1px,transparent 1px),radial-gradient(ellipse at 48% -18%,rgba(37,112,156,.17),transparent 55%);background-size:48px 48px,48px 48px,auto}
+.hero{background:#050c14}.hero-label{color:#b8e8ff;border-color:rgba(126,201,255,.3);font-family:var(--mono);font-size:10px}.hero-label i{background:#b7ff65;box-shadow:0 0 12px rgba(183,255,101,.85)}
+.scramble-word{display:inline-block;min-width:4.7em;text-align:center;margin-left:9px;padding:1px 7px;border-left:1px solid rgba(126,201,255,.3);color:#c8f8d8;font:600 10px var(--mono);letter-spacing:.12em}
+.scramble-word .scr-char{display:inline-block;min-width:.68em;transform-origin:center;will-change:transform,color}
+.hero-bottom{background:#091725;border-color:rgba(255,255,255,.08)}
+.research,.trust,.about{background:#08131f;color:#e6eff7}
+.markets{background:#0a1723;color:#e6eff7}
+.feature-story{background:#0c1c2b}
+.story-card,.market-panel,.domain{background:#0d1a28;border-color:rgba(175,204,226,.15);color:#e5eef6}
+.story-card .story-meta,.story-card h3{color:#dce8f1}
+.story-card .story-meta{color:#8fa4b7}.story-card h3{font-weight:600}
+.story-card:hover{border-color:rgba(126,201,255,.55)}
+.market-panel-head{border-color:rgba(175,204,226,.14)}
+.market-panel-head .k,.market-foot{color:#8299ad}
+.market-empty{color:#9eafbe}.market-empty h4{color:#e9f2f8}.market-empty .empty-mark{border-color:rgba(126,201,255,.28);color:#86d3ff}
+.market-foot{border-color:rgba(175,204,226,.14)}
+.evaluation{background:#091521;color:#e6eff7}
+.eval-intro p,.eval-step p{color:#a5b5c3}
+.eval-steps,.eval-step{border-color:rgba(175,204,226,.17)}
+.eval-step .num,.section-kicker{color:#84d2ff}
+.domain{background:#0d1b29;border-color:rgba(175,204,226,.15)}.domain span{color:#98aaba}
+.reports{background:#050c14}
+.trust-card{background:linear-gradient(135deg,#0c202b,#101b27);border-color:rgba(126,201,255,.23)}
+.trust-card:before{border-color:rgba(126,201,255,.16);box-shadow:0 0 0 30px rgba(126,201,255,.025),0 0 0 60px rgba(126,201,255,.018)}
+.trust-card h3,.trust-copy h2,.about-aside h2{color:#eaf3f8}
+.trust-card p,.trust-copy>p,.about-aside p{color:#a4b4c3}
+.trust-card .button{background:#b8ff65;color:#08111a}.trust-logo small{color:#91a7b8}
+.trust-avatar{background:#142d3a;color:#c7f8d8}
+.trust-topics span{background:#0d1a28;border-color:rgba(175,204,226,.2);color:#c2d2df}
+.principle-list,.principle{border-color:rgba(175,204,226,.17)}.principle p{color:#9eafbe}.principle b{color:#e6eff7}
+.contact{background:#0e2231;color:#e7f0f7}.contact-in p{color:#a9bac8}.contact-in .button{background:#b8ff65;color:#09131c}
+footer{background:#050c14}.footer-brand p,.footer-bottom{color:#7f93a5}.footer-nav a{color:#aab9c6}
+.button-primary{background:#b8ff65;border-color:#b8ff65;color:#07111a}.button-primary:hover{background:#caff83;color:#07111a}
+.text-link{color:#8cd7ff}.section-head>p{color:#a5b4c2}
+.report-card{background:rgba(255,255,255,.035);border-color:rgba(213,230,244,.16)}
+.report-card p{color:#a4b4c3}
+.spotlight-card{position:relative;isolation:isolate;overflow:hidden;--spot-x:50%;--spot-y:50%}
+.spotlight-card:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:inherit;opacity:0;background:radial-gradient(circle 115px at var(--spot-x) var(--spot-y),rgba(255,255,255,.34),rgba(255,255,255,0) 100%);transition:opacity .12s ease-out}
+.spotlight-card:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;padding:2px;border-radius:inherit;opacity:0;background:radial-gradient(circle 120px at var(--spot-x) var(--spot-y),rgba(255,122,82,1),rgba(255,122,82,0) 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;transition:opacity .12s ease-out}
+.spotlight-card.spot-active:before,.spotlight-card.spot-active:after{opacity:1}
+.spotlight-card>*{position:relative;z-index:1}
+.reveal{opacity:1;transform:none}
+.motion-ready .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media(hover:hover) and (pointer:fine){.spotlight-card.spot-active{border-color:rgba(255,255,255,.16)}}
+@media(prefers-reduced-motion:reduce){.motion-ready .reveal{opacity:1;transform:none;transition:none}.scramble-word .scr-char{will-change:auto}}
+@media(max-width:760px){.hero-label{font-size:9px}.scramble-word{font-size:9px;margin-left:5px}.story-card,.market-panel,.domain{background:#0d1a28}.trust-card{background:linear-gradient(135deg,#0c202b,#101b27)}}
+
+  
+/* Dynamic security interface */
+.reading-progress{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:linear-gradient(90deg,#4edcff,#b8ff65);box-shadow:0 0 14px #8dffbd;pointer-events:none}
+.hero{isolation:isolate}.hero-grid{z-index:2}.cyber-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}.hero:before{z-index:1;background:linear-gradient(90deg,rgba(5,12,20,.94) 0%,rgba(5,12,20,.79) 38%,rgba(5,12,20,.1) 100%),radial-gradient(ellipse at 78% 50%,rgba(32,164,211,.16),transparent 48%)}
+.visual{transform:perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .25s ease-out}
+.visual:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,rgba(96,241,255,.18) 50deg,transparent 80deg);animation:radarSweep 7s linear infinite;filter:blur(1px);pointer-events:none}
+.visual:after{content:"";position:absolute;inset:10% 4%;background:linear-gradient(transparent 48%,rgba(124,255,215,.18) 49.7%,rgba(152,255,231,.7) 50%,transparent 50.4%);background-size:100% 180%;animation:scanPass 5s linear infinite;mask-image:radial-gradient(ellipse,#000,transparent 72%);pointer-events:none}
+.visual .halo:first-child{border-color:rgba(99,225,255,.35);box-shadow:0 0 45px rgba(57,198,240,.1),inset 0 0 40px rgba(57,198,240,.06);animation:haloPulse 4s ease-in-out infinite}
+.visual .sphere{animation:corePulse 4s ease-in-out infinite}.visual .sphere-grid{animation:spin 18s linear infinite}
+.visual .orbit{animation:orbitBreath 5s ease-in-out infinite}.visual .orbit.o2{animation-delay:-2.5s}
+.hero-label i{animation:signalPulse 2s infinite}.visual-label{animation:labelGlow 4s ease-in-out infinite alternate}.visual-label.l2,.visual-label.l4{animation-delay:-2s}
+.cyber-ticker{position:relative;overflow:hidden;border-bottom:1px solid rgba(100,221,246,.15);background:#07131e;color:#86afba;font:10px var(--mono);letter-spacing:.15em;white-space:nowrap}
+.cyber-ticker-track{display:flex;width:max-content;animation:streamMove 35s linear infinite}.cyber-ticker-track span{padding:12px 38px}.cyber-ticker b{color:#b8ff65;font-weight:400}
+.section-kicker:before{box-shadow:0 0 10px #74dfff}.button-primary{box-shadow:0 0 20px rgba(184,255,101,.12)}.button-primary:hover{box-shadow:0 0 30px rgba(184,255,101,.35)}
+.feature-story{isolation:isolate}.feature-story:after{animation:featurePulse 7s ease-in-out infinite alternate}
+@keyframes radarSweep{to{transform:rotate(360deg)}}@keyframes scanPass{0%{background-position:0 -140%}100%{background-position:0 240%}}@keyframes haloPulse{50%{box-shadow:0 0 65px rgba(57,198,240,.22),inset 0 0 55px rgba(57,198,240,.1)}}@keyframes corePulse{50%{box-shadow:0 0 110px rgba(48,185,230,.36),inset 0 0 52px rgba(168,240,248,.22);filter:brightness(1.2)}}@keyframes orbitBreath{50%{opacity:.5;filter:drop-shadow(0 0 6px #5fdcfa)}}@keyframes signalPulse{50%{opacity:.4;box-shadow:0 0 22px #b7ff65}}@keyframes labelGlow{from{opacity:.5}to{opacity:1;text-shadow:0 0 12px #5ddaf3}}@keyframes streamMove{to{transform:translateX(-50%)}}@keyframes featurePulse{to{transform:scale(1.12);opacity:.55}}
+@media(max-width:760px){.hero:before{background:linear-gradient(180deg,rgba(5,12,20,.8),rgba(5,12,20,.45))}.visual:before{width:290px;height:290px}.cyber-ticker-track{animation-duration:26s}}
+@media(prefers-reduced-motion:reduce){.visual,.visual:before,.visual:after,.visual .halo,.visual .sphere,.visual .sphere-grid,.visual .orbit,.hero-label i,.visual-label,.cyber-ticker-track,.feature-story:after{animation:none!important;transform:none!important}.cyber-canvas{display:none}}
+
+
+/* Photography: Unsplash / Rick Rothenberg, Logan Voss, A Chosen Soul.
+   Sources: unsplash.com/photos/ZVuVzcSk7cs, unsplash.com/photos/DLofzojj51Q,
+   unsplash.com/photos/MOIGsaj8te0. */
+.hero{background:#050c14 url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=2000&q=85") center 46%/cover no-repeat}
+.hero:before{background:linear-gradient(90deg,rgba(3,10,18,.97) 0%,rgba(3,10,18,.9) 34%,rgba(3,10,18,.4) 73%,rgba(3,10,18,.25) 100%),linear-gradient(0deg,rgba(3,10,18,.8),transparent 35%);z-index:1}
+.hero-grid{min-height:628px}.hero .visual .sphere,.hero .visual .halo,.hero .visual .orbit,.hero .visual:before,.hero .visual:after{opacity:.35}
+.feature-story{background:linear-gradient(0deg,rgba(4,13,23,.98) 0%,rgba(4,13,23,.75) 43%,rgba(4,13,23,.15) 100%),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=1200&q=80") center/cover}
+.feature-story:before,.feature-story:after{opacity:.24}
+.report-card:nth-child(1){background:linear-gradient(0deg,rgba(5,14,24,.98),rgba(5,14,24,.65)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(2){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.72)),url("https://images.unsplash.com/photo-1771011726574-60ab6028724a?auto=format&fit=crop&w=900&q=75") center/cover}
+.report-card:nth-child(3){background:linear-gradient(0deg,rgba(5,14,24,.97),rgba(5,14,24,.75)),url("https://images.unsplash.com/photo-1783237472550-b1513321a08b?auto=format&fit=crop&w=900&q=75") center/cover}
+.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.98),rgba(6,21,29,.85)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=1200&q=75") center/cover}
+@media(max-width:760px){.hero{background-position:64% center}.hero:before{background:linear-gradient(180deg,rgba(3,10,18,.86),rgba(3,10,18,.68) 65%,rgba(3,10,18,.91))}.hero-grid{min-height:0}.trust-card{background:linear-gradient(90deg,rgba(6,21,29,.96),rgba(6,21,29,.82)),url("https://images.unsplash.com/photo-1770885653473-ca48b4d69173?auto=format&fit=crop&w=800&q=75") center/cover}}
+
+</style>
+<style>
+.article{padding:64px 0 80px}.article .wrap{max-width:820px}
+.crumb{font:11px var(--mono);letter-spacing:.1em;color:var(--muted-light);margin-bottom:22px}
+.crumb a{color:var(--blue)}.crumb a:hover{text-decoration:underline}
+.article h1{font-size:clamp(28px,4vw,40px);line-height:1.4;letter-spacing:-.02em;margin:0 0 16px}
+.article-meta{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted-light);font:11px var(--mono);letter-spacing:.08em;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.article-cover{margin:0 0 30px}.article-cover img{width:100%;display:block;border:1px solid var(--line)}
+.article-body{font-size:16px;line-height:2;color:#dbe7f0}
+.article-body h2{font-size:22px;line-height:1.5;margin:38px 0 14px;letter-spacing:-.01em}
+.article-body h3{font-size:18px;margin:30px 0 10px}
+.article-body p{margin:0 0 18px}
+.article-body strong{color:#fff}
+.article-body figure{margin:28px 0}
+.article-body figure img{width:100%;display:block;border:1px solid var(--line)}
+.article-body figcaption{color:var(--muted-light);font-size:12px;margin-top:10px;text-align:center}
+.article-body blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--blue);background:rgba(126,201,255,.07);color:#cfe0ec}
+.article-body blockquote p{margin:0}
+.article-body hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+.article-body code{background:rgba(126,201,255,.12);padding:2px 6px;font-size:14px}
+.article-nav{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);margin-top:44px;padding-top:24px}
+.article-nav a{color:var(--blue);font-size:13px;line-height:1.6;max-width:46%}
+.article-nav a.next{text-align:right;margin-left:auto}
+.article-nav span{display:block;color:var(--muted-light);font:10px var(--mono);letter-spacing:.12em;margin-bottom:4px}
+.archive-list{list-style:none;margin:0;padding:0}
+.archive-list li{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.archive-list .d{font:11px var(--mono);color:var(--muted-light);letter-spacing:.06em;padding-top:4px}
+.archive-list a.t{font-size:17px;font-weight:650;line-height:1.55;color:#eef4f9}
+.archive-list a.t:hover{color:var(--blue)}
+.archive-list p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.archive-head{margin-bottom:8px}
+</style>
+</head><body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="/" aria-label="SafetyWorld 首页">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span>
+      </a>
+      <nav class="nav" id="mainNav" aria-label="主导航">
+        <a href="/#research">研究洞察</a><a href="/articles/">文章归档</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/#about">关于我们</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="search-toggle" id="searchToggle" aria-label="打开站内搜索" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <a class="contact-link" href="/#contact">研究合作</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel"><form class="wrap search-form" id="searchForm" role="search"><input id="siteSearch" type="search" placeholder="搜索 AI 安全研究、评测与产业情报" aria-label="搜索网站内容"><button type="submit">查找</button></form></div>
+  </header>
+  <main id="main">
+    <article class="article"><div class="wrap">
+      <p class="crumb"><a href="/">首页</a> ／ <a href="/articles/">文章归档</a> ／ 可信AI说</p>
+      <h1>挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入&quot;产能过剩&quot;时代？</h1>
+      <div class="article-meta"><span>可信AI说</span><span>2026-10-13</span><span>阅读约 5 分钟</span><span>SAFETYWORLD · TRUSTED AI SPEAKS</span></div>
+      <figure class="article-cover"><img src="/articles/2026-10-13-anthropic-cyber-mission/cover.jpg" alt="挖出 2.9 万个漏洞，只修了 516 个：AI 挖洞正在进入&quot;产能过剩&quot;时代？"></figure>
+      <div class="article-body">
+<p>10 月 8 日，Anthropic 公布了一张成绩单。过去六个月，它的模型在广泛使用的开源软件里挖出了 29,439 个潜在漏洞。六家外部安全公司评审了其中 6,123 条，确认 5,674 条有效，真阳性率 92.7%。听起来像一场胜利。</p>
+<p>同一张成绩单的下一行却不太好看：上报给维护者的 6,157 条里，真正被上游修好的，只有 516 条。从挖出到修好，转化率 8.4%。而这已经是追赶上来的结果：五个月前，修好的数字是 97。</p>
+<p><strong>这张成绩单真正想讲的故事，是 AI 安全产业的第一次&quot;产能过剩&quot;。</strong></p>
+<p>这条漏斗是怎么造出来的，要从 Anthropic 当天发布的&quot;Cyber Mission&quot;说起。整个计划有两条腿。一条伸向关键基础设施：把最强模型、驻场工程师和威胁研究送给 11 家创始合作伙伴，从埃森哲、德勤到 CrowdStrike、Palo Alto Networks，再到罗克韦尔自动化，覆盖电网、水务和交通的运营商。另一条腿伸向开源社区：OSS Scanner，给入选的开源项目免费做周期性扫描。</p>
+<p>项目想加入，得在 GitHub 上提一个带配置文件和 Dockerfile 的 PR。扫描全程在与外网隔离的虚拟机里跑，灵感直接对标 Google 的 OSS-Fuzz。</p>
+<p>扫描报告长什么样，Anthropic 给了标准件：一个可独立复现的触发器、一份漏洞说明、能定位到引入提交的代码二分结果，以及可能存在的候选补丁。最激进的一点是，报告由模型直接生成，发送前不经过人工审核。发布首周，就有 116 个项目排队递交了 PR。</p>
+<p><strong>省掉人工审核，等于把误报风险转嫁给了维护者。</strong></p>
+<figure><img src="/articles/2026-10-13-anthropic-cyber-mission/cover.jpg" alt="AI 挖洞漏斗：29,439 个发现，只有 516 个被修复" loading="lazy"><figcaption>图1：AI 挖洞漏斗。六个月挖出 29,439 个潜在漏洞，真正被上游修好的只有 516 个</figcaption></figure>
+<p>答案要先从这条漏斗的&quot;质检&quot;环节讲起：在 48 个项目里抽查 97 个高危或严重发现，85 个达到披露标准，11 个是已知问题的重复，误报只有 1 个。</p>
+<p>wolfSSL 收到 74 份报告，72 份有效，其中 5 个变成了 CVE。</p>
+<p>Anthropic 的内部目标，是把真阳性率推到 90% 以上。</p>
+<p><strong>92.7% 的准确率，只属于被评审过的那一批。</strong></p>
+<p>仪表盘上还有一行小字：4,824 条报告是&quot;直接发送&quot;给维护者的，未经人工审核，&quot;可能包含误报&quot;。落到维护者头上，这条漏斗是什么滋味，另一组新闻给了参照。</p>
+<p>上周 Google 宣布暂停开源漏洞赏金计划，理由是自动化提交暴增、绝大多数无效；Linux 内核维护者被 AI 生成的报告淹没，确认率从 15% 跌到 5%。看起来矛盾：Anthropic 说真阳性率 92.7%，Google 说绝大多数是噪声。</p>
+<p>矛盾的解法藏在&quot;谁来付验证成本&quot;里：Anthropic 自己掏钱请六家公司做了人工 triage，把验证成本内部化了；而涌向 Google 和 Linux 内核的那些报告，验证成本被甩给了维护者。</p>
+<figure><img src="/articles/2026-10-13-anthropic-cyber-mission/img2.jpg" alt="发现曲线与修复曲线的剪刀差" loading="lazy"><figcaption>图2：发现与修复的剪刀差。AI 让&quot;发现&quot;变成流水线，&quot;修复&quot;仍停留在人的时间里</figcaption></figure>
+<p><strong>验证成本由谁来付，决定了 AI 报告是金矿还是噪声。</strong></p>
+<p>部分维护者已经开始抱怨：严重性评级被抬高，扫描器误解了项目的威胁模型。VentureBeat 还记录了一个更冷的数字：从 5 月 22 日到 10 月 2 日，上报量涨了 3.9 倍（1,596 到 6,157），修复量涨了 5.3 倍（97 到 516），修复占比从 6.1% 升到 8.4%。修复在追赶，但追赶的速度，永远慢发现一拍。接下来的问题是：当&quot;发现&quot;变成一条流水线，瓶颈会转移到哪里。</p>
+<p>答案是&quot;修复&quot;。CrowdStrike 反制对手行动高级副总裁 Adam Meyers 在今年 4 月就说过，问题在打补丁。他算过一笔账：如果发现量再涨十倍，维护者会被彻底淹没。</p>
+<p>Anthropic 自己的 Glasswing 项目也承认：在发现和修复之间，经常隔着好几个月。而在工控系统里，这个间隔可能长到离谱：给运行中的机器打补丁，在极少数情况下可能要等几十年。</p>
+<p><strong>挖洞的速度，第一次超过了修洞的诚意。</strong></p>
+<p>7 月 30 日，FBI 和 EPA 联合警告：至少七个州的水务设施报告了针对罗克韦尔 Allen-Bradley PLC 控制器的攻击，出现了失压和管网漫水。而罗克韦尔，正是 Anthropic 关键基础设施计划的 11 家创始伙伴之一。</p>
+<p>闭环出现了：AI 帮你找出的漏洞，补丁还没装上，攻击者已经先到了 PLC 门口。国会议员 Josh Gottheimer 提出的《AI 网络防御法案》想给 CISA 试点拨 1 亿美元（2027 到 2031 年），让关键基础设施运营商免费使用前沿模型。</p>
+<p>连立法者都看明白了：模型能力已经够用，缺的是为修复买单的人。但故事还有另一面，更麻烦的是，这把铲子从来不只握在防守者手里。</p>
+<p>Anthropic 同一天还扩大了 Cyber Verification Program：三档访问，防御档做事件响应和逆向，红队档做授权渗透测试，专家档再往上。同一批模型，既发给修理工，也发给拆弹的人。</p>
+<p>Glasswing 在 2026 年 4 月到 7 月验证了 12.9 万个软件漏洞，其中 3.3 万多个是高危或严重，Anthropic 说这还是抽样调查的低估，真实影响可能是五倍。</p>
+<p>漏洞情报公司 VulnCheck 的研究员翻了一遍：在抽查的 300 个里，真正在野外被利用的只有 2 个，一个是 Ghost CMS 的 SQL 注入（CVE-2026-26980），一个是 Rejetto HTTP 文件服务器的会话伪造（CVE-2026-61500）。挖出来的绝大多数从未被利用，但防守方要为每一条付出消化成本，这就是攻防之间最不对称的一笔账。</p>
+<p><strong>当 AI 每天能挖几十个漏洞，补丁的速度才是唯一的护城河。</strong></p>
+<p>这句话还有后半段，是防守方最不愿意面对的：Veracode 测出来，44% 的 AI 代码生成任务会引入有风险的安全漏洞；1Password 则证明，AI 生成的补丁本身可能引入新的风险。挖得快、修得慢、补丁还可能带毒，这就是&quot;产能过剩&quot;的完整形状。既然修复链注定漫长，企业真正该买的，是&quot;漏洞还没修好之前&quot;的安全。</p>
+<p>这正是 AI 安全围栏这个品类要回答的问题。数美做在线业务安全和内容风控出身，把同一套能力延伸到了 AI 业务上。</p>
+<p>大模型安全围栏覆盖输入指令、多模态附件、生成内容和训练数据四个环节，对每一条判定给出 PASS 放行、REVIEW 转人工、REJECT 拦截三级处置，每条判定附三级风险标签和置信度，支持会话级多轮检测。</p>
+<p>这是机制上的对应：当开源组件带着已知但未修复的漏洞跑在业务里，围栏在运行时把&quot;已知风险&quot;拦在动作发生之前。评测走在围栏前面。</p>
+<p>数美的 AI 安全评测产品天攻，负责在模型和应用上线前，用攻击者的视角做红队评测，把问题发现在发布之前。一个管上线前，一个管运行时。</p>
+<p>背后的链路是同一套：AI 机器审核，加上大模型审核 Agent，再加上专家决策，三层先机器过一遍，再让模型做判断，最后专家拍板。唐会军把这套东西总结成一句话：风控是一整套体系工程。</p>
+<p>业务每向前演进一次，安全就同步演进一次。漏洞的发现方式已经从人工审计演进到 AI 批量扫描，安全的响应也该从&quot;等补丁&quot;演进到&quot;先兜底&quot;，因为技术把 AI 能用的开源边界推大了一圈，AI 业务安全要把企业敢用这些开源的边界推大一圈。</p>
+<figure><img src="/articles/2026-10-13-anthropic-cyber-mission/img3.jpg" alt="三段防线：围栏四环节与三级处置" loading="lazy"><figcaption>图3：三段防线。评测管上线前，围栏管运行时：四环节检查加 PASS / REVIEW / REJECT 三级处置</figcaption></figure>
+<p><strong>修复链注定漫长，买的是&quot;漏洞还没修好之前&quot;的安全。</strong></p>
+<p>这周就能做的四件事，收好。</p>
+<p>01 查依赖。去 Anthropic 的 OSS Scanner 仓库里搜一遍你用的开源项目，看它们收没收到报告，盯紧上游的安全公告和版本发布。报告只发给维护者，不会抄送到你手上。</p>
+<p>02 把&quot;发布补丁&quot;和&quot;装上补丁&quot;记成两条时间线。Anthropic 的仪表盘都提醒：上游修了，不等于你装上了。给每个高危依赖建一个&quot;已发布未安装&quot;清单。</p>
+<p>03 对不能停机的系统，先断暴露面再等补丁。FBI 和 EPA 的建议很直接：把 PLC 从公网摘下来。打不上补丁的窗口期，隔离就是补丁。</p>
+<p>04 把评测做成每次发版前的固定动作。等不起上游修复的业务，至少做到上线前有人用攻击者视角看一遍。</p>
+<p>Anthropic 的 OSS Scanner 有个争议决定：不设 90 天强制披露期限，理由是 AI 报告可能有误报，披露政策以后再定。传统规则是 90 天一到就公开，倒逼厂商修。</p>
+<p>你站哪边？A 坚持 90 天强制公开，公开是最好的倒逼；B 不设期限，等准备好了再公开，公开太早等于给攻击者送情报。评论区见。</p>
+      </div>
+<nav class="article-nav"><a href="/articles/2026-10-12-korea-artex-bank.html"><span>← 上一篇 · 2026-10-12</span>一个人攻破 7 家银行，6.8 万人数据外泄：银行的 Agent 安全防线，为什么漏在侧门？</a><a class="next" href="/articles/2026-10-14-whitehouse-mandate.html"><span>下一篇 · 2026-10-14 →</span>19 份签证表、1 条假线索之后：白宫为什么要求大模型公司&quot;出事必须上报&quot;？</a></nav>
+    </div></article>
+  </main>
+  <footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">S</span><span class="brand-name">SafetyWorld<small>AI SAFETY RESEARCH</small></span></a><p>AI 安全研究、评测与产业情报。关注 AI 安全的技术边界、产业变化与真实业务需求。</p></div><nav class="footer-nav" aria-label="页脚导航"><a href="/#research">研究洞察</a><a href="/#markets">产业情报</a><a href="/#evaluation">安全评测</a><a href="/#reports">研究报告</a><a href="/#trusted">可信 AI 说</a><a href="/articles/">文章归档</a><a href="/#about">关于我们</a><a href="/#contact">研究合作</a></nav></div><div class="footer-bottom"><span>© <span id="year">2026</span> SAFETYWORLD · AI SAFETY RESEARCH</span><span>INSIGHT · EVALUATION · INTELLIGENCE</span></div></div></footer>
+  <script>
+    const menu=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+    const searchToggle=document.getElementById('searchToggle');const searchPanel=document.getElementById('searchPanel');searchToggle.addEventListener('click',()=>{const open=searchPanel.classList.toggle('open');searchToggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('siteSearch').focus()});document.getElementById('searchForm').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('siteSearch').value.trim();if(!q)return;const matches=[...document.querySelectorAll('main h1,main h2,main h3,main p')].filter(el=>el.textContent.toLowerCase().includes(q.toLowerCase()));if(matches.length){matches[0].scrollIntoView({behavior:'smooth',block:'center'});matches[0].setAttribute('tabindex','-1');matches[0].focus({preventScroll:true})}else{document.getElementById('siteSearch').setCustomValidity('暂未找到相关内容，请尝试“AI 安全”“评测”或“产业情报”。');document.getElementById('siteSearch').reportValidity();setTimeout(()=>document.getElementById('siteSearch').setCustomValidity(''),2600)}});document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
