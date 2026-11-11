@@ -196,3 +196,16 @@ body{background:var(--paper);color:var(--ink)}
 .paper-source-group p{margin-top:11px}
 @media(max-width:980px){.paper-source-map{grid-template-columns:1fr;gap:22px}.paper-source-groups{gap:15px}}
 @media(max-width:700px){.paper-source-map{padding:20px 17px;margin:16px 0 22px}.paper-source-groups{grid-template-columns:1fr;gap:18px}.paper-source-group{padding-left:13px}.paper-source-copy h3{font-size:18px}}
+
+/* ---------- AI safety procurement: distinguish verified Shumei records and open tenders ---------- */
+.tender-market .tender-list li{padding:18px 15px;border-color:#d2d9ce;transition:background .2s,border-color .2s}
+.tender-market .tender-list li:hover{background:#e9eee4;border-color:#b9c8ad}
+.tender-market .tender-list li.featured-bid{padding-left:19px;border-left:3px solid #809d5d;background:linear-gradient(90deg,rgba(223,234,211,.72),rgba(237,241,232,.3) 55%)}
+.tender-market .tender-list li.featured-bid strong{color:#273a24}
+.tender-market .tender-list li.featured-bid b{font-weight:700;color:#324e28}
+.tender-market .tender-list li.open-bid{background:#f1f3ec}
+.tender-market .tender-list li>div{gap:18px;align-items:baseline}
+.tender-market .tender-list li>div strong{line-height:1.65}
+.tender-market .tender-list li>div span{white-space:nowrap}
+.tender-market .tender-list li p{max-width:1000px}
+@media(max-width:700px){.tender-market .tender-list li{padding:16px 10px}.tender-market .tender-list li.featured-bid{padding-left:14px}.tender-market .tender-list li>div{display:block}.tender-market .tender-list li>div span{display:block;margin-top:5px;white-space:normal}}
