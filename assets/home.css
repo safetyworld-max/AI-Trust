@@ -12,3 +12,24 @@
 @media(max-width:980px){.report-shelf{gap:16px}.report-cover{height:165px;padding:12px}.report-cover b{font-size:48px}.report-book h3{font-size:12px}.paper-grid{gap:20px}.paper-card h3{font-size:15px}}
 @media(max-width:700px){.paper-section{margin-top:38px;padding-top:25px}.paper-head{display:block}.paper-head h3{font-size:23px}.paper-head p{margin-top:14px;font-size:12px}.paper-grid{grid-template-columns:1fr;gap:24px}.paper-card h3{font-size:18px}.paper-card p{font-size:12px;margin-bottom:14px}.paper-card .report-status{font-size:11px}.market-intro{position:static}.market-more{margin-top:16px}.intel-list li>div{flex-wrap:wrap;gap:5px 12px}.intel-list li>div>span{font-size:11px}.intel-list strong{font-size:13px}.report-shelf{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;padding:0 4px 18px;scrollbar-color:#6e805c #1c2818;scrollbar-width:thin}.report-book{flex:0 0 72%;scroll-snap-align:start}.report-cover{height:220px;padding:18px}.report-cover b{font-size:75px}.report-cover>span{font-size:11px}.report-cover small{font-size:9px}.report-book h3{font-size:17px}.report-book p{font-size:12px}.report-book>.report-no{font-size:10px}.reports{padding-bottom:44px}.reports .section-head h2{font-size:29px}.reports .section-head p{font-size:12px}.reports-more{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.hero-video{display:none}.hero-object{will-change:auto}}
+
+
+/* Align homepage cards and keep each content grid readable at tablet widths. */
+.paper-grid{align-items:stretch;grid-auto-rows:1fr}
+.paper-card{min-width:0;align-items:stretch}
+.paper-card h3{min-height:3em}
+.paper-card .paper-actions{align-self:flex-start;margin-top:auto!important;padding-top:12px}
+@media(max-width:900px){
+  .paper-head{gap:24px}
+  .paper-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .report-shelf{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+  .report-cover{height:170px}
+}
+@media(max-width:700px){
+  .paper-head{display:block}
+  .paper-grid{grid-template-columns:1fr;gap:22px}
+  .paper-card h3{min-height:0}
+  .report-shelf{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;padding:0 4px 18px;scrollbar-color:#6e805c #1c2818;scrollbar-width:thin}
+  .report-book{flex:0 0 72%;scroll-snap-align:start}
+  .report-cover{height:220px}
+}
