@@ -17,15 +17,23 @@ function senderDomain(from) {
 async function senderRecordsReady(domain) {
   if (!domain) return false;
   try {
-    const [dkim, spf, mx] = await Promise.all([
-      dns.resolveTxt("resend._domainkey." + domain),
+    const dkim = await dns.resolveTxt("resend._domainkey." + domain);
+    const hasDkim = dkim.some(parts => parts.join("").startsWith("p="));
+    if (!hasDkim) return false;
+    const forgeReady = await Promise.all([
+      dns.resolveCname("rsend." + domain),
+      dns.resolveCname("send." + domain)
+    ]).then(([rsend, send]) =>
+      rsend.some(value => value.toLowerCase().replace(/\.$/, "") === "rsend.forge.rmta.net") &&
+      send.some(value => value.toLowerCase().replace(/\.$/, "") === "send.forge.rmta.net")
+    ).catch(() => false);
+    if (forgeReady) return true;
+    const [spf, mx] = await Promise.all([
       dns.resolveTxt("send." + domain),
       dns.resolveMx("send." + domain)
     ]);
-    const hasDkim = dkim.some(parts => parts.join("").startsWith("p="));
-    const hasSpf = spf.some(parts => parts.join("").includes("v=spf1") && parts.join("").includes("amazonses.com"));
-    const hasMx = mx.some(record => String(record.exchange || "").toLowerCase().endsWith(".amazonses.com"));
-    return hasDkim && hasSpf && hasMx;
+    return spf.some(parts => parts.join("").includes("v=spf1") && parts.join("").includes("amazonses.com")) &&
+      mx.some(record => String(record.exchange || "").toLowerCase().endsWith(".amazonses.com"));
   } catch {
     return false;
   }
