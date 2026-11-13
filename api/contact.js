@@ -110,8 +110,15 @@ module.exports = async function handler(req, res) {
       })
     });
     if (!response.ok) {
-      console.error("SafetyWorld lead email delivery failed with status", response.status);
-      return res.status(502).json({ error: "邮件发送暂时失败，请稍后重试。" });
+      const providerResult = await response.json().catch(() => ({}));
+      const providerCode = clean(providerResult.name || providerResult.code || "", 80);
+      console.error("SafetyWorld lead email delivery failed", response.status, providerCode || "unknown");
+      let message = "邮件服务未能接受请求，请检查 Resend 配置。";
+      if (response.status === 401) message = "Resend API Key 无效或没有发送权限，请检查密钥和权限设置。";
+      else if (response.status === 403) message = "Resend 拒绝了发件请求，请检查发件域名验证、账号状态和 API Key 权限。";
+      else if (response.status === 422) message = "发件地址格式或域名验证未通过，请检查 RESEND_FROM_EMAIL 和 Resend Domains 状态。";
+      else if (response.status === 429) message = "邮件服务触发限流，请稍后再试。";
+      return res.status(502).json({ error: message, providerStatus: response.status, providerCode: providerCode || "unknown" });
     }
     return res.status(200).json({ ok: true });
   } catch (error) {
