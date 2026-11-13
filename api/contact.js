@@ -7,6 +7,30 @@ const MAX_PER_WINDOW = 5;
 const DESTINATION = "xman212zjp@gmail.com";
 
 const clean = (value, max) => String(value || "").trim().slice(0, max);
+const dns = require("dns").promises;
+
+function senderDomain(from) {
+  const match = String(from || "").match(/@([^>\\s]+)/);
+  return match ? match[1].replace(/[;,]$/, "").toLowerCase() : "";
+}
+
+async function senderRecordsReady(domain) {
+  if (!domain) return false;
+  try {
+    const [dkim, spf, mx] = await Promise.all([
+      dns.resolveTxt("resend._domainkey." + domain),
+      dns.resolveTxt("send." + domain),
+      dns.resolveMx("send." + domain)
+    ]);
+    const hasDkim = dkim.some(parts => parts.join("").startsWith("p="));
+    const hasSpf = spf.some(parts => parts.join("").includes("v=spf1") && parts.join("").includes("amazonses.com"));
+    const hasMx = mx.some(record => String(record.exchange || "").toLowerCase().endsWith(".amazonses.com"));
+    return hasDkim && hasSpf && hasMx;
+  } catch {
+    return false;
+  }
+}
+
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
 }[char]));
@@ -19,7 +43,8 @@ module.exports = async function handler(req, res) {
 
   const configured = Boolean(process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL);
   if (req.method === "GET") {
-    return res.status(200).json({ ready: configured });
+    const domainReady = configured ? await senderRecordsReady(senderDomain(process.env.RESEND_FROM_EMAIL)) : false;
+    return res.status(200).json({ ready: configured && domainReady });
   }
   if (req.method !== "POST") {
     res.setHeader("Allow", "GET, POST");
