@@ -131,3 +131,5 @@ body.sw-lead-open{overflow:hidden}
 .sw-lead-submit{width:100%;justify-content:space-between}
 }
 @media(prefers-reduced-motion:reduce){.sw-lead-dialog{animation:none}.sw-lead-trigger,.sw-lead-submit{transition:none}}
+
+.sw-lead-status.is-pending{color:#8a7650}.sw-lead-status.is-ready{color:#59754b}.sw-lead-submit:disabled{cursor:not-allowed;opacity:.58}
