@@ -59,10 +59,10 @@ status.className='sw-lead-status is-success';
 status.textContent=err.message||'提交暂时失败，请稍后重试。';
 status.className='sw-lead-status is-error';
 }finally{
+const feedback=status.textContent, outcome=status.classList.contains('is-success')?'is-success':status.classList.contains('is-error')?'is-error':'';
 const readiness=await fetch('/api/contact',{method:'GET',cache:'no-store'}).then(r=>r.ok?r.json():{ready:false}).catch(()=>({ready:false}));
 setReady(readiness.ready===true);
-if(status.classList.contains('is-success'))status.className='sw-lead-status is-success';
-else if(status.classList.contains('is-error'))status.className='sw-lead-status is-error';
+if(outcome){status.textContent=feedback;status.className='sw-lead-status '+outcome;}
 }
 });
 dialog.addEventListener('keydown',e=>{
