@@ -74,8 +74,8 @@
 
 
 /* ---------- SafetyWorld lead capture ---------- */
-.sw-lead-trigger{position:fixed;left:20px;top:50%;z-index:45;display:flex;align-items:center;gap:9px;padding:13px 11px;border:1px solid #b4d575;background:#d5f786;color:#172214;box-shadow:0 8px 30px #07100b30;font:600 12px var(--sans);letter-spacing:.04em;writing-mode:vertical-rl;transform:translateY(-50%);transition:background .2s,box-shadow .2s,transform .2s}
-.sw-lead-trigger:hover{background:#e4ffa8;box-shadow:0 12px 34px #07100b45;transform:translateY(-50%) translateX(3px)}
+.sw-lead-trigger{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;align-items:center;gap:9px;padding:13px 11px;border:1px solid #b4d575;background:#d5f786;color:#172214;box-shadow:0 8px 30px #07100b30;font:600 12px var(--sans);letter-spacing:.04em;writing-mode:horizontal-tb;transform:none;transition:background .2s,box-shadow .2s,transform .2s}
+.sw-lead-trigger:hover{background:#e4ffa8;box-shadow:0 12px 34px #07100b45;transform:translateY(-2px)}
 .sw-lead-trigger svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;writing-mode:horizontal-tb}
 .sw-lead-overlay{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:24px;background:rgba(6,12,10,.72);backdrop-filter:blur(8px)}
 .sw-lead-overlay[hidden]{display:none}
@@ -116,7 +116,7 @@
 .sw-lead-privacy{margin:14px 0 0;color:#899286;font-size:9px;line-height:1.6}
 body.sw-lead-open{overflow:hidden}
 @media(max-width:700px){
-.sw-lead-trigger{left:14px;top:auto;bottom:16px;transform:none;writing-mode:horizontal-tb;flex-direction:row;padding:11px 14px;box-shadow:0 5px 22px #07100b45}
+.sw-lead-trigger{right:14px;bottom:16px;transform:none;writing-mode:horizontal-tb;flex-direction:row;padding:11px 14px;box-shadow:0 5px 22px #07100b45}
 .sw-lead-trigger:hover{transform:translateY(-2px)}
 .sw-lead-dialog{display:block;width:min(520px,100%);max-height:calc(100dvh - 24px)}
 .sw-lead-aside{min-height:0;padding:27px 22px 20px}
