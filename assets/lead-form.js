@@ -19,8 +19,8 @@ root.innerHTML=`
 <label class="sw-lead-wide">需求说明 <em>*</em><textarea name="message" required minlength="8" maxlength="2000" rows="3" placeholder="请简要描述您关注的问题或合作需求"></textarea></label>
 <label class="sw-lead-trap" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
 </div>
-<label class="sw-lead-consent"><input type="checkbox" name="consent" required><span>我同意 SafetyWorld 为回复本次需求使用所填信息。请勿填写身份证、密码等敏感信息。</span></label>
-<div class="sw-lead-actions"><button class="sw-lead-submit" type="submit" disabled>邮件接收待配置</button><p class="sw-lead-status is-pending" id="sw-lead-status" role="status" aria-live="polite">邮件通道配置完成后即可提交；当前不会发送表单信息。</p></div>
+<label class="sw-lead-consent"><input type="checkbox" name="consent" required><span>我同意 SafetyWorld 为回复本次需求处理所填信息，并经邮件服务转交至 SafetyWorld 工作邮箱。请勿填写身份证、密码等敏感信息。</span></label>
+<div class="sw-lead-actions"><button class="sw-lead-submit" type="submit" disabled>正在检查邮件通道</button><p class="sw-lead-status is-pending" id="sw-lead-status" role="status" aria-live="polite">正在确认邮件接收状态…</p></div>
 </form><p class="sw-lead-privacy">信息仅用于联系与处理本次需求，不会在网站公开展示。</p></div></section></div>`;
 document.body.append(root);
 const trigger=document.getElementById('sw-lead-trigger'),overlay=document.getElementById('sw-lead-overlay'),dialog=document.getElementById('sw-lead-dialog'),closeBtn=dialog.querySelector('.sw-lead-close'),form=document.getElementById('sw-lead-form'),status=document.getElementById('sw-lead-status');
@@ -30,5 +30,48 @@ function open(){prior=document.activeElement;overlay.hidden=false;document.body.
 trigger.addEventListener('click',open);closeBtn.addEventListener('click',close);
 overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)close()});
+const submit=form.querySelector('.sw-lead-submit');
+function setReady(ready){
+submit.disabled=!ready;
+submit.textContent=ready?'提交合作意向':'邮件接收待配置';
+status.textContent=ready?'信息将通过邮件服务发送至 SafetyWorld 工作邮箱。':'邮件通道配置完成后即可提交；当前不会发送表单信息。';
+status.className='sw-lead-status '+(ready?'is-ready':'is-pending');
+}
+fetch('/api/contact',{method:'GET',cache:'no-store'})
+.then(response=>response.ok?response.json():{ready:false})
+.then(result=>setReady(result.ready===true))
+.catch(()=>setReady(false));
+form.addEventListener('submit',async e=>{
+e.preventDefault();
+if(submit.disabled||!form.reportValidity())return;
+status.textContent='';status.className='sw-lead-status';
+submit.disabled=true;submit.textContent='正在提交…';
+const data=Object.fromEntries(new FormData(form).entries());
+data.consent=form.elements.consent.checked;
+try{
+const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+const result=await response.json().catch(()=>({}));
+if(!response.ok)throw new Error(result.error||'提交暂时失败，请稍后重试。');
+form.reset();
+status.textContent='已收到您的信息，SafetyWorld 会尽快与您联系。';
+status.className='sw-lead-status is-success';
+}catch(err){
+status.textContent=err.message||'提交暂时失败，请稍后重试。';
+status.className='sw-lead-status is-error';
+}finally{
+const readiness=await fetch('/api/contact',{method:'GET',cache:'no-store'}).then(r=>r.ok?r.json():{ready:false}).catch(()=>({ready:false}));
+setReady(readiness.ready===true);
+if(status.classList.contains('is-success'))status.className='sw-lead-status is-success';
+else if(status.classList.contains('is-error'))status.className='sw-lead-status is-error';
+}
+});
+dialog.addEventListener('keydown',e=>{
+if(e.key!=='Tab')return;
+const focusables=Array.from(dialog.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled])')).filter(el=>el.offsetParent!==null);
+if(!focusables.length)return;
+const first=focusables[0],last=focusables[focusables.length-1];
+if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+});
 
 })();
