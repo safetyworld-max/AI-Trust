@@ -48,4 +48,5 @@ if(searchToggle&&searchPanel&&searchForm&&searchInput){
   });
   searchInput.addEventListener('input',()=>searchInput.removeAttribute('aria-invalid'));
 }
+if(!document.querySelector('script[data-sw-lead-loader]')){const s=document.createElement('script');s.src='/assets/lead-form.js';s.defer=true;s.dataset.swLeadLoader='true';document.head.append(s)}
 })();
