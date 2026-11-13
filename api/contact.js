@@ -10,7 +10,7 @@ const clean = (value, max) => String(value || "").trim().slice(0, max);
 const dns = require("dns").promises;
 
 function senderDomain(from) {
-  const match = String(from || "").match(/@([^>\\s]+)/);
+  const match = String(from || "").match(/@([^>\s]+)/);
   return match ? match[1].replace(/[;,]$/, "").toLowerCase() : "";
 }
 
