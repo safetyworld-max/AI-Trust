@@ -4,7 +4,7 @@ const allowedTopics = new Set([
 const recentSubmissions = new Map();
 const WINDOW_MS = 60 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
-const DESTINATION = "877797212@qq.com";
+const DESTINATION = "xman212zjp@gmail.com";
 
 const clean = (value, max) => String(value || "").trim().slice(0, max);
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({
